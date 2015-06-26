@@ -6,7 +6,13 @@
 package th.co.geniustree.intenship.advisor.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import th.co.geniustree.intenship.advisor.model.Student;
 import th.co.geniustree.intenship.advisor.repo.StudentRepo;
 
 /**
@@ -17,4 +23,18 @@ import th.co.geniustree.intenship.advisor.repo.StudentRepo;
 public class StudentController {
     @Autowired
     private StudentRepo studentRepo;
+    
+    @RequestMapping (value = "/students")
+    public Page<Student> getStudent(Pageable pageable){
+        return studentRepo.findAll(pageable);
+    }
+    
+    @RequestMapping (value = "/students",method = RequestMethod.POST)
+    public void saveStudent(@RequestBody Student student){
+        studentRepo.save(student);
+    }
+    @RequestMapping (value = "/studentss",method = RequestMethod.POST)
+    public void deleteStudent(@RequestBody Student student){
+        studentRepo.delete(student.getId());
+    }
 }
