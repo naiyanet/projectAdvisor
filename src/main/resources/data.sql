@@ -1,6 +1,6 @@
 
-INSERT INTO student(id,name,email,mobile) values(STUDENT_SEQ.nextVal,'somying','somying@best.com','098888888');
-INSERT INTO student(id,name,email,mobile) values(STUDENT_SEQ.nextVal,'somchai','somchai@nut.com','0988889999');
-INSERT INTO student(id,name,email,mobile) values(STUDENT_SEQ.nextVal,'somruk','somruk@o.com','0988880000');
+INSERT INTO STUDENT(id,name,email,mobile,enabled) values(STUDENT_SEQ.nextVal,'somying','somyinggh@best.com','098888888',TRUE);
+INSERT INTO STUDENT(id,name,email,mobile,enabled) values(STUDENT_SEQ.nextVal,'somchai','somchaigh@nut.com','0988889999',TRUE);
+INSERT INTO STUDENT(id,name,email,mobile,enabled) values(STUDENT_SEQ.nextVal,'somruk','somruk@ogh.com','0988880000',TRUE);
 
-INSERT INTO faculty(id,name) values(FACULTY_SEQ.nextVal,'computer technology');
+-- INSERT INTO faculty(id,name) values(FACULTY_SEQ.nextVal,'computer technology');

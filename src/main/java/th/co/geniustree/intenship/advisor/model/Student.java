@@ -25,7 +25,7 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 @Table(name = "STUDENT")
-public class Student implements Serializable {
+public class Student implements Serializable  {
 
     @Id
     @SequenceGenerator(name = "student", sequenceName = "STUDENT_SEQ", allocationSize = 1)
@@ -37,11 +37,11 @@ public class Student implements Serializable {
     @NotBlank(message = "please input email")
     @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
     private String email;
-    @NotBlank(message = "please input ID Student")
+//    @NotBlank(message = "please input ID Student")
     private Integer idStudent;
-    @NotBlank(message = "please input ID Card")
+//    @NotBlank(message = "please input ID Card")
     private Integer idCard;
-    @NotBlank(message = "please input Your Name")
+//    @NotBlank(message = "please input Your Name")
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;

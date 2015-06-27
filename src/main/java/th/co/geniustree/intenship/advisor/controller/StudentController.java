@@ -25,7 +25,7 @@ public class StudentController {
     @Autowired
     private StudentRepo studentRepo;
     
-    @RequestMapping (value = "/students")
+    @RequestMapping (value = "/students",method = RequestMethod.GET)
     public Page<Student> getStudent(Pageable pageable){
         return studentRepo.findAll(pageable);
     }
