@@ -1,14 +1,14 @@
-angular.module('department', []);
-angular.module('department')
-        .controller('departmentController', function ($scope, $http) {
+angular.module('faculty', []);
+angular.module('faculty')
+        .controller('facultyController', function ($scope, $http) {
 
-            $scope.departments = {};
-            $scope.department = {};
+            $scope.facultys = {};
+            $scope.faculty = {};
             $scope.error = {};
             load();
             function load () {
-                $http.get('/department',{params:{page:0,size:20,sort:'name,desc'}}).success(function (data) {
-                    $scope.departments = data;
+                $http.get('/faculty',{params:{page:0,size:20,sort:'name,desc'}}).success(function (data) {
+                    $scope.facultys = data;
                 }).error(function (data, status, header, config) {
 
                 });
@@ -19,7 +19,7 @@ angular.module('department')
             };
             
             $scope.save = function() {
-                $http.post('/department', $scope.department).success(function (data) {
+                $http.post('/facultys', $scope.faculty).success(function (data) {
                     load();
                     $scope.error = {};
                 }).error(function (data, status, header, config) {
@@ -27,7 +27,7 @@ angular.module('department')
                 });
             };
             $scope.delete = function(dep) {
-                $http.post('/departmentdelete',dep).success(function (data) {
+                $http.post('/facultyss',dep).success(function (data) {
                     load();
                 }).error(function (data, status, header, config) {
 

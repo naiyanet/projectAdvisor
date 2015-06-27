@@ -1,39 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
  * @author User
  */
-
 @Entity
+@Table(name = "STUDENT")
 public class Student implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "student", sequenceName = "student_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "student", sequenceName = "STUDENT_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "student", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    private String password;
     
+    @Column(name = "email" , nullable = false , unique = true)
+    @NotBlank(message = "please input email")
+    @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
+    private String email;
+    @NotBlank(message = "please input ID Student")
+    private Integer idStudent;
+    @NotBlank(message = "please input ID Card")
     private Integer idCard;
+    @NotBlank(message = "please input Your Name")
     private String name;
-    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
     private String sex;
@@ -41,43 +50,25 @@ public class Student implements Serializable {
     private String nationality;
     private String religion;
     private String bloodType;
+    private String addressIDCard;
     private String address;
+    @Column(name = "mobile" , nullable = false)
+    @NotBlank(message = "please input mobile")
     private String phone;
-    private String email;
-
+    
+    private boolean enabled = true;
     
     @ManyToOne
+    @JoinColumn(name = "FACULTY_ID")
     private Faculty faculty;
-    
+
     @ManyToOne
+    @JoinColumn(name = "PARENT_ID")
     private Parent parent;
-    
+
     @ManyToOne
+    @JoinColumn(name = "TEACHER_ID")
     private Teacher teacher;
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
-
-    public Parent getParent() {
-        return parent;
-    }
-
-    public void setParent(Parent parent) {
-        this.parent = parent;
-    }
-
-    public Faculty getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
-    }
 
     public Integer getId() {
         return id;
@@ -87,12 +78,28 @@ public class Student implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPassword() {
+        return password;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getIdStudent() {
+        return idStudent;
+    }
+
+    public void setIdStudent(Integer idStudent) {
+        this.idStudent = idStudent;
     }
 
     public Integer getIdCard() {
@@ -101,6 +108,14 @@ public class Student implements Serializable {
 
     public void setIdCard(Integer idCard) {
         this.idCard = idCard;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Date getbDate() {
@@ -151,6 +166,14 @@ public class Student implements Serializable {
         this.bloodType = bloodType;
     }
 
+    public String getAddressIDCard() {
+        return addressIDCard;
+    }
+
+    public void setAddressIDCard(String addressIDCard) {
+        this.addressIDCard = addressIDCard;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -167,18 +190,42 @@ public class Student implements Serializable {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
+    public Faculty getFaculty() {
+        return faculty;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+
+    public Parent getParent() {
+        return parent;
+    }
+
+    public void setParent(Parent parent) {
+        this.parent = parent;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -196,5 +243,7 @@ public class Student implements Serializable {
         }
         return true;
     }
+
+    
 
 }
