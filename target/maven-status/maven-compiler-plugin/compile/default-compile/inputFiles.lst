@@ -4,7 +4,9 @@ D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Pare
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\service\MyUserDetailService.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\config\WebConfig.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\config\SecurityConfig.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\AccountController.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\ParentRepo.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\AccountRepo.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Autority.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\StudentRepo.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Faculty.java
@@ -15,6 +17,7 @@ D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Teacher.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\TeacherRepo.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\StudentController.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Account.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\App.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Student.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\AutorityRepo.java
