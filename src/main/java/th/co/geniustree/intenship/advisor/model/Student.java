@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -25,10 +27,14 @@ import javax.persistence.OneToOne;
 public class Student implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "student", sequenceName = "student_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "student", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    
     private Integer idCard;
     private String name;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
     private String sex;
     private String race;
@@ -39,11 +45,23 @@ public class Student implements Serializable {
     private String phone;
     private String email;
 
+    
     @ManyToOne
     private Faculty faculty;
     
     @ManyToOne
     private Parent parent;
+    
+    @ManyToOne
+    private Teacher teacher;
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
     public Parent getParent() {
         return parent;

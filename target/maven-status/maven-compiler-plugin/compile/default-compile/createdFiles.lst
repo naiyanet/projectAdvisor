@@ -1,8 +1,14 @@
 th\co\geniustree\intenship\advisor\App.class
-th\co\geniustree\intenship\advisor\config\WebConfig.class
+th\co\geniustree\intenship\advisor\controller\ParentController.class
 th\co\geniustree\intenship\advisor\model\Faculty.class
 th\co\geniustree\intenship\advisor\repo\StudentRepo.class
-th\co\geniustree\intenship\advisor\repo\ParentRepo.class
+th\co\geniustree\intenship\advisor\repo\TeacherRepo.class
 th\co\geniustree\intenship\advisor\model\Parent.class
-th\co\geniustree\intenship\advisor\repo\FacultyRepo.class
 th\co\geniustree\intenship\advisor\model\Student.class
+th\co\geniustree\intenship\advisor\config\WebConfig.class
+th\co\geniustree\intenship\advisor\repo\ParentRepo.class
+th\co\geniustree\intenship\advisor\controller\StudentController.class
+th\co\geniustree\intenship\advisor\controller\TeacherController.class
+th\co\geniustree\intenship\advisor\controller\FacultyController.class
+th\co\geniustree\intenship\advisor\repo\FacultyRepo.class
+th\co\geniustree\intenship\advisor\model\Teacher.class

@@ -3,6 +3,12 @@ D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Pare
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\config\WebConfig.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\ParentRepo.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\StudentRepo.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Faculty.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\ParentController.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\TeacherController.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\FacultyController.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Teacher.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\TeacherRepo.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\StudentController.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\App.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Student.java
-D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Faculty.java
