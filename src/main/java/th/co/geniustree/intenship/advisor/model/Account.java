@@ -9,13 +9,16 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author User
  */
 @Entity
-public class Account implements Serializable{
+@Table(name = "ACCOUNT")
+public class Account implements Serializable {
+
     @Id
     private Integer id;
     private String password;
@@ -66,5 +69,5 @@ public class Account implements Serializable{
         }
         return true;
     }
-    
+
 }

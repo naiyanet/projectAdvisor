@@ -13,12 +13,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author User
  */
 @Entity
+@Table(name = "FACULTY")
 public class Faculty implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

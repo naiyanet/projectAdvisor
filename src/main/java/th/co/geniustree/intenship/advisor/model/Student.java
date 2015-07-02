@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,24 +26,22 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 @Table(name = "STUDENT")
-public class Student implements Serializable  {
+public class Student implements Serializable {
 
     @Id
     @SequenceGenerator(name = "student", sequenceName = "STUDENT_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "student", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String password;
-    
-    @Column(name = "email" , nullable = false , unique = true)
+
+    @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
     private String email;
-//    @NotBlank(message = "please input ID Student")
     private Integer idStudent;
-//    @NotBlank(message = "please input ID Card")
     private Integer idCard;
-//    @NotBlank(message = "please input Your Name")
     private String name;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
     private String sex;
@@ -52,12 +51,12 @@ public class Student implements Serializable  {
     private String bloodType;
     private String addressIDCard;
     private String address;
-    @Column(name = "mobile" , nullable = false)
-    @NotBlank(message = "please input mobile")
     private String phone;
-    
+
     private boolean enabled = true;
-    
+    @ManyToMany
+    private List<Authority> authorities;
+
     @ManyToOne
     @JoinColumn(name = "FACULTY_ID")
     private Faculty faculty;
@@ -70,6 +69,10 @@ public class Student implements Serializable  {
     @JoinColumn(name = "TEACHER_ID")
     private Teacher teacher;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ACCOUNT_ID", nullable = true)
+    private Account account;
+    
     public Integer getId() {
         return id;
     }
@@ -214,12 +217,28 @@ public class Student implements Serializable  {
         this.teacher = teacher;
     }
 
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+    
     public boolean isEnabled() {
         return enabled;
     }
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public List<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
     }
 
     @Override
@@ -243,7 +262,5 @@ public class Student implements Serializable  {
         }
         return true;
     }
-
-    
 
 }
