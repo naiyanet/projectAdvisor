@@ -43,11 +43,7 @@ public class Student implements Serializable {
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
-    private String sex;
-    private String race;
-    private String nationality;
-    private String religion;
-    private String bloodType;
+    private Integer age;
     private String addressIDCard;
     private String address;
     private String mobile;
@@ -125,45 +121,14 @@ public class Student implements Serializable {
         this.bDate = bDate;
     }
 
-    public String getSex() {
-        return sex;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setAge(Integer age) {
+        this.age = age;
     }
-
-    public String getRace() {
-        return race;
-    }
-
-    public void setRace(String race) {
-        this.race = race;
-    }
-
-    public String getNationality() {
-        return nationality;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public String getReligion() {
-        return religion;
-    }
-
-    public void setReligion(String religion) {
-        this.religion = religion;
-    }
-
-    public String getBloodType() {
-        return bloodType;
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
-    }
+    
 
     public String getAddressIDCard() {
         return addressIDCard;

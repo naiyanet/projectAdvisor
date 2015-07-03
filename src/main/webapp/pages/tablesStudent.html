@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Add form data student-project advisor</a>
+                    <a class="navbar-brand" href="index.html">Project Advisor - Add form data student - tablesStudent</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -213,7 +213,7 @@
                                         <a href="profileParent.html">Profile Parent</a>
                                     </li>
                                     <li>
-                                        <a href="">School record</a>
+                                        <a href="schoolRecord.html">School record</a>
                                     </li>
                                     <li>
                                         <a href="tablesStudent.html"><i class="fa fa-table fa-fw"></i> edit Student</a>
@@ -251,7 +251,7 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Tables</h1>
+                        <h1 class="page-header">แก้ไขข้อมูลส่วนตัว</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -268,10 +268,41 @@
                                     </td>
                                 </tr>
                                 <tr class="trinput">
-                                    <td><label>NAME : </label></td>
+                                    <td><label>รหัสนักศึกษา : </label></td>
+                                    <td><input ng-model="student.idStudent" class="form-control"></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>รหัสบัตรประชาชน : </label></td>
+                                    <td><input ng-model="student.idCard" class="form-control"></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>ชื่อ-นามสกุล : </label></td>
                                     <td><input ng-model="student.name" class="form-control" placeholder="Name"></td>
                                     <td><span ng-show="errors.violations.name.message" class="alert alert-danger" id="message-error">
                                             {{errors.violations.name.message}}
+                                    </span></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>วันเดือนปีเกิด : </label></td>
+                                    <td><input ng-model="student.bDate" class="form-control"></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>อายุ : </label></td>
+                                    <td><input ng-model="student.age" class="form-control"></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>ที่อยู่ตามทะเบียนบ้าน : </label></td>
+                                    <td><input ng-model="student.addressIDCard" class="form-control"></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>ที่อยู่ปัจจุบัน : </label></td>
+                                    <td><input ng-model="student.address" class="form-control"></td>
+                                </tr>
+                                <tr class="trinput">
+                                    <td><label>Mobile : </label></td>
+                                    <td><input ng-model="student.mobile" class="form-control" placeholder="Phone Number"></td>
+                                    <td><span ng-show="errors.violations.mobile.message" class="alert alert-danger" id="message-error">
+                                            {{errors.violations.mobile.message}}
                                         </span>  </td>
                                 </tr>
                                 <tr class="trinput">
@@ -281,13 +312,7 @@
                                             {{errors.violations.email.message}}
                                         </span>  </td> 
                                 </tr>
-                                <tr class="trinput">
-                                    <td><label>Mobile : </label></td>
-                                    <td><input ng-model="student.mobile" class="form-control" placeholder="Phone Number"></td>
-                                    <td><span ng-show="errors.violations.mobile.message" class="alert alert-danger" id="message-error">
-                                            {{errors.violations.mobile.message}}
-                                        </span>  </td>
-                                </tr>
+                                
                                 <tr style="height: 60px;">
                                     <td></td>
                                     <td>

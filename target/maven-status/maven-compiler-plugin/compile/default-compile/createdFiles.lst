@@ -1,7 +1,9 @@
 th\co\geniustree\intenship\advisor\App.class
 th\co\geniustree\intenship\advisor\repo\StudentRepo.class
 th\co\geniustree\intenship\advisor\repo\TeacherRepo.class
+th\co\geniustree\intenship\advisor\controller\AuthorityController.class
 th\co\geniustree\intenship\advisor\config\BeanValidatorConfig.class
+th\co\geniustree\intenship\advisor\repo\AuthorityRepo.class
 th\co\geniustree\intenship\advisor\model\Student.class
 th\co\geniustree\intenship\advisor\model\Account.class
 th\co\geniustree\intenship\advisor\controller\StudentController.class
@@ -14,6 +16,7 @@ th\co\geniustree\intenship\advisor\controller\AccountController.class
 th\co\geniustree\intenship\advisor\config\WebConfig.class
 th\co\geniustree\intenship\advisor\repo\ParentRepo.class
 th\co\geniustree\intenship\advisor\service\MyUserDetailService.class
+th\co\geniustree\intenship\advisor\model\Authority.class
 th\co\geniustree\intenship\advisor\config\SecurityConfig.class
 th\co\geniustree\intenship\advisor\controller\FacultyController.class
 th\co\geniustree\intenship\advisor\model\Teacher.class
