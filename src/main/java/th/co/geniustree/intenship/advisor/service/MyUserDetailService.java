@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import th.co.geniustree.intenship.advisor.repo.AccountRepo;
+import th.co.geniustree.intenship.advisor.repo.StudentRepo;
 
 
 /**
@@ -19,12 +19,11 @@ import th.co.geniustree.intenship.advisor.repo.AccountRepo;
  */
 @Service
 public class MyUserDetailService implements UserDetailsService{
-    @Autowired
-    private AccountRepo accountRepo;
+   
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-       UserDetails user = accountRepo.findByEmail(username);
-       return user;
+        return null;
+       
     }
     
 }

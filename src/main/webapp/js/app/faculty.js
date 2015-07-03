@@ -19,7 +19,7 @@ angular.module('faculty')
             };
             
             $scope.save = function() {
-                $http.post('/facultys', $scope.faculty).success(function (data) {
+                $http.post('/saveFaculty', $scope.faculty).success(function (data) {
                     load();
                     $scope.error = {};
                 }).error(function (data, status, header, config) {
@@ -27,7 +27,7 @@ angular.module('faculty')
                 });
             };
             $scope.delete = function(dep) {
-                $http.post('/facultyss',dep).success(function (data) {
+                $http.post('/deleteFaculty',dep).success(function (data) {
                     load();
                 }).error(function (data, status, header, config) {
 

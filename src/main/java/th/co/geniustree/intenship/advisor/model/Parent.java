@@ -3,6 +3,7 @@ package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -24,14 +26,12 @@ public class Parent implements Serializable{
     @GeneratedValue(generator = "parent", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String password;
+     @Column(name = "EMAIL", nullable = false, unique = true)
+    @NotBlank(message = "please input email")
     private String email;
     private String name;
     private String relations;
-    private String phone;
-
-    @ManyToOne
-    @JoinColumn(name = "STUDENT_ID")
-    private Student student;
+    private String mobile;
 
     public Integer getId() {
         return id;
@@ -73,12 +73,12 @@ public class Parent implements Serializable{
         this.email = email;
     }
     
-    public String getPhone() {
-        return phone;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
     
     @Override

@@ -25,16 +25,16 @@ public class StudentController {
     @Autowired
     private StudentRepo studentRepo;
     
-    @RequestMapping (value = "/students",method = RequestMethod.GET)
+    @RequestMapping (value = "/student",method = RequestMethod.GET)
     public Page<Student> getStudent(Pageable pageable){
         return studentRepo.findAll(pageable);
     }
     
-    @RequestMapping (value = "/students",method = RequestMethod.POST)
+    @RequestMapping (value = "/saveStudent",method = RequestMethod.POST)
     public void saveStudent(@Validated @RequestBody Student student){
         studentRepo.save(student);
     }
-    @RequestMapping (value = "/studentss",method = RequestMethod.POST)
+    @RequestMapping (value = "/deleteStudents",method = RequestMethod.POST)
     public void deleteStudent(@RequestBody Student student){
         studentRepo.delete(student.getId());
     }

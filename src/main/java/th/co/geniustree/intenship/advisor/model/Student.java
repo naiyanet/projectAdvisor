@@ -36,7 +36,6 @@ public class Student implements Serializable {
 
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
-    @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
     private String email;
     private Integer idStudent;
     private Integer idCard;
@@ -51,11 +50,11 @@ public class Student implements Serializable {
     private String bloodType;
     private String addressIDCard;
     private String address;
-    private String phone;
+    private String mobile;
 
-    private boolean enabled = true;
-    @ManyToMany
-    private List<Authority> authorities;
+   // private boolean enabled = true;
+   // @ManyToMany
+   // private List<Authority> authorities;
 
     @ManyToOne
     @JoinColumn(name = "FACULTY_ID")
@@ -69,9 +68,6 @@ public class Student implements Serializable {
     @JoinColumn(name = "TEACHER_ID")
     private Teacher teacher;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ACCOUNT_ID", nullable = true)
-    private Account account;
     
     public Integer getId() {
         return id;
@@ -185,12 +181,12 @@ public class Student implements Serializable {
         this.address = address;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public Faculty getFaculty() {
@@ -215,30 +211,6 @@ public class Student implements Serializable {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-    
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public List<Authority> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
     }
 
     @Override

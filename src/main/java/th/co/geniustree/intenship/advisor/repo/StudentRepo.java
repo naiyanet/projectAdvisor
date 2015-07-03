@@ -13,5 +13,6 @@ import th.co.geniustree.intenship.advisor.model.Student;
  * @author User
  */
 public interface StudentRepo extends JpaRepository<Student, Integer>{
+
     
 }

@@ -25,17 +25,17 @@ public class FacultyController {
     @Autowired
     private FacultyRepo facultyRepo;
     
-    @RequestMapping(value = "/facultys")
+    @RequestMapping(value = "/faculty")
     public Page<Faculty> getFaculty(Pageable pageable){
         return facultyRepo.findAll(pageable);
     }
     
-    @RequestMapping(value = "/facultys", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveFaculty", method = RequestMethod.POST)
     public void saveFaculty(@Validated @RequestBody Faculty faculty){
         facultyRepo.save(faculty);
     }
     
-    @RequestMapping(value = "/facultyss", method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteFaculty", method = RequestMethod.POST)
     public void deleteFaculty(@RequestBody Faculty faculty){
         facultyRepo.delete(faculty.getId());
     }

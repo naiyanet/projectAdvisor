@@ -5,14 +5,14 @@ angular.module('student')
             $scope.student = {};
            
 
-            $http.get('/students').success(function (data) {
+            $http.get('/student').success(function (data) {
                 $scope.students = data;
             }).error(function (data, status, header, config) {
 
             });
 
             $scope.showStudent = function () {
-                $http.get('/students').success(function (data) {
+                $http.get('/student').success(function (data) {
                     $scope.students = data;
                 }).error(function (data, status, header, config) {
 
@@ -29,7 +29,7 @@ angular.module('student')
 ////////////// Save and Update /////////////////////// 
             $scope.saveStudent = function () {
                 $scope.showStudent();
-                $http.post('/students', $scope.student)
+                $http.post('/student', $scope.student)
                         .success(function (data) {
                             $scope.showStudent();
                              $scope.errors = data;
@@ -50,7 +50,7 @@ angular.module('student')
 
             $scope.studentss = {};
             $scope.deleteStudent = function () {
-                $http.post('/studentss', $scope.studentss)
+                $http.post('/deleteStudent', $scope.studentss)
                         .success(function (data) {
                             $scope.showStudent();
                    

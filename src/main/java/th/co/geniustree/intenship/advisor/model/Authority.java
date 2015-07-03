@@ -18,6 +18,7 @@ import org.springframework.security.core.GrantedAuthority;
  *
  * @author User
  */
+
 @Entity
 @Table(name = "AUTHORITY")
 public class Authority implements GrantedAuthority, Serializable {
@@ -37,7 +38,7 @@ public class Authority implements GrantedAuthority, Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.role);
+        hash = 79 * hash + Objects.hashCode(this.role);
         return hash;
     }
 
@@ -55,11 +56,10 @@ public class Authority implements GrantedAuthority, Serializable {
         }
         return true;
     }
-    
-    @JsonIgnore
+
     @Override
+    @JsonIgnore
     public String getAuthority() {
         return role;
     }
-
 }

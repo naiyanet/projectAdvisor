@@ -5,14 +5,17 @@
  */
 package th.co.geniustree.intenship.advisor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -23,22 +26,13 @@ import javax.persistence.Table;
 @Table(name = "FACULTY")
 public class Faculty implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+     @SequenceGenerator(name = "FACULTY",sequenceName = "FACULTY_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "FACULTY",strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID")
     private Integer id;
     private String name;
-
-    @OneToMany(mappedBy = "faculty")
-    private List<Student> student;
-
-    public List<Student> getStudents() {
-        return student;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.student = students;
-    }
-
-    public Integer getId() {
+    
+   public Integer getId() {
         return id;
     }
 

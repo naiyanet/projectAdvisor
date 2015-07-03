@@ -30,7 +30,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "TEACHER")
 public class Teacher implements Serializable{
     @Id
-     @SequenceGenerator(name = "teacher", sequenceName = "TEACHER_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "teacher", sequenceName = "TEACHER_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "teacher", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private Integer idTeacher;
@@ -39,7 +39,6 @@ public class Teacher implements Serializable{
     
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
-    @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
     private String email;
     
     private String name;
@@ -53,24 +52,8 @@ public class Teacher implements Serializable{
     private String bloodType;
     private String addressIDCard;
     private String address;
-    private String phone;
-    
-    @ManyToMany
-    private List<Authority> authorities;
-    
-    @OneToMany
-    @JoinColumn(name = "STUDENT_ID")
-    private Student student;
-    
-    @ManyToOne
-    @JoinColumn(name = "FACULTY_ID")
-    private Faculty faculty;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ACCOUNT_ID", nullable = true)
-    private Account account;
-    
-    
+    private String mobile;
+
     public Integer getId() {
         return id;
     }
@@ -183,12 +166,12 @@ public class Teacher implements Serializable{
         this.address = address;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
     
     
