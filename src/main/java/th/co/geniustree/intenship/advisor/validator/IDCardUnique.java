@@ -12,16 +12,15 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-
 /**
  *
  * @author User
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Constraint(validatedBy = EmailUniqueValidator.class)
-public @interface EmailUnique {
-    String message() default "th.co.geniustree.intenship.advisor.validator.EmailUnique.message";
+@Constraint(validatedBy = IDCardUniqueValidator.class)
+public @interface IDCardUnique {
+    String message() default "th.co.geniustree.intenship.advisor.validator.IDCardUnique.message";
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
