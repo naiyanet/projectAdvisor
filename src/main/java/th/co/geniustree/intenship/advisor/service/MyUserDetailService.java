@@ -12,18 +12,20 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import th.co.geniustree.intenship.advisor.repo.StudentRepo;
 
-
 /**
  *
  * @author User
  */
 @Service
-public class MyUserDetailService implements UserDetailsService{
-   
+public class MyUserDetailService implements UserDetailsService {
+
+    @Autowired
+    private StudentRepo studentRepo;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return null;
-       
+
     }
-    
+
 }

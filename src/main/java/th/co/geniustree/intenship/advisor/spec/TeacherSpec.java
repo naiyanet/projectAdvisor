@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package th.co.geniustree.intenship.advisor.spec;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import org.springframework.data.jpa.domain.Specification;
+import th.co.geniustree.intenship.advisor.model.Teacher;
+import th.co.geniustree.intenship.advisor.model.Teacher_;
+/**
+ *
+ * @author User
+ */
+public class TeacherSpec {
+    public static Specification<Teacher> likeName(String keyword) {
+        return new Specification<Teacher>() {
+
+            @Override
+            public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                return cb.like(cb.upper(root.get(Teacher_.name)), keyword.toUpperCase());
+            }
+        };
+    }
+
+    public static Specification<Teacher> likeEmail(String keyword) {
+        return new Specification<Teacher>() {
+
+            @Override
+            public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                return cb.like(cb.upper(root.get(Teacher_.email)), keyword.toUpperCase());
+            }
+        };
+    }
+}

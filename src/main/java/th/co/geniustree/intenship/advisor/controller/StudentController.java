@@ -34,7 +34,7 @@ public class StudentController {
     public void saveStudent(@Validated @RequestBody Student student){
         studentRepo.save(student);
     }
-    @RequestMapping (value = "/deleteStudents",method = RequestMethod.POST)
+    @RequestMapping (value = "/deleteStudent",method = RequestMethod.POST)
     public void deleteStudent(@RequestBody Student student){
         studentRepo.delete(student.getId());
     }

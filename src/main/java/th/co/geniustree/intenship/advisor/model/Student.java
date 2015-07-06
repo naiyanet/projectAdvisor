@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import th.co.geniustree.intenship.advisor.validator.EmailUnique;
 
 /**
  *
@@ -29,14 +30,16 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Student implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "student", sequenceName = "STUDENT_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "student", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "STUDENT", sequenceName = "STUDENT_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "STUDENT", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String password;
-
+    
+    @EmailUnique
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     private String email;
+    
     private Integer idStudent;
     private Integer idCard;
     private String name;
@@ -48,9 +51,9 @@ public class Student implements Serializable {
     private String address;
     private String mobile;
 
-   // private boolean enabled = true;
-   // @ManyToMany
-   // private List<Authority> authorities;
+    
+    @ManyToMany
+    private List<Authority> authorities;
 
     @ManyToOne
     @JoinColumn(name = "FACULTY_ID")
@@ -178,6 +181,14 @@ public class Student implements Serializable {
         this.teacher = teacher;
     }
 
+    public List<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;

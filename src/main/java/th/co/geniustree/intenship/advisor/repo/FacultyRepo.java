@@ -6,12 +6,13 @@
 package th.co.geniustree.intenship.advisor.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import th.co.geniustree.intenship.advisor.model.Faculty;
 
 /**
  *
  * @author User
  */
-public interface FacultyRepo extends JpaRepository<Faculty,Integer>{
+public interface FacultyRepo extends JpaRepository<Faculty,Integer>,JpaSpecificationExecutor<Faculty>{
     
 }
