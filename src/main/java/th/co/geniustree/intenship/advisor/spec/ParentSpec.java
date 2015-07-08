@@ -13,22 +13,25 @@ import org.springframework.data.jpa.domain.Specification;
 import th.co.geniustree.intenship.advisor.model.Parent;
 import th.co.geniustree.intenship.advisor.model.Parent_;
 
+
 /**
  *
  * @author User
  */
 public class ParentSpec {
-      public static Specification<Parent> likeName(final String keyword) {
+
+    public static Specification<Parent> nameLike(String keyword) {
         return new Specification<Parent>() {
 
             @Override
-            public Predicate toPredicate(Root<Parent> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+            public Predicate toPredicate(Root<Parent> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
                 return cb.like(cb.upper(root.get(Parent_.name)), keyword.toUpperCase());
             }
+
         };
     }
 
-public static Specification<Parent> likeEmail(final String keyword) {
+    public static Specification<Parent> emailLike(String keyword) {
         return new Specification<Parent>() {
 
             @Override

@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,12 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -36,24 +32,39 @@ public class Teacher implements Serializable{
     private Integer idTeacher;
     private Integer idCard;
     private String password;
-    
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     private String email;
-    
     private String name;
-    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
-    private String sex;
-    private String race;
-    private String nationality;
-    private String religion;
-    private String bloodType;
     private String addressIDCard;
     private String address;
     private String mobile;
+    
+    @ManyToMany
+    private List<Authority> authorities;
+    
+    @ManyToOne
+    @JoinColumn(name = "FACULTY_ID")
+    private Faculty faculty;
 
+    public List<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
+    }
+
+    public Faculty getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -108,46 +119,6 @@ public class Teacher implements Serializable{
 
     public void setbDate(Date bDate) {
         this.bDate = bDate;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getRace() {
-        return race;
-    }
-
-    public void setRace(String race) {
-        this.race = race;
-    }
-
-    public String getNationality() {
-        return nationality;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public String getReligion() {
-        return religion;
-    }
-
-    public void setReligion(String religion) {
-        this.religion = religion;
-    }
-
-    public String getBloodType() {
-        return bloodType;
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
     }
 
     public String getAddressIDCard() {

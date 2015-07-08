@@ -20,12 +20,13 @@ import th.co.geniustree.intenship.advisor.spec.FacultySpec;
  */
 @Service
 public class FacultySearchService {
+
     @Autowired
     private FacultyRepo facultyRepo;
-    public Page<Faculty> search(String keyword, Pageable pageable){
 
-        Specifications<Faculty> specification = Specifications.where(FacultySpec.nameLike("%"+keyword+"%"))
-                .or(FacultySpec.nameLike("%"+keyword+"%"));
-        return  facultyRepo.findAll(specification,pageable);
+    public Page<Faculty> search(String keyword, Pageable pageable) {
+
+        Specifications<Faculty> specification = Specifications.where(FacultySpec.nameLike("%" + keyword + "%"));
+        return facultyRepo.findAll(specification, pageable);
     }
 }

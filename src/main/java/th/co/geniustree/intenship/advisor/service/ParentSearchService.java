@@ -24,8 +24,8 @@ public class ParentSearchService {
     private ParentRepo parentRepo;
     public Page<Parent> search(String keyword, Pageable pageable){
 
-        Specifications<Parent> specification = Specifications.where(ParentSpec.likeName("%"+keyword+"%"))
-                .or(ParentSpec.likeName("%"+keyword+"%"));
+        Specifications<Parent> specification = Specifications.where(ParentSpec.nameLike("%"+keyword+"%"))
+                .or(ParentSpec.emailLike("%"+keyword+"%"));
         return  parentRepo.findAll(specification,pageable);
     }
 }

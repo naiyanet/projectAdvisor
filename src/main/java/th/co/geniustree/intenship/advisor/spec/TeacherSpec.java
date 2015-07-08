@@ -12,28 +12,31 @@ import javax.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
 import th.co.geniustree.intenship.advisor.model.Teacher;
 import th.co.geniustree.intenship.advisor.model.Teacher_;
+
+
 /**
  *
  * @author User
  */
 public class TeacherSpec {
-    public static Specification<Teacher> likeName(final String keyword) {
+    public static Specification<Teacher> nameLike(String keyword){
         return new Specification<Teacher>() {
 
             @Override
-            public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+            public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
                 return cb.like(cb.upper(root.get(Teacher_.name)), keyword.toUpperCase());
             }
         };
     }
-
-    public static Specification<Teacher> likeEmail(final String keyword) {
+    public static Specification<Teacher> emailLike(String keyword){
         return new Specification<Teacher>() {
 
             @Override
-            public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+            public Predicate toPredicate(Root<Teacher> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
                 return cb.like(cb.upper(root.get(Teacher_.email)), keyword.toUpperCase());
             }
         };
     }
 }
+
+   

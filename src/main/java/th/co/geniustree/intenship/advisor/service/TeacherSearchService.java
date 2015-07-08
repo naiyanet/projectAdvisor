@@ -14,19 +14,20 @@ import th.co.geniustree.intenship.advisor.model.Teacher;
 import th.co.geniustree.intenship.advisor.repo.TeacherRepo;
 import th.co.geniustree.intenship.advisor.spec.TeacherSpec;
 
-
 /**
  *
  * @author User
  */
 @Service
 public class TeacherSearchService {
+
     @Autowired
     private TeacherRepo teacherRepo;
-    public Page<Teacher> search(String keyword, Pageable pageable){
 
-        Specifications<Teacher> specification = Specifications.where(TeacherSpec.likeEmail("%"+keyword+"%"))
-                .or(TeacherSpec.likeEmail("%"+keyword+"%"));
-        return  teacherRepo.findAll(specification,pageable);
+    public Page<Teacher> search(String keyword, Pageable pageable) {
+
+        Specifications<Teacher> specification = Specifications.where(TeacherSpec.emailLike("%" + keyword + "%"))
+                .or(TeacherSpec.emailLike("%" + keyword + "%"));
+        return teacherRepo.findAll(specification, pageable);
     }
 }

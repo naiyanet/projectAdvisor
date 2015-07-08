@@ -25,4 +25,5 @@ public @interface EmailUnique {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+   
 }

@@ -20,11 +20,13 @@ import th.co.geniustree.intenship.advisor.spec.StudentSpec;
  */
 @Service
 public class StudentSearchService {
+
     @Autowired
     private StudentRepo studentRepo;
-    public Page<Student> search(String keyword,Pageable pageable){
-        Specifications<Student> specification = Specifications.where(StudentSpec.emailLike("%"+keyword+"%"))
-                .or(StudentSpec.nameLike("%"+keyword+"%"));
-        return  studentRepo.findAll(specification,pageable);
+
+    public Page<Student> search(String keyword, Pageable pageable) {
+        Specifications<Student> specification = Specifications.where(StudentSpec.emailLike("%" + keyword + "%"))
+                .or(StudentSpec.nameLike("%" + keyword + "%"));
+        return studentRepo.findAll(specification, pageable);
     }
 }

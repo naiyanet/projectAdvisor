@@ -39,4 +39,17 @@ public class FacultyController {
     public void deleteFaculty(@RequestBody Faculty faculty){
         facultyRepo.delete(faculty.getId());
     }
+    
+    @RequestMapping(value = "/faculty/search", method = RequestMethod.POST)
+    public Page<Faculty> searchFaculty(@RequestBody String keyword, Pageable pageable) {
+        
+        if(keyword.equals("s"))
+        {
+           return facultyRepo.findAll(pageable);
+        }
+        else{
+           return facultyRepo.findByName(keyword, pageable);
+        }
+        
+    }
 }

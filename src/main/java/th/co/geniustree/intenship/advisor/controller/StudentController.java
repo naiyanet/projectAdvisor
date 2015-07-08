@@ -38,4 +38,8 @@ public class StudentController {
     public void deleteStudent(@RequestBody Student student){
         studentRepo.delete(student.getId());
     }
+    @RequestMapping(value = "/student/search", method = RequestMethod.POST)
+    public Page<Student> searchStudent(@RequestBody String keyword, Pageable pageable) {
+        return studentRepo.findByNameOrEmail(keyword, keyword, pageable);
+    }
 }

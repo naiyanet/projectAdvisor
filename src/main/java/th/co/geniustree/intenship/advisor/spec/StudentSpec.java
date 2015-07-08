@@ -11,7 +11,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
 import th.co.geniustree.intenship.advisor.model.Student;
-import th.co.geniustree.intenship.advisor.model.Student_;
+
 
 /**
  *
@@ -23,13 +23,13 @@ public class StudentSpec {
 
             @Override
             public Predicate toPredicate(Root<Student> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                //return cb.like(cb.like(root.get(Student_.name)), keyword.toUpperCase());
-                return null;
+                return cb.like(cb.upper(root.get(Student_.name)), keyword.toUpperCase());
+                
             }
         };
     }
 
-    public static Specification<Student> emailLike(final String keyword) {
+    public static Specification<Student> emailLike(String keyword) {
         return new Specification<Student>() {
 
             @Override

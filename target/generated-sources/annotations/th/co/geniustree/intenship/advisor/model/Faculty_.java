@@ -1,6 +1,7 @@
 package th.co.geniustree.intenship.advisor.model;
 
 import javax.annotation.Generated;
+import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
@@ -8,6 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Faculty.class)
 public abstract class Faculty_ {
 
+	public static volatile ListAttribute<Faculty, Student> student;
 	public static volatile SingularAttribute<Faculty, String> name;
 	public static volatile SingularAttribute<Faculty, Integer> id;
 
