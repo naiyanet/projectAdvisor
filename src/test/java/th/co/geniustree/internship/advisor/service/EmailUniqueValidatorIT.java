@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package th.co.geniustree.internship.advisor.service;
 
 import java.util.Set;
@@ -28,26 +23,28 @@ import th.co.geniustree.intenship.advisor.repo.StudentRepo;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = App.class)
 @Transactional(propagation = Propagation.REQUIRED)
-public class MobileUniqueValidatorIT {
+public class EmailUniqueValidatorIT {
 
     @Autowired
     private StudentRepo studentRepo;
-
     @Autowired
     private Validator validator;
     private Student student;
 
     @Before
-    public void setting() {
+    public void setup() {
         student = new Student();
-        student.setName("somchai");
-        student.setMobile("08988888888");
+        student.setEmail("stdent@xxx.Com");
+        student.setPassword("xxx");
+        student.setIdCard(123);
+        student.setName("xxxxx");
+        student.setMobile("xxxxxx");
         student = studentRepo.save(student);
     }
 
     @Test
-    public void ifMobileuniqueMustReturnOneNaja() {
-        Set<ConstraintViolation<Student>> validateProperty = validator.validateProperty(student, "mobile");
-       // Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dup phone number ");
+    public void ifAlreadyExistEmailThenError() {
+        Set<ConstraintViolation<Student>> validate = validator.validateProperty(student, "email");
+        //Assertions.assertThat(validate).extracting(c -> c.getMessage()).contains("dup");
     }
 }

@@ -11,6 +11,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
 import th.co.geniustree.intenship.advisor.model.Student;
+import th.co.geniustree.intenship.advisor.model.Student_;
 
 
 /**

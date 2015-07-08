@@ -20,7 +20,9 @@ import javax.validation.Payload;
 @Target(ElementType.FIELD)
 @Constraint(validatedBy = IDCardUniqueValidator.class)
 public @interface IDCardUnique {
+
     String message() default "th.co.geniustree.intenship.advisor.validator.IDCardUnique.message";
+
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};

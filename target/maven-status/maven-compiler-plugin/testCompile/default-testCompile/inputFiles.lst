@@ -1,3 +1,7 @@
 D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\FacultySearchServiceSpecIT.java
 D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\MobileUniqueValidatorIT.java
+D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\ParentSearchServiceSpecIT.java
+D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\EmailUniqueValidatorIT.java
+D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\TeacherSearchServiceSpecIT.java
 D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\IDCardUniqueValidatorIT.java
+D:\workspace\advisor\src\test\java\th\co\geniustree\internship\advisor\service\StudentSearchServiceSpecIT.java
