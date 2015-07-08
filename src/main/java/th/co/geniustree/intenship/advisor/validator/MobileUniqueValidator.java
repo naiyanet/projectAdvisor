@@ -32,7 +32,5 @@ public class MobileUniqueValidator implements ConstraintValidator<MobileUnique,S
         return true;
         }
         return studentRepo.findByMobileIgnoreCase(value) == null;
-    }
-    
-    
+    }    
 }

@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        super.configure(web); //To change body of generated methods, choose Tools | Templates.
+        super.configure(web); 
       web.ignoring().antMatchers("/console/*");
     }
     

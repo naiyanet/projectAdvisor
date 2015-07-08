@@ -16,7 +16,7 @@ import th.co.geniustree.intenship.advisor.repo.StudentRepo;
  *
  * @author User
  */
-class IDCardUniqueValidator implements ConstraintValidator<IDCardUnique, String>{
+public class IDCardUniqueValidator implements ConstraintValidator<IDCardUnique, String>{
     @Autowired
     private StudentRepo studentRepo;
     @Override

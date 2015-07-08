@@ -35,7 +35,7 @@ public class Student implements Serializable {
     private Integer id;
     private String password;
     
-    @EmailUnique
+ 
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     private String email;

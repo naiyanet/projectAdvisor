@@ -18,7 +18,7 @@ import th.co.geniustree.intenship.advisor.model.Parent_;
  * @author User
  */
 public class ParentSpec {
-      public static Specification<Parent> likeName(String keyword) {
+      public static Specification<Parent> likeName(final String keyword) {
         return new Specification<Parent>() {
 
             @Override
@@ -28,7 +28,7 @@ public class ParentSpec {
         };
     }
 
-    public static Specification<Parent> likeEmail(String keyword) {
+public static Specification<Parent> likeEmail(final String keyword) {
         return new Specification<Parent>() {
 
             @Override

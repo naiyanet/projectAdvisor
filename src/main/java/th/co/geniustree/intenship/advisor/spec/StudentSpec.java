@@ -23,12 +23,13 @@ public class StudentSpec {
 
             @Override
             public Predicate toPredicate(Root<Student> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                return cb.like(cb.like(root.get(Student_.name)), keyword.toUpperCase());
+                //return cb.like(cb.like(root.get(Student_.name)), keyword.toUpperCase());
+                return null;
             }
         };
     }
 
-    public static Specification<Student> emailLike(String keyword) {
+    public static Specification<Student> emailLike(final String keyword) {
         return new Specification<Student>() {
 
             @Override
