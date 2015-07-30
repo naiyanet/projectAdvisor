@@ -36,7 +36,7 @@ public class Faculty implements Serializable {
     private String name;
     
     @JsonIgnore
-    @OneToMany(mappedBy = "FACULTY")
+    @OneToMany(mappedBy = "faculty")
     private List<Student> student;
 
     public List<Student> getStudent() {

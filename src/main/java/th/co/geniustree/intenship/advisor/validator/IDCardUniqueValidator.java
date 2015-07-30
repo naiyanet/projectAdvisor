@@ -25,7 +25,7 @@ public class IDCardUniqueValidator implements ConstraintValidator<IDCardUnique, 
         if (Strings.isNullOrEmpty(value)) {
             return true;
         }
-        Student findByPidIgnoreCase = studentRepo.findByIDCardIgnoreCase(value);
+        Student findByPidIgnoreCase = studentRepo.findByIdCardIgnoreCase(value);
         return findByPidIgnoreCase == null;
     }
 }

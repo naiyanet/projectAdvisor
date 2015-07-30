@@ -33,7 +33,7 @@ public class Student implements Serializable {
     @NotBlank(message = "please input email")
     private String email;
     private Integer idStudent;
-    private Integer idCard;
+    private String idCard;
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;

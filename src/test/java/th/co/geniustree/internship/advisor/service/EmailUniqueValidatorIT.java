@@ -4,6 +4,7 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.iterable.Extractor;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,7 +45,14 @@ public class EmailUniqueValidatorIT {
 
     @Test
     public void ifAlreadyExistEmailThenError() {
-        Set<ConstraintViolation<Student>> validate = validator.validateProperty(student, "email");
-        //Assertions.assertThat(validate).extracting(c -> c.getMessage()).contains("dup");
+        Set<ConstraintViolation<Student>> validateProperty = validator.validateProperty(student, "email");
+        Assertions.assertThat(validateProperty).extracting(new Extractor<ConstraintViolation<Student>,String>(){
+
+            @Override
+            public String extract(ConstraintViolation<Student> f) {
+                return f.getMessage();
+            }
+            
+        }).contains("dublicateEmail");
     }
 }

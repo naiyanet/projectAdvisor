@@ -23,7 +23,5 @@ public interface StudentRepo extends JpaRepository<Student, Integer>,JpaSpecific
 
     public Object findByMobileIgnoreCase(String value);
 
-    public Student findByIDCardIgnoreCase(String value);
-
-    
+    public Student findByIdCardIgnoreCase(String value);
 }
