@@ -41,7 +41,7 @@ public class StudentSearchServiceSpecIT {
         student = new Student();
         student.setEmail("student@xxxx.com");
         student.setPassword("xxx");
-        student.setIdCard(121212);
+        //student.setIdCard(121212);
         student.setName("xxxxx");
         student.setMobile("xxxxxx");
     }

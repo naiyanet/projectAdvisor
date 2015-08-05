@@ -37,7 +37,7 @@ public class EmailUniqueValidatorIT {
         student = new Student();
         student.setEmail("stdent@xxx.Com");
         student.setPassword("xxx");
-        student.setIdCard(123);
+        //student.setIdCard(123);
         student.setName("xxxxx");
         student.setMobile("xxxxxx");
         student = studentRepo.save(student);

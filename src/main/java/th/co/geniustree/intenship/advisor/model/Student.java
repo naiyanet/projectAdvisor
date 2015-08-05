@@ -91,11 +91,11 @@ public class Student implements Serializable {
         this.idStudent = idStudent;
     }
 
-    public Integer getIdCard() {
+    public String getIdCard() {
         return idCard;
     }
 
-    public void setIdCard(Integer idCard) {
+    public void setIdCard(String idCard) {
         this.idCard = idCard;
     }
 
