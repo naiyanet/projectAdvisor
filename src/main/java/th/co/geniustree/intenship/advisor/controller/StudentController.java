@@ -25,21 +25,23 @@ public class StudentController {
     @Autowired
     private StudentRepo studentRepo;
     
-    @RequestMapping (value = "/student",method = RequestMethod.GET)
+    @RequestMapping (value = "/getstudent",method = RequestMethod.GET)
     public Page<Student> getStudent(Pageable pageable){
         return studentRepo.findAll(pageable);
     }
     
-    @RequestMapping (value = "/saveStudent",method = RequestMethod.POST)
-    public void saveStudent(@Validated @RequestBody Student student){
+    @RequestMapping (value = "/savestudent",method = RequestMethod.POST)
+    public void saveStudent(@RequestBody Student student){
         studentRepo.save(student);
     }
-    @RequestMapping (value = "/deleteStudent",method = RequestMethod.POST)
+    
+    @RequestMapping (value = "/deletestudent",method = RequestMethod.POST)
     public void deleteStudent(@RequestBody Student student){
-        studentRepo.delete(student.getId());
+        studentRepo.delete(student);
     }
-    @RequestMapping(value = "/student/search", method = RequestMethod.POST)
-    public Page<Student> searchStudent(@RequestBody String keyword, Pageable pageable) {
-        return studentRepo.findByNameOrEmail(keyword, keyword, pageable);
-    }
+    
+//    @RequestMapping(value = "/student/search", method = RequestMethod.POST)
+//    public Page<Student> searchStudent(@RequestBody String keyword, Pageable pageable) {
+//        return studentRepo.findByNameOrEmail(keyword, keyword, pageable);
+//    }
 }

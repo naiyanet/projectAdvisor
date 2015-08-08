@@ -29,10 +29,9 @@ public class Student implements Serializable {
     @GeneratedValue(generator = "STUDENT", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String password;
-    @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     private String email;
-    private Integer idStudent;
+    private String idStudent;
     private String idCard;
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -83,11 +82,11 @@ public class Student implements Serializable {
         this.email = email;
     }
 
-    public Integer getIdStudent() {
+    public String getIdStudent() {
         return idStudent;
     }
 
-    public void setIdStudent(Integer idStudent) {
+    public void setIdStudent(String idStudent) {
         this.idStudent = idStudent;
     }
 
