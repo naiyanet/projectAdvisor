@@ -1,6 +1,7 @@
 
 package th.co.geniustree.intenship.advisor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -25,16 +27,17 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "TEACHER")
 public class Teacher implements Serializable{
+    
     @Id
     @SequenceGenerator(name = "teacher", sequenceName = "TEACHER_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "teacher", strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private Integer idTeacher;
-    private Integer idCard;
     private String password;
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     private String email;
+    private Integer idTeacher;
+    private Integer idCard;
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
@@ -48,7 +51,11 @@ public class Teacher implements Serializable{
     @ManyToOne
     @JoinColumn(name = "FACULTY_ID")
     private Faculty faculty;
-
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "teacher")
+    private List<Student> student;
+    
     public List<Authority> getAuthorities() {
         return authorities;
     }

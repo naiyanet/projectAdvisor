@@ -4,11 +4,16 @@ angular.module('teacher').controller('teacherController', function ($scope, $htt
     $scope.save = function () {
         $http.post('/saveTeacher', $scope.teacher).success().error();
     };
-    function getSuccess(){
-        alert('SaveSuccess');
-    }
-    function getError(){
-        alert('Error');
-    }
+
+    $scope.delStudent = {};
+    $scope.deleteTeacher = function () {
+        $http.post('/deleteteacher', $scope.delStudent).success(function (data) {
+            growl('Delete success', 'info', 'top');
+            getStudent();
+        }).error(function (data) {
+            growl('Delete error', 'info', 'top');
+        });
+    };
+   
 });
 
