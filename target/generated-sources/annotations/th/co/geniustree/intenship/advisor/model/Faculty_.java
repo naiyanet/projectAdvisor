@@ -9,9 +9,11 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Faculty.class)
 public abstract class Faculty_ {
 
+	public static volatile ListAttribute<Faculty, Teacher> teacher;
 	public static volatile ListAttribute<Faculty, Student> student;
 	public static volatile SingularAttribute<Faculty, String> name;
 	public static volatile SingularAttribute<Faculty, Integer> id;
+	public static volatile ListAttribute<Faculty, Authority> authorities;
 
 }
 

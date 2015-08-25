@@ -20,7 +20,7 @@ import th.co.geniustree.intenship.advisor.model.Parent_;
  */
 public class ParentSpec {
 
-    public static Specification<Parent> nameLike(String keyword) {
+    public static Specification<Parent> nameLike(final String keyword) {
         return new Specification<Parent>() {
 
             @Override
@@ -31,7 +31,7 @@ public class ParentSpec {
         };
     }
 
-    public static Specification<Parent> emailLike(String keyword) {
+    public static Specification<Parent> emailLike(final String keyword) {
         return new Specification<Parent>() {
 
             @Override

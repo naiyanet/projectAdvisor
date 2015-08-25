@@ -19,7 +19,7 @@ import th.co.geniustree.intenship.advisor.model.Teacher_;
  * @author User
  */
 public class TeacherSpec {
-    public static Specification<Teacher> nameLike(String keyword){
+    public static Specification<Teacher> nameLike(final String keyword){
         return new Specification<Teacher>() {
 
             @Override
@@ -28,7 +28,7 @@ public class TeacherSpec {
             }
         };
     }
-    public static Specification<Teacher> emailLike(String keyword){
+    public static Specification<Teacher> emailLike(final String keyword){
         return new Specification<Teacher>() {
 
             @Override

@@ -6,6 +6,7 @@
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 public class Timetable implements Serializable{
     @Id
     private Integer id;
-
+    
     public Integer getId() {
         return id;
     }
@@ -27,5 +28,28 @@ public class Timetable implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Timetable other = (Timetable) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }

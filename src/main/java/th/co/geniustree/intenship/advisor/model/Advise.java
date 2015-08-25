@@ -6,6 +6,8 @@
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +26,9 @@ public class Advise implements Serializable{
     @SequenceGenerator(name = "ADVISE", sequenceName = "ADVISE_SEQ",allocationSize = 1)
     @GeneratedValue(generator = "ADVISE",strategy = GenerationType.SEQUENCE)
     private Integer id;
+    private String topic;
+    private Date dates;
+    private String material;
 
     public Integer getId() {
         return id;
@@ -32,5 +37,28 @@ public class Advise implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Advise other = (Advise) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }

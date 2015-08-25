@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="teacher">
     <head>
 
         <meta charset="utf-8">
@@ -21,7 +21,7 @@
         <script src="../js/app/student.js"></script>
 
     </head>
-    <body>
+    <body ng-controller="teacherController">
 
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -117,19 +117,19 @@
                             <br>
                             <div>
                                 <div>
-                                <label>รหัสอาจารย์</label><br>
-                                <input type="text" placeholder="Id teacher">
-                            </div>
-                            <label>ชื่อ-นามสกุล</label><br>
-                            <input type="text" placeholder="Name">
+                                    <label>รหัสอาจารย์</label><br>
+                                    <input type="text" placeholder="Id teacher">
+                                </div>
+                                <label>ชื่อ-นามสกุล</label><br>
+                                <input type="text" placeholder="Name">
                             </div>
                             <div>
                                 <label>เบอร์โทรศัพท์</label><br>
                                 <input type="text" placeholder="Mobile">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-default">Save</button>
-                        </form>
+                            <input type="submit" value="save" ng-click="save()" class="btn btn-warning btn-sm">
+                        </form> 
                     </div>
                 </div>
 

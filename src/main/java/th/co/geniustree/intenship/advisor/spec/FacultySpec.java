@@ -19,7 +19,7 @@ import th.co.geniustree.intenship.advisor.model.Faculty_;
  */
 public class FacultySpec {
 
-    public static Specification<Faculty> nameLike(String keyword) {
+    public static Specification<Faculty> nameLike(final String keyword) {
         return new Specification<Faculty>() {
 
             @Override

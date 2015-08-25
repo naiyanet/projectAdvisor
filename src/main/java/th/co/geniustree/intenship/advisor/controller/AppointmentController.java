@@ -36,6 +36,6 @@ public class AppointmentController {
     
      @RequestMapping(value = "/deleteappointment",method = RequestMethod.POST)
     public void deleteAppointment(@RequestBody Appointment appointment){
-        appointmentRepo.delete(appointment);
+        appointmentRepo.delete(appointment.getId());
     }
 }
