@@ -9,97 +9,116 @@
         <meta name="author" content="">
 
         <title>Project Advisor</title>
-        <script src="../js/jquery-1.11.3.min.js"></script>
-        <script src="../js/angular.min.js"></script>
-        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-        <link href="../dist/css/timeline.css" rel="stylesheet">
-        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
-        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <script src="../js/jquery-custom-growl.js"></script>
-        <script src="../js/app/student.js"></script>
+        <link rel="stylesheet" href="../material/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../material/dist/css/material.min.css">
+        <link rel="stylesheet" href="../material/dist/css/material-fullpalette.min.css">
+        <link rel="stylesheet" href="../material/dist/css/ripples.min.css">
+        <link rel="stylesheet" href="../material/dist/css/roboto.min.css">
+        <script src="../material/jquery-2.1.4.min.js"></script>
 
     </head>
     <body>
-
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <img src="image/logo-w.png" height="100" width="150">
+                        <a class="navbar-brand" href="home.html"><h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <br>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <img src="image/logo-w.png" height="100" width="150">
-                    <a class="navbar-brand" href="home.html"><h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <br>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="student.html">Profile</a></li>
-                        <li><a href="#">Help</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
-                </div>
-            </div>
-        </nav>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 col-md-2 sidebar">
-                    <br>
-                    <br>
-                    <br>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="teacher.html">ข้อมูลอาจารย์</a></li>
-                        <li><a href="teacherAdd.html">เพิ่มอาจารย์</a></li>
-                        <li><a href="teacherEdit.html">แก้ไขอาจารย์</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="student.html">ข้อมูลนักศึกษา</a></li>
-                        <li><a href="studentAdd.html">เพิ่มนักศึกษา</a></li>
-                        <li><a href="studentEdit.html">แก้ไขนักศึกษา</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="parent.html">ข้อมูลผู้ปกครอง</a></li>
-                        <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
-                        <li><a href="parentEdit.html">แก้ไขผู้ปกครอง</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="advise.html">ข้อมูลการให้คำปรึกษา</a></li>
-                        <li><a href="adviseAdd.html">เพิ่มคำปรึกษา</a></li>
-                        <li><a href="adviseAdd.html">แก้ไขคำปรึกษา</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="behavior.html">ข้อมูลความประพฤติ</a></li>
-                        <li><a href="behaviorAdd.html">เพิ่มความประพฤติ</a></li>
-                        <li><a href="behaviorAdd.html">แก้ไขความประพฤติ</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="appointment.html">ข้อมูลการนัดหมาย</a></li>
-                        <li><a href="appointmentAdd.html">เพิ่มการนัดหมาย</a></li>
-                        <li><a href="appointmentAdd.html">แก้ไขการนัดหมาย</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="course.html">ข้อมูลหลักสูตร</a></li>
-                        <li><a href="courseAdd.html">เพิ่มหลักสูตร</a></li>
-                        <li><a href="courseAdd.html">แก้ไขหลักสูตร</a></li>
-                    </ul>
-                    <ul class="nav nav-sidebar">
-                        <li><a href="timetable.html">ตารางเรียน/ตารางสอน</a></li>
-                        <li><a href="timetableAdd.html">เพิ่มตารางเรียน/ตารางสอน</a></li>
-                        <li><a href="timetableAdd.html">แก้ไขตารางเรียน/ตารางสอน</a></li>
-                    </ul>
-                </div>
-                <br>
-
-                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    <h1 class="page-header">เพิ่มผู้ปกครอง</h1>
-                    <div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-2 sidebar">
+                        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                            <li class="active"><a href="home.html">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    Teacher <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="teacher.html">อาจารย์</a></li>
+                                    <li><a href="teacherAdd.html">เพิ่มอาจารย์</a></li>
+                                    <li><a href="teacherEdit.html">แก้ไขอาจารย์</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    Student <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="student.html">นักศึกษา</a></li>
+                                    <li><a href="studentAdd.html">เพิ่มนักศึกษา</a></li>
+                                    <li><a href="studentEdit.html">แก้ไขนักศึกษา</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    Parent <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="parent.html">ผู้ปกครอง</a></li>
+                                    <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
+                                    <li><a href="studentEdit.html">แก้ไขผู้ปกครอง</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    การให้คำปรึกษา <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="advise.html">ข้อมูลการให้คำปรึกษา</a></li>
+                                    <li><a href="adviseAdd.html">เพิ่มข้อมูลการให้คำปรึกษา</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    แสดงความประพฤติ <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="behavior.html">ข้อมูลความประพฤติ</a></li>
+                                    <li><a href="behaviorAdd.html">เพิ่มข้อมูลความประพฤติ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    การนัดหมาย <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="appointment.html">ข้อมูลการนัดหมาย</a></li>
+                                    <li><a href="appointmentAdd.html">เพิ่มการนัดหมาย</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    หลักสูตร <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="course.html">หลักสูตรสาขา</a></li>
+                                    <li><a href="courseAdd.html">เพิ่มหลักสูตรสาขา</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="timetable.html">ตารางเรียน/สอน</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-10">
+                        <div>
                         <form>
                             <div>
                                 <label>Email address</label><br>
@@ -128,19 +147,24 @@
                             <br>
                             <button type="submit" class="btn btn-default">Save</button>
                         </form>
+                    </div> 
                     </div>
                 </div>
+                <br>
             </div>
         </div>
+         
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                           
+    </div>
+</div>
+</div>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-        <script src="../../assets/js/vendor/holder.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    </body>
+<script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../material/dist/js/material.min.js"></script>
+<script src="../material/dist/js/ripples.min.js"></script>
+</body>
 </html>
+
+                    
+                

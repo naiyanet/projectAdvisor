@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="student">
+<html lang="en">
     <head>
 
         <meta charset="utf-8">
@@ -7,93 +7,82 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Project Advisor</title>
-
-        <script src="../js/jquery-1.11.3.min.js"></script>
-        <script src="../js/angular.min.js"></script>
-        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-        <link href="../dist/css/timeline.css" rel="stylesheet">
-        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
-        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <script src="../js/jquery-custom-growl.js"></script>
-        <script src="../js/app/student.js"></script>
+        <link rel="stylesheet" href="../material/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../material/dist/css/material.min.css">
+        <link rel="stylesheet" href="../material/dist/css/material-fullpalette.min.css">
+        <link rel="stylesheet" href="../material/dist/css/ripples.min.css">
+        <link rel="stylesheet" href="../material/dist/css/roboto.min.css">
+        <script src="../material/jquery-2.1.4.min.js"></script>
 
     </head>
-    <body ng-controller="studentController">
+    <body>
         <div id="wrapper">
-            
-                <nav class="navbar navbar-inverse navbar-fixed-top">
-                    <div class="container">
-                        
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <img src="image/logo-w.png" height="100" width="150">
-                            <a class="navbar-brand" href="home.html"><h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา</a>
-                        </div>
-                        <div id="navbar" class="navbar-collapse collapse">
-                            <form class="navbar-form navbar-right">
-                                <br>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Email" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" placeholder="Password" class="form-control">
-                                </div>
-                                <a href="login.html">
-                                <button type="submit" class="btn btn-success">Sign in</button></a>  
-                                <br>
-                                <h4 align="right"><font COLOR="#FFFFFF">Rajamangala University of Technology krungthep</font></h4>
-                            </form>
-                            
-                        </div><!--/.navbar-collapse -->
-                    </div>
-                </nav>
 
-                <!-- Main jumbotron for a primary marketing message or call to action -->
-                <div class="jumbotron">
-                    <div class="container">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <img src="image/pic2.gif" height="500" width="1200" ALIGN="center">    
+            <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
+                <div class="container">
+                    <div class="navbar-header">
+                        <img src="image/logo-w.png" height="100" width="150">
+                        <a class="navbar-brand" href="home.html">
+                            <h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <form class="navbar-form navbar-right">
+
+                            <div class="form-group">
+                                <input type="text" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password" class="form-control">
+                            </div>
+                            <a href="login.html">
+                                <button type="submit" class="btn btn-success">Sign in</button></a>  
+
+                            <h4 align="right"><a href="http://www.rmutk.ac.th/" class="text-success">Rajamangala University of Technology krungthep</a></h4>
+                        </form>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="bg">
+                <div class="container">
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <img src="image/pic2.gif" height="500" width="1200" ALIGN="center">    
+                </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>อาจารย์</h2>
+                        <p>Read me!! </p>
+                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>นักศึกษา</h2>
+                        <p>Read me!! </p>
+                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>ผู้ปกครอง</h2>
+                        <p>Read me!!</p>
+                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
                     </div>
                 </div>
 
-                <div class="container">
-                    <!-- Example row of columns -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>อาจารย์</h2>
-                            <p>Read me!! </p>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                        <div class="col-md-4">
-                            <h2>นักศึกษา</h2>
-                            <p>Read me!! </p>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                        <div class="col-md-4">
-                            <h2>ผู้ปกครอง</h2>
-                            <p>Read me!!</p>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                    </div>
+                <hr>
+                <footer>
+                    <p>&copy; Advisor 2015</p>
+                </footer>
+            </div>
 
-                    <hr>
-                    <footer>
-                        <p>&copy; Advisor 2015</p>
-                    </footer>
-                </div> <!-- /container -->
-            
         </div>
 
         <style>
@@ -107,17 +96,8 @@
 
         </style>
 
-        <!-- jQuery -->
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-        <!-- Morris Charts JavaScript -->
-        <script src="../bower_components/raphael/raphael-min.js"></script>
-        <script src="../bower_components/morrisjs/morris.min.js"></script>
-        <script src="../js/morris-data.js"></script>
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
+        <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <script src="../material/dist/js/material.min.js"></script>
+        <script src="../material/dist/js/ripples.min.js"></script>
     </body>
 </html>
