@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,8 +16,7 @@
         <script src="../material/jquery-2.1.4.min.js"></script>
     </head>
     <body>
-        <div>
-            <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <img src="image/logo-w.png" height="100" width="150">
@@ -46,7 +44,8 @@
                 <div class="row">
                     <div class="col-sm-3 col-md-2 sidebar">
                         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                            <li class="active"><a href="home.html">Home</a></li>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="admin_add_User.html">Admin</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
                                     Teacher <span class="caret"></span>
@@ -58,55 +57,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-t  <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
-                                    Parent <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="parent.html">ผู้ปกครอง</a></li>
-                                    <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
-                                    <li><a href="studentEdit.html">แก้ไขผู้ปกครอง</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
-                                    การให้คำปรึกษา <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="advise.html">ข้อมูลการให้คำปรึกษา</a></li>
-                                    <li><a href="adviseAdd.html">เพิ่มข้อมูลการให้คำปรึกษา</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
-                                    แสดงความประพฤติ <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="behavior.html">ข้อมูลความประพฤติ</a></li>
-                                    <li><a href="behaviorAdd.html">เพิ่มข้อมูลความประพฤติ</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
-                                    การนัดหมาย <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="appointment.html">ข้อมูลการนัดหมาย</a></li>
-                                    <li><a href="appointmentAdd.html">เพิ่มการนัดหมาย</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
-                                    หลักสูตร <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="course.html">หลักสูตรสาขา</a></li>
-                                    <li><a href="courseAdd.html">เพิ่มหลักสูตรสาขา</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="timetable.html">ตารางเรียน/สอน</a></li>
-                        </ul>
-                    </div>oggle="dropdown" href="bootstrap-elements.html" data-target="#">
                                     Student <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -165,7 +116,7 @@
                         </ul>
                     </div>
                     <div class="col-md-10">
-                        <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                       <ul class="nav nav-tabs" style="margin-bottom: 15px;">
                             <li class="active"><a href="profile.html" data-toggle="tab">ข้อมูลส่วนตัว</a></li>
                             <li><a href="#profile" data-toggle="tab">ข้อมูลการเรียน</a></li>
                             <li><a href="#profile" data-toggle="tab">ข้อมูลคำปรึกษา</a></li>
@@ -182,7 +133,7 @@
                                     <div class="row-content">
                                         <h4 class="list-group-item-heading">ข้อมูลส่วนตัว</h4>
                                         <p class="list-group-item-text">
-                                        <form class="form-horizontal">
+                                            <form class="form-horizontal">
                                             <fieldset>
                                                 <div class="form-group">
                                                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -199,8 +150,9 @@
                                                 <div class="form-group">
                                                     <label for="inputFile" class="col-lg-2 control-label">File</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
-                                                        <input type="file" id="inputFile" multiple="">
+                                                        <!--<input type="submit" id="input-picture" readonly="" class="form-control floating-label" placeholder="Browse...">-->
+                                                        <input type="file" id="input-picture">
+                                                        <img src="image/very-basic-picture-icon.png" width="100" height="100" id="picture">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -234,8 +186,6 @@
                                                         <span class="help-block">โปรดใส่ที่อยู่ตามความจริง</span>
                                                     </div>
                                                 </div>
-
-
                                                 <div class="form-group">
                                                     <div class="col-lg-10 col-lg-offset-2">
                                                         <button class="btn btn-default">Cancel</button>
@@ -244,7 +194,7 @@
                                                 </div>
                                             </fieldset>
                                         </form>
-                                        </p>
+                                        </p>                                       
                                     </div>
                                 </div>
                                 <div class="list-group-separator"></div>
@@ -252,12 +202,32 @@
                         </div>
                     </div>
                 </div>
+                 
                 <br>
             </div>
-        </div>
-
         <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
         <script src="../material/dist/js/material.min.js"></script>
         <script src="../material/dist/js/ripples.min.js"></script>
+        <script>
+        $.material.init();
+    </script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#picture').attr('src', e.target.result);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#input-picture").change(function () {
+                readURL(this);
+            });
+       
+        </script>
     </body>
 </html>

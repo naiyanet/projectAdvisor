@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        
+
         <title>Project Advisor</title>
         <link rel="stylesheet" href="../material/bootstrap-3.3.5-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../material/dist/css/material.min.css">
@@ -16,23 +16,17 @@
         <script src="../material/jquery-2.1.4.min.js"></script>
     </head>
     <body ng-controller="studentController">
-        <div id="wrapper">
-            <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
                         <img src="image/logo-w.png" height="100" width="150">
                         <a class="navbar-brand" href="home.html"><h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <br>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="student.html">Profile</a></li>
+                            <li><a href="profile.html">Profile</a></li>
                             <li><a href="#">Help</a></li>
                         </ul>
                         <form class="navbar-form navbar-right">
@@ -41,197 +35,244 @@
                     </div>
                 </div>
             </nav>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-3 col-md-2 sidebar">
-                        <br>
-                        <br>
-                        <br>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="teacher.html">ข้อมูลอาจารย์</a></li>
-                            <li><a href="teacherAdd.html">เพิ่มอาจารย์</a></li>
-                            <li><a href="teacherEdit.html">แก้ไขอาจารย์</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="student.html">ข้อมูลนักศึกษา</a></li>
-                            <li><a href="studentAdd.html">เพิ่มนักศึกษา</a></li>
-                            <li><a href="studentEdit.html">แก้ไขนักศึกษา</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="parent.html">ข้อมูลผู้ปกครอง</a></li>
-                            <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
-                            <li><a href="parentEdit.html">แก้ไขผู้ปกครอง</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="advise.html">ข้อมูลการให้คำปรึกษา</a></li>
-                            <li><a href="adviseAdd.html">เพิ่มคำปรึกษา</a></li>
-                            <li><a href="adviseAdd.html">แก้ไขคำปรึกษา</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="behavior.html">ข้อมูลความประพฤติ</a></li>
-                            <li><a href="behaviorAdd.html">เพิ่มความประพฤติ</a></li>
-                            <li><a href="behaviorAdd.html">แก้ไขความประพฤติ</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="appointment.html">ข้อมูลการนัดหมาย</a></li>
-                            <li><a href="appointmentAdd.html">เพิ่มการนัดหมาย</a></li>
-                            <li><a href="appointmentAdd.html">แก้ไขการนัดหมาย</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="course.html">ข้อมูลหลักสูตร</a></li>
-                            <li><a href="courseAdd.html">เพิ่มหลักสูตร</a></li>
-                            <li><a href="courseAdd.html">แก้ไขหลักสูตร</a></li>
-                        </ul>
-                        <ul class="nav nav-sidebar">
-                            <li><a href="timetable.html">ตารางเรียน/ตารางสอน</a></li>
-                            <li><a href="timetableAdd.html">เพิ่มตารางเรียน/ตารางสอน</a></li>
-                            <li><a href="timetableAdd.html">แก้ไขตารางเรียน/ตารางสอน</a></li>
+                        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="admin_add_User.html">Admin</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    Teacher <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="teacher.html">อาจารย์</a></li>
+                                    <li><a href="teacherAdd.html">เพิ่มอาจารย์</a></li>
+                                    <li><a href="teacherEdit.html">แก้ไขอาจารย์</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    Student <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="student.html">นักศึกษา</a></li>
+                                    <li  class="active"><a href="studentAdd.html">เพิ่มนักศึกษา</a></li>
+                                    <li><a href="studentEdit.html">แก้ไขนักศึกษา</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    Parent <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="parent.html">ผู้ปกครอง</a></li>
+                                    <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
+                                    <li><a href="studentEdit.html">แก้ไขผู้ปกครอง</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    การให้คำปรึกษา <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="advise.html">ข้อมูลการให้คำปรึกษา</a></li>
+                                    <li><a href="adviseAdd.html">เพิ่มข้อมูลการให้คำปรึกษา</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    แสดงความประพฤติ <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="behavior.html">ข้อมูลความประพฤติ</a></li>
+                                    <li><a href="behaviorAdd.html">เพิ่มข้อมูลความประพฤติ</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    การนัดหมาย <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="appointment.html">ข้อมูลการนัดหมาย</a></li>
+                                    <li><a href="appointmentAdd.html">เพิ่มการนัดหมาย</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                                    หลักสูตร <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="course.html">หลักสูตรสาขา</a></li>
+                                    <li><a href="courseAdd.html">เพิ่มหลักสูตรสาขา</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="timetable.html">ตารางเรียน/สอน</a></li>
                         </ul>
                     </div>
-                    <br>
-
-                    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                        <h1 class="page-header">เพิ่มนักเรียน</h1>
-                        <div>
-                            <form>
-                                <div class="row">
-                                    <div class="col-lg-4">
-
-                                        <div>
-                                            <label>รหัสนักศึกษา </label>
-                                            <div>
-                                                <input type="text" placeholder="Text IDStudent">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>รหัสบัตรประชาชน </label>
-                                            <div>
-                                                <input type="text" placeholder="Text IDStudent">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>ชื่อ </label>
-                                            <div>
-                                                <input type="text"  placeholder="Text Name">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>วันเดือนปีเกิด </label>
-                                            <div>
-                                                <input type="text" placeholder="Text birth date">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>อายุ </label>
-                                            <div>
-                                                <input type="text" placeholder="Text Age">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>ที่อยู่ตามทะเบียนบ้าน</label>
-                                            <div>
-                                                <input type="text" placeholder="Text addressIdCard">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>ที่อยู่ปัจจุบัน</label>
-                                            <div>
-                                                <input type="text" placeholder="Text address">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>Email </label>
-                                            <div>
-                                                <input type="email" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>Password </label>
-                                            <div>
-                                                <input type="password"   placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label>เบอร์โทรศัพท์</label>
-                                            <div>
-                                                <input type="text" placeholder="Text mobile">
-                                            </div>
-                                        </div>    
-
-                                        <br>
-                                        <div>
-                                            <input type="submit" value="save" ng-click="save()" class="btn btn-warning btn-sm">
-                                        </div>
-
-                                        <!--end form-->
+                    <div class="col-md-10">
 
 
 
-                                        <!--delete student-->                        
-                                        <h1>Delete</h1>  
-                                        <div>
-                                            <label>Delete ID :</label> 
-                                            <input ng-model="delStudent.id">
-                                            <input type="submit" value="Delete" ng-click="deleteStudent()">
-                                        </div>
-                                        <!--end delete student--> 
 
-                                        <!-- show view---->
-                                        <table class="table table-bordered">
-                                            <tr>
-                                                <td>ID</td>
-                                                <td>Email</td>
-                                                <td>ID Student</td>
-                                                <td>ID Card</td>
-                                                <td>Name</td>
-                                                <td>Birth Date</td>
-                                                <td>Age</td>
-                                                <td>Address ID Card</td>
-                                                <td>Address</td>
-                                                <td>Mobile</td>
-                                                <td>Update</td>
-                                            </tr>
-                                            <tr ng-repeat="stu in students.content">
-                                                <td>{{stu.id}}</td>
-                                                <td>{{stu.email}}</td>
-                                                <td>{{stu.idStudent}}</td>
-                                                <td>{{stu.idCard}}</td>
-                                                <td>{{stu.name}}</td>
-                                                <td>{{stu.bDate}}</td>
-                                                <td>{{stu.age}}</td>
-                                                <td>{{stu.addressIDCard}}</td>
-                                                <td>{{stu.address}}</td>
-                                                <td>{{stu.mobile}}</td>
-                                                <td><input type="submit" value="update" ng-click="clickUpdate(stu)"></td>
-                                            </tr>    
-                                        </table>
-                                        <div id="growl-custom"></div>                      
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
+                <br>
             </div>
-
-
-
         </div>
-    </div>
-
-    <style>
-        #growl-custom{
-            display: none;
-            position: absolute;
-            z-index: 1000;
-            padding: 15px 20px;
-            border-radius: 10px;
-        }
-
-    </style>
-
-    <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                           
+        </div>
+        <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
         <script src="../material/dist/js/material.min.js"></script>
         <script src="../material/dist/js/ripples.min.js"></script>
-</body>
+        <!--        
+                            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                                <h1 class="page-header">เพิ่มนักเรียน</h1>
+                                <div>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+        
+                                                <div>
+                                                    <label>รหัสนักศึกษา </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text IDStudent">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>รหัสบัตรประชาชน </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text IDStudent">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>ชื่อ </label>
+                                                    <div>
+                                                        <input type="text"  placeholder="Text Name">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>วันเดือนปีเกิด </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text birth date">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>อายุ </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text Age">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>ที่อยู่ตามทะเบียนบ้าน</label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text addressIdCard">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>ที่อยู่ปัจจุบัน</label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text address">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>Email </label>
+                                                    <div>
+                                                        <input type="email" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>Password </label>
+                                                    <div>
+                                                        <input type="password"   placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>เบอร์โทรศัพท์</label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text mobile">
+                                                    </div>
+                                                </div>    
+        
+                                                <br>
+                                                <div>
+                                                    <input type="submit" value="save" ng-click="save()" class="btn btn-warning btn-sm">
+                                                </div>
+        
+                                                end form
+        
+        
+        
+                                                delete student                        
+                                                <h1>Delete</h1>  
+                                                <div>
+                                                    <label>Delete ID :</label> 
+                                                    <input ng-model="delStudent.id">
+                                                    <input type="submit" value="Delete" ng-click="deleteStudent()">
+                                                </div>
+                                                end delete student 
+        
+                                                 show view--
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td>ID</td>
+                                                        <td>Email</td>
+                                                        <td>ID Student</td>
+                                                        <td>ID Card</td>
+                                                        <td>Name</td>
+                                                        <td>Birth Date</td>
+                                                        <td>Age</td>
+                                                        <td>Address ID Card</td>
+                                                        <td>Address</td>
+                                                        <td>Mobile</td>
+                                                        <td>Update</td>
+                                                    </tr>
+                                                    <tr ng-repeat="stu in students.content">
+                                                        <td>{{stu.id}}</td>
+                                                        <td>{{stu.email}}</td>
+                                                        <td>{{stu.idStudent}}</td>
+                                                        <td>{{stu.idCard}}</td>
+                                                        <td>{{stu.name}}</td>
+                                                        <td>{{stu.bDate}}</td>
+                                                        <td>{{stu.age}}</td>
+                                                        <td>{{stu.addressIDCard}}</td>
+                                                        <td>{{stu.address}}</td>
+                                                        <td>{{stu.mobile}}</td>
+                                                        <td><input type="submit" value="update" ng-click="clickUpdate(stu)"></td>
+                                                    </tr>    
+                                                </table>
+                                                <div id="growl-custom"></div>                      
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+        
+                </div>
+            </div>-->
+        <script>
+                $.material.init();
+        </script>
+        <style>
+            #growl-custom{
+                display: none;
+                position: absolute;
+                z-index: 1000;
+                padding: 15px 20px;
+                border-radius: 10px;
+            }
+
+        </style>
+
+    </body>
 </html>

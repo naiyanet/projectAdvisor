@@ -47,7 +47,8 @@
                 <div class="row">
                     <div class="col-sm-3 col-md-2 sidebar">
                         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                            <li class="active"><a href="home.html">Home</a></li>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="admin_add_User.html">Admin</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
                                     Teacher <span class="caret"></span>
@@ -110,141 +111,143 @@
                                     หลักสูตร <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="course.html">หลักสูตรสาขา</a></li>
+                                    <li ><a href="course.html">หลักสูตรสาขา</a></li>
                                     <li><a href="courseAdd.html">เพิ่มหลักสูตรสาขา</a></li>
                                 </ul>
                             </li>
-                            <li><a href="timetable.html">ตารางเรียน/สอน</a></li>
+                            <li class="active"><a href="timetable.html">ตารางเรียน/สอน</a></li>
                         </ul>
                     </div>
                     <div class="col-md-10">
                         <h1 class="page-header">ตารางเรียน/ตารางสอน</h1>  
-                    <div>
-                        <table class="table table-bordered">
-                            <tbody>
-                                <tr align="center">
-                                <td>คาบที่</td>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                            </tr>
-                            <tr align="center">
-                                <td>เวลา</td>
-                                <td>08:00-09:00</td>
-                                <td>09:00-10:00</td>
-                                <td>10:00-11:00</td>
-                                <td>11:00-12:00</td>
-                                <td>12:00-13:00</td>
-                                <td>13:00-14:00</td>
-                                <td>14:00-15:00</td>
-                                <td>15:00-16:00</td>
-                                <td>16:00-17:00</td>
-                                <td>17:00-18:00</td>
-                                <td>18:00-19:00</td>
-                                <td>19:00-20:00</td>
-                            </tr>
-                            <tr align="center">
-                                <td>จันทร์</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr align="center">
-                                <td>อังคาร</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr  align="center">
-                                <td>พุธ</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr align="center">
-                                <td>พฤหัสบดี</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr align="center">
-                                <td>ศุกร์</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <button type="button" class="btn btn-success btn-lg"><a href="timetableAdd.html"><font color="black">edit</font></a></button>
-                    </div> 
+                        <div>
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr align="center">
+                                        <td>คาบที่</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>เวลา</td>
+                                        <td>08:00-09:00</td>
+                                        <td>09:00-10:00</td>
+                                        <td>10:00-11:00</td>
+                                        <td>11:00-12:00</td>
+                                        <td>12:00-13:00</td>
+                                        <td>13:00-14:00</td>
+                                        <td>14:00-15:00</td>
+                                        <td>15:00-16:00</td>
+                                        <td>16:00-17:00</td>
+                                        <td>17:00-18:00</td>
+                                        <td>18:00-19:00</td>
+                                        <td>19:00-20:00</td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>จันทร์</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>อังคาร</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr  align="center">
+                                        <td>พุธ</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>พฤหัสบดี</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>ศุกร์</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-success btn-lg"><a href="timetableAdd.html"><font color="black">edit</font></a></button>
+                        </div> 
                     </div>
                 </div>
                 <br>
             </div>
         </div>
-<script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<script src="../material/dist/js/material.min.js"></script>
-<script src="../material/dist/js/ripples.min.js"></script>
-</body>
+        <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <script src="../material/dist/js/material.min.js"></script>
+        <script src="../material/dist/js/ripples.min.js"></script>
+        <script>
+            $.material.init();
+        </script>
+    </body>
 </html>
 
 
 
 
 
-                    
- 
+

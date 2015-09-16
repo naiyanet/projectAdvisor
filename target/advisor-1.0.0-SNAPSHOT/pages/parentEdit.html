@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="student">
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,9 +14,8 @@
         <link rel="stylesheet" href="../material/dist/css/ripples.min.css">
         <link rel="stylesheet" href="../material/dist/css/roboto.min.css">
         <script src="../material/jquery-2.1.4.min.js"></script>
-
     </head>
-    <body>
+    <body ng-controller="studentController">
         <div>
             <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
                 <div class="container-fluid">
@@ -47,7 +45,8 @@
                 <div class="row">
                     <div class="col-sm-3 col-md-2 sidebar">
                         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                            <li class="active"><a href="home.html">Home</a></li>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="admin_add_User.html">Admin</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
                                     Teacher <span class="caret"></span>
@@ -75,7 +74,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="parent.html">ผู้ปกครอง</a></li>
                                     <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
-                                    <li><a href="studentEdit.html">แก้ไขผู้ปกครอง</a></li>
+                                    <li  class="active"><a href="studentEdit.html">แก้ไขผู้ปกครอง</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -118,34 +117,34 @@
                         </ul>
                     </div>
                     <div class="col-md-10">
-                        <div>
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        
-                                        dddddd
-                                    </tr>
-                                    <tr>
-                                        
-                                        ddddddd
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div> 
+                        
+                        
+                        
+                        
                     </div>
                 </div>
                 <br>
             </div>
         </div>
-         
-    </div>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                           
-    </div>
-</div>
-</div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                           
+        </div>
 
-<script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<script src="../material/dist/js/material.min.js"></script>
-<script src="../material/dist/js/ripples.min.js"></script>
-</body>
+        <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <script src="../material/dist/js/material.min.js"></script>
+        <script src="../material/dist/js/ripples.min.js"></script>
+        <script>
+        $.material.init();
+    </script>
+        <style>
+            #growl-custom{
+                display: none;
+                position: absolute;
+                z-index: 1000;
+                padding: 15px 20px;
+                border-radius: 10px;
+            }
+
+        </style>
+
+    </body>
 </html>

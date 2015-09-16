@@ -47,7 +47,8 @@
                 <div class="row">
                     <div class="col-sm-3 col-md-2 sidebar">
                         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                            <li class="active"><a href="home.html">Home</a></li>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="admin_add_User.html">Admin</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
                                     Teacher <span class="caret"></span>
@@ -73,7 +74,7 @@
                                     Parent <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="parent.html">ผู้ปกครอง</a></li>
+                                    <li  class="active"><a href="parent.html">ผู้ปกครอง</a></li>
                                     <li><a href="parentAdd.html">เพิ่มผู้ปกครอง</a></li>
                                     <li><a href="studentEdit.html">แก้ไขผู้ปกครอง</a></li>
                                 </ul>
@@ -119,15 +120,73 @@
                     </div>
                     <div class="col-md-10">
                         <div>
-                            <table class="table table-bordered">
+                            <table class="table table-striped table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>User</th>
+                                        <th>Detail</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     <tr>
-                                        
-                                        dddddd
+                                        <td>1</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>2</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
                                     </tr>
                                     <tr>
-                                        
-                                        ddddddd
+                                        <td>3</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>4</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>6</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                        <td>Parent</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -137,15 +196,15 @@
                 <br>
             </div>
         </div>
-         
-    </div>
+
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                           
     </div>
-</div>
-</div>
 
 <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script src="../material/dist/js/material.min.js"></script>
 <script src="../material/dist/js/ripples.min.js"></script>
+<script>
+    $.material.init();
+</script>
 </body>
 </html>
