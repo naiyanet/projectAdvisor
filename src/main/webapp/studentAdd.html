@@ -1,0 +1,150 @@
+
+                    <div class="col-md-10">
+
+
+stdentadd
+
+                    </div>
+               
+        <!--        
+                            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                                <h1 class="page-header">เพิ่มนักเรียน</h1>
+                                <div>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+        
+                                                <div>
+                                                    <label>รหัสนักศึกษา </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text IDStudent">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>รหัสบัตรประชาชน </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text IDStudent">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>ชื่อ </label>
+                                                    <div>
+                                                        <input type="text"  placeholder="Text Name">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>วันเดือนปีเกิด </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text birth date">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>อายุ </label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text Age">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>ที่อยู่ตามทะเบียนบ้าน</label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text addressIdCard">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>ที่อยู่ปัจจุบัน</label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text address">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>Email </label>
+                                                    <div>
+                                                        <input type="email" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>Password </label>
+                                                    <div>
+                                                        <input type="password"   placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>เบอร์โทรศัพท์</label>
+                                                    <div>
+                                                        <input type="text" placeholder="Text mobile">
+                                                    </div>
+                                                </div>    
+        
+                                                <br>
+                                                <div>
+                                                    <input type="submit" value="save" ng-click="save()" class="btn btn-warning btn-sm">
+                                                </div>
+        
+                                                end form
+        
+        
+        
+                                                delete student                        
+                                                <h1>Delete</h1>  
+                                                <div>
+                                                    <label>Delete ID :</label> 
+                                                    <input ng-model="delStudent.id">
+                                                    <input type="submit" value="Delete" ng-click="deleteStudent()">
+                                                </div>
+                                                end delete student 
+        
+                                                 show view--
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td>ID</td>
+                                                        <td>Email</td>
+                                                        <td>ID Student</td>
+                                                        <td>ID Card</td>
+                                                        <td>Name</td>
+                                                        <td>Birth Date</td>
+                                                        <td>Age</td>
+                                                        <td>Address ID Card</td>
+                                                        <td>Address</td>
+                                                        <td>Mobile</td>
+                                                        <td>Update</td>
+                                                    </tr>
+                                                    <tr ng-repeat="stu in students.content">
+                                                        <td>{{stu.id}}</td>
+                                                        <td>{{stu.email}}</td>
+                                                        <td>{{stu.idStudent}}</td>
+                                                        <td>{{stu.idCard}}</td>
+                                                        <td>{{stu.name}}</td>
+                                                        <td>{{stu.bDate}}</td>
+                                                        <td>{{stu.age}}</td>
+                                                        <td>{{stu.addressIDCard}}</td>
+                                                        <td>{{stu.address}}</td>
+                                                        <td>{{stu.mobile}}</td>
+                                                        <td><input type="submit" value="update" ng-click="clickUpdate(stu)"></td>
+                                                    </tr>    
+                                                </table>
+                                                <div id="growl-custom"></div>                      
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+        
+                </div>
+            </div>-->
+        <script>
+                $.material.init();
+        </script>
+        <style>
+            #growl-custom{
+                display: none;
+                position: absolute;
+                z-index: 1000;
+                padding: 15px 20px;
+                border-radius: 10px;
+            }
+
+        </style>
