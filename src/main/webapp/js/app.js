@@ -78,7 +78,7 @@ app.config(function ($routeProvider) {
             })
             .when('/parent', {
                 controller: 'parentController',
-                templateUrl: 'parent.html'
+                templateUrl: 'parent1.html'
             })
             .when('/parentAdd', {
                 controller: 'parentController',
@@ -102,7 +102,7 @@ app.config(function ($routeProvider) {
             })
             .when('/teacher', {
                 controller: 'teacherController',
-                templateUrl: 'teacher.html'
+                templateUrl: 'teacher1.html'
             })
             .when('/teacherAdd', {
                 controller: 'teacherController',
@@ -114,7 +114,7 @@ app.config(function ($routeProvider) {
             })
             .when('/timetable', {
                 controller: 'timetableController',
-                templateUrl: 'timetable.html'
+                templateUrl: 'timetable1.html'
             })
             .when('/timetableAdd', {
                 controller: 'timetableController',
