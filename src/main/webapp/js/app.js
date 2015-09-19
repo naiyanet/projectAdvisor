@@ -119,5 +119,9 @@ app.config(function ($routeProvider) {
             .when('/timetableAdd', {
                 controller: 'timetableController',
                 templateUrl: 'timetableAdd.html'
+            })
+            .when('/profile', {
+                controller: 'profileController',
+                templateUrl: 'profile.html'
             });
 });
