@@ -2,6 +2,7 @@
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,10 +22,15 @@ public class Course implements Serializable{
     @SequenceGenerator(name = "COURSE",sequenceName = "COURSE_SEQ",allocationSize = 1)
     @GeneratedValue(generator = "COURSE",strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private String idSubject;
-    private String name;
-    private String credit;
     
+    private CategoryCourse categoryCourse;
+    
+    private CategoryGroupCourse categoryGroupCourse;
+    
+    private String subjectCode;
+    private String subjectName;
+    private String credit;
+
     public Integer getId() {
         return id;
     }
@@ -33,20 +39,36 @@ public class Course implements Serializable{
         this.id = id;
     }
 
-    public String getIdSubject() {
-        return idSubject;
+    public CategoryCourse getCategoryCourse() {
+        return categoryCourse;
     }
 
-    public void setIdSubject(String idSubject) {
-        this.idSubject = idSubject;
+    public void setCategoryCourse(CategoryCourse categoryCourse) {
+        this.categoryCourse = categoryCourse;
     }
 
-    public String getName() {
-        return name;
+    public CategoryGroupCourse getCategoryGroupCourse() {
+        return categoryGroupCourse;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryGroupCourse(CategoryGroupCourse categoryGroupCourse) {
+        this.categoryGroupCourse = categoryGroupCourse;
+    }
+
+    public String getSubjectCode() {
+        return subjectCode;
+    }
+
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     public String getCredit() {
@@ -60,7 +82,7 @@ public class Course implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 23 * hash + Objects.hashCode(this.id);
         return hash;
     }
 

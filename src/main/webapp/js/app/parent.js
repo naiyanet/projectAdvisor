@@ -2,7 +2,7 @@ angular.module('parent', []);
 angular.module('parent').controller('parentController', function ($scope, $http) {
     $scope.parent = {};
     $scope.save = function () {
-        $htpp.post('/saveParent', $scope.parent).success(getSuccess()).error(getError());
+        $htpp.post('/saveparent', $scope.parent).success(getSuccess()).error(getError());
     };
     function getSuccess() {
         alert('SaveSuccess');

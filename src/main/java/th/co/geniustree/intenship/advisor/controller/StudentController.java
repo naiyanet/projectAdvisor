@@ -31,7 +31,7 @@ public class StudentController {
     }
     
     @RequestMapping (value = "/savestudent",method = RequestMethod.POST)
-    public void saveStudent(@RequestBody Student student){
+    public void saveStudent(@Validated @RequestBody Student student){
         studentRepo.save(student);
     }
     

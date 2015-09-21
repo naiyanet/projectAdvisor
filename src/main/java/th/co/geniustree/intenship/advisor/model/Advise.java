@@ -22,9 +22,12 @@ public class Advise implements Serializable{
     @SequenceGenerator(name = "ADVISE", sequenceName = "ADVISE_SEQ",allocationSize = 1)
     @GeneratedValue(generator = "ADVISE",strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private String topic;
-    private Date dates;
-    private String material;
+    private String idSubject;
+    private Date date;
+    private String title;
+    private String detail;
+    private String description;
+    private String file;
 
     public Integer getId() {
         return id;
@@ -34,35 +37,58 @@ public class Advise implements Serializable{
         this.id = id;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getIdSubject() {
+        return idSubject;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setIdSubject(String idSubject) {
+        this.idSubject = idSubject;
     }
 
-    public Date getDates() {
-        return dates;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDates(Date dates) {
-        this.dates = dates;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getMaterial() {
-        return material;
+    public String getTitle() {
+        return title;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setTitle(String title) {
+        this.title = title;
     }
-    
-    
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 29 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -80,6 +106,6 @@ public class Advise implements Serializable{
         }
         return true;
     }
-    
-    
+
+      
 }

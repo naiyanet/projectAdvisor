@@ -9,6 +9,7 @@ D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\validator\
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\CourseController.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\service\ParentSearchService.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\validator\MobileUnique.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Information.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\TimetableRepo.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\spec\StudentSpec.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\spec\TeacherSpec.java
@@ -27,10 +28,12 @@ D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\FacultyRepo.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\service\MyUserDetailService.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\repo\AdviseRepo.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\GroupEmail.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\service\StudentSearchService.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\ParentController.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\ValidationErrorMessage.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Teacher.java
+D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\model\Category.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\spec\ParentSpec.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\ValidationExceptionHandler.java
 D:\workspace\advisor\src\main\java\th\co\geniustree\intenship\advisor\controller\BehaviorController.java

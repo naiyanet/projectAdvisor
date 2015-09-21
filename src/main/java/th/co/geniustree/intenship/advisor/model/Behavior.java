@@ -1,4 +1,3 @@
-
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
@@ -17,15 +16,18 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "BEHAVIOR")
-public class Behavior implements Serializable{
+public class Behavior implements Serializable {
+
     @Id
-    @SequenceGenerator(name = "BEHAVIOR", sequenceName = "BEHAVIOR_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "BEHAVIOR",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "BEHAVIOR", sequenceName = "BEHAVIOR_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "BEHAVIOR", strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private String topic;
     private Date dates;
-    private String material;
-    
+    private String title;
+    private String detail;
+    private String description;
+    private String file;
+
     public Integer getId() {
         return id;
     }
@@ -34,10 +36,50 @@ public class Behavior implements Serializable{
         this.id = id;
     }
 
+    public Date getDates() {
+        return dates;
+    }
+
+    public void setDates(Date dates) {
+        this.dates = dates;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 79 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -55,7 +97,6 @@ public class Behavior implements Serializable{
         }
         return true;
     }
-    
     
     
 }

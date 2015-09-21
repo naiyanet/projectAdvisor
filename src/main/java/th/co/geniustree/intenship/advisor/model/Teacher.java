@@ -29,8 +29,8 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Teacher implements Serializable{
     
     @Id
-    @SequenceGenerator(name = "teacher", sequenceName = "TEACHER_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "teacher", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "TEACHER", sequenceName = "TEACHER_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "TEACHER", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String password;
     @Column(name = "EMAIL", nullable = false, unique = true)

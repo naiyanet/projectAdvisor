@@ -4,7 +4,10 @@ package th.co.geniustree.intenship.advisor.model;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -15,7 +18,10 @@ import javax.persistence.Table;
 @Table(name = "TIMETABLE")
 public class Timetable implements Serializable{
     @Id
+    @SequenceGenerator(name = "TIMETABLE", sequenceName = "TEACHER_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "TIMETABLE", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    
     
     public Integer getId() {
         return id;
@@ -24,6 +30,8 @@ public class Timetable implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
+    
+    
 
     @Override
     public int hashCode() {

@@ -13,7 +13,7 @@ public abstract class Student_ {
 	public static volatile SingularAttribute<Student, Parent> parent;
 	public static volatile SingularAttribute<Student, String> address;
 	public static volatile SingularAttribute<Student, String> idCard;
-	public static volatile SingularAttribute<Student, String> addressIDCard;
+	public static volatile SingularAttribute<Student, String> filePic;
 	public static volatile SingularAttribute<Student, String> mobile;
 	public static volatile ListAttribute<Student, Authority> authorities;
 	public static volatile SingularAttribute<Student, Faculty> faculty;

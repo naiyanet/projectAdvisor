@@ -28,18 +28,20 @@ public class Student implements Serializable {
     @SequenceGenerator(name = "STUDENT", sequenceName = "STUDENT_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "STUDENT", strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private String password;
     @NotBlank(message = "please input email")
     private String email;
+    private String password;
+    
+    private String filePic;
     private String idStudent;
     private String idCard;
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
     private Integer age;
-    private String addressIDCard;
-    private String address;
     private String mobile;
+    private String address;
+    
 
     
     @ManyToMany
@@ -121,16 +123,15 @@ public class Student implements Serializable {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public String getFilePic() {
+        return filePic;
+    }
+
+    public void setFilePic(String filePic) {
+        this.filePic = filePic;
+    }
     
-
-    public String getAddressIDCard() {
-        return addressIDCard;
-    }
-
-    public void setAddressIDCard(String addressIDCard) {
-        this.addressIDCard = addressIDCard;
-    }
-
     public String getAddress() {
         return address;
     }

@@ -41,7 +41,7 @@ public class Appointment implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 3;
