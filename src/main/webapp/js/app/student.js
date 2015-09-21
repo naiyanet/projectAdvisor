@@ -1,6 +1,9 @@
 angular.module('student', []);
+
 angular.module('student').controller('studentController', function ($scope, $http) {
+    
     $scope.student = {};
+    
     $scope.save = function () {
         $http.post('/savestudent', $scope.student).success(function (data) {
             growl('Save Success', 'success', 'top');

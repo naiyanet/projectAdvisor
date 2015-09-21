@@ -1,14 +1,52 @@
-angular.module('parent', []);
-angular.module('parent').controller('parentController', function ($scope, $http) {
+angular.module('parent',[]);
+angular.module('parent').controller('parentController',function($scope,$http){
+    
+    
+    
     $scope.parent = {};
-    $scope.save = function () {
-        $htpp.post('/saveparent', $scope.parent).success(getSuccess()).error(getError());
+    
+    
+    
+    $scope.save = function(){
+        $http.post('/saveparent',$scope.parent).success(getSuccess()).error(getError());
     };
-    function getSuccess() {
-        alert('SaveSuccess');
+    
+    
+    
+    
+    $scope.delParent = {};
+    $scope.deleteParent = function (){
+        $http.post('/deleteparent',$scope.parent).success(getSuccess()).error(getError());
+    };
+    
+    
+    
+    getParent();
+    
+    
+    
+    $scope.parentshow = {};
+        function getParent(){
+            $http.get('/getparent').success(function(data){
+                $scope.parentshow = data;
+            }).error(function(data){
+                
+            });
+        };
+    
+    
+    
+    
+    $scope.clickUpdate = function(updateParent){
+        $scope.parent = updateParent;
+    };
+    
+    
+    
+    function getSuccess(){
+        alert('Save Success');
     }
-    function getError() {
+    function getError(){
         alert('Error');
     }
-    $('#date').datepicker();
 });

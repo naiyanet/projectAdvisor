@@ -1,34 +1,52 @@
-angular.module('teacher', []);
-angular.module('teacher').controller('teacherController', function ($scope, $http) {
+angular.module('teacher',[]);
+angular.module('teacher').controller('teacherController',function($scope,$http){
+    
+    
+    
     $scope.teacher = {};
-    $scope.save = function () {
-        $http.post('/saveteacher', $scope.teacher).success(function (data) {
-            growl('Save Success', 'success', 'top');
-            getTeacher();
-        }).error(function (data) {
-
-        });
+    
+    
+    
+    $scope.save = function(){
+        $http.post('/saveteacher',$scope.teacher).success(getSuccess()).error(getError());
     };
+    
+    
+    
+    
     $scope.delTeacher = {};
-    $scope.deleteTeacher = function(){
-      $http.post('deleteteacher',$scope.delTeacher).success(function(data){
-          growl('Delete success','info','top');
-          getTeacher();
-      }).error(function(data){
-          growl('Delete error','info','top');
-      });  
+    $scope.deleteTeacher = function (){
+        $http.post('/deleteteacher',$scope.teacher).success(getSuccess()).error(getError());
     };
+    
+    
+    
     getTeacher();
     
-    $scope.teachers = {};
-    function getTeacher(){
-      $http.get('/getteacher').success(function (data){
-          $scope.teachers = data;
-      }).error(function(data){});  
-    };
+    
+    
+    $scope.teachershow = {};
+        function getTeacher(){
+            $http.get('/getteacher').success(function(data){
+                $scope.teachershow = data;
+            }).error(function(data){
+                
+            });
+        };
+    
+    
+    
     
     $scope.clickUpdate = function(updateTeacher){
-      $scope.teacher = updateTeacher;
+        $scope.teacher = updateTeacher;
     };
+    
+    
+    
+    function getSuccess(){
+        alert('Save Success');
+    }
+    function getError(){
+        alert('Error');
+    }
 });
-
