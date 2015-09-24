@@ -4,14 +4,12 @@ angular.module('student').controller('studentController', function ($scope, $htt
     
     $scope.student = {};
     
-    $scope.save = function () {
-        $http.post('/savestudent', $scope.student).success(function (data) {
-            growl('Save Success', 'success', 'top');
-            getStudent();
-        }).error(function (data) {
-        });
+    $scope.save = function(){
+        $http.post('/savestudent',$scope.student).success(getSuccess()).error(getError());
     };
     
+    
+       
     $scope.delStudent = {};
     $scope.deleteStudent = function () {
         $http.post('/deletestudent', $scope.delStudent).success(function(data){
@@ -34,6 +32,13 @@ angular.module('student').controller('studentController', function ($scope, $htt
     $scope.clickUpdate = function(updateStudent){
         $scope.student = updateStudent;
     };
+    
+    function getSuccess(){
+        alert('Save Success');
+    }
+    function getError(){
+        alert('Error');
+    }
     
 });
 
