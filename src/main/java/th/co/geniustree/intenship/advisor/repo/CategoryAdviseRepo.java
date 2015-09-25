@@ -6,12 +6,12 @@
 package th.co.geniustree.intenship.advisor.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import th.co.geniustree.intenship.advisor.model.Category;
+import th.co.geniustree.intenship.advisor.model.CategoryAdvise;
 
 /**
  *
  * @author User
  */
-public interface CategoryRepo extends JpaRepository<Category, Integer>{
+public interface CategoryAdviseRepo extends JpaRepository<CategoryAdvise, Integer>{
     
 }

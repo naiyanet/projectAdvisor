@@ -8,16 +8,9 @@ angular.module('student').controller('studentController', function ($scope, $htt
         $http.post('/savestudent',$scope.student).success(getSuccess()).error(getError());
     };
     
-    
-       
     $scope.delStudent = {};
     $scope.deleteStudent = function () {
-        $http.post('/deletestudent', $scope.delStudent).success(function(data){
-            growl('Delete success','info','top');
-            getStudent();
-        }).error(function(data){
-            growl('Delete error','info','top');
-        });
+        $http.post('/deletestudent', $scope.delStudent).success(getSuccess()).error(getError());
     };
     
     getStudent();

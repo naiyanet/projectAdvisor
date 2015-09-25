@@ -21,11 +21,11 @@ import org.hibernate.validator.constraints.NotBlank;
  * @author User
  */
 @Entity
-@Table(name = "CATEGORY")
-public class Category implements Serializable{
+@Table(name = "CATEGORYADVISE")
+public class CategoryAdvise implements Serializable{
     @Id
-    @SequenceGenerator(name = "CATEGORY", sequenceName = "CATEGORY_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "CATEGORY", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "CATEGORYADVISE", sequenceName = "CATEGORYADVISE_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "CATEGORYADVISE", strategy = GenerationType.SEQUENCE)
     private Integer id;
     
     private String categoryName;
@@ -61,7 +61,7 @@ public class Category implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Category other = (Category) obj;
+        final CategoryAdvise other = (CategoryAdvise) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

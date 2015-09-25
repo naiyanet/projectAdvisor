@@ -8,4 +8,15 @@ INSERT INTO STUDENT(ID,NAME,EMAIL,MOBILE,ADDRESS)
 INSERT INTO STUDENT(ID,NAME,EMAIL,MOBILE,ADDRESS) 
         values(STUDENT_SEQ.nextVal,'somruk','somruk@login.com','0988880000','bangkok');
 
-INSERT INTO FACULTY(ID,NAME) values(FACULTY_SEQ.nextVal,'computer technology');
+
+INSERT INTO FACULTY(ID,NAME) 
+        values(FACULTY_SEQ.nextVal,'computer technology');
+
+INSERT INTO CATEGORYADVISE(ID,CATEGORYNAME) 
+        values(CATEGORYADVISE_SEQ.nextVal,'หมวดวิชาการ');
+
+INSERT INTO CATEGORYADVISE(ID,CATEGORYNAME) 
+        values(CATEGORYADVISE_SEQ.nextVal,'หมวดกิจกรรม');
+
+INSERT INTO CATEGORYADVISE(ID,CATEGORYNAME) 
+        values(CATEGORYADVISE_SEQ.nextVal,'หมวดทั่วไป');

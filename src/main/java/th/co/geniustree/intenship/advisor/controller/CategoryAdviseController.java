@@ -13,31 +13,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import th.co.geniustree.intenship.advisor.model.Category;
-import th.co.geniustree.intenship.advisor.repo.CategoryRepo;
+import th.co.geniustree.intenship.advisor.model.CategoryAdvise;
+import th.co.geniustree.intenship.advisor.repo.CategoryAdviseRepo;
 
 /**
  *
  * @author User
  */
 @RestController
-public class CategoryController {
+public class CategoryAdviseController {
 
     @Autowired
-    private CategoryRepo categoryRepo;
+    private CategoryAdviseRepo categoryAdviseRepo;
 
     @RequestMapping(value = "/getcategory", method = RequestMethod.GET)
-    public Page<Category> getCategory(Pageable pageable) {
-        return categoryRepo.findAll(pageable);
+    public Page<CategoryAdvise> getCategory(Pageable pageable) {
+        return categoryAdviseRepo.findAll(pageable);
     }
 
     @RequestMapping(value = "/savecategory", method = RequestMethod.POST)
-    public void saveCategory(@Validated @RequestBody Category category) {
-        categoryRepo.save(category);
+    public void saveCategory(@Validated @RequestBody CategoryAdvise category) {
+        categoryAdviseRepo.save(category);
     }
 
     @RequestMapping(value = "/deletecategory", method = RequestMethod.POST)
-    public void deleteCategory(@RequestBody Category category){
-        categoryRepo.delete(category);
+    public void deleteCategory(@RequestBody CategoryAdvise category){
+        categoryAdviseRepo.delete(category);
     }
 }
