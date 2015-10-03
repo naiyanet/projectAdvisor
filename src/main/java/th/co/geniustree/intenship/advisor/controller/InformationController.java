@@ -36,7 +36,7 @@ public class InformationController {
         informationRepo.save(information);
     }
     
-    @RequestMapping(value = "/deleteformation",method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteinformation",method = RequestMethod.POST)
     public void deleteInformation(@RequestBody Information information){
         informationRepo.delete(information);
     }

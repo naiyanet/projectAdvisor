@@ -19,7 +19,13 @@ angular.module('faculty').controller('facultyController',function($scope,$http){
         $http.post('/deletefaculty',$scope.faculty).success(getSuccess()).error(getError());
     };
     
-    
+    $scope.delFaculty = function (rowfaculty) {
+        $http.post('/deletefaculty', rowfaculty).success(function (data) {
+            getFaculty();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
     
     getFaculty();
     

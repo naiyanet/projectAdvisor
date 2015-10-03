@@ -1,7 +1,7 @@
 <script>
     $.material.init();
 </script>
-<div class="col-md-10">
+<div class="col-md-10" ng-app="admin_add_User" ng-controller="admin_add_UserController">
     <a href="#/admin_add_groupemail"><button class="btn btn-success">ส่งอีเมล์ถึงสมาชิก</button></a>
     <a href="#/admin_add_information"><button class="btn btn-success">เพิ่มข่าวประชาสัมพันธ์</button></a>
     <div class="panel panel-primary">
@@ -12,13 +12,13 @@
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                 <div class="col-lg-10">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="addUser.email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                 <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="addUser.password">
                 </div>
             </div>
             <div class="form-group">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                    <button class="btn btn-primary"><span class="mdi-social-person-add"></span></button>
+                    <button class="btn btn-primary" ng-click="saveAddUser()"><span class="mdi-social-person-add"></span></button>
                     <button class="btn btn-danger"><span class="mdi-navigation-close"></span></button>
 
                 </div>
@@ -57,29 +57,21 @@
                     <tr>
                         <th>#</th>
                         <th>User</th>
-                        <th>Detail</th>
+                        <th>Password</th>
                         <th>Autority</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Column content</td>
-                        <td><a href="#">click!</a></td>
-                        <td>Student</td>
+                    <tr ng-repeat="adduser in addUsershow.content">
+                        <td>{{adduser.length}}</td>
+                        <td>{{adduser.email}}</td>
+                        <td>{{adduser.password}}</td>
+                        <td></td>
                         <td><span class="mdi-image-edit"></span></td>
-                        <td><span class="mdi-action-delete"></span></td>
-                        
-                    </tr>
-                    <tr class="success">
-                        <td>2</td>
-                        <td>Column content</td>
-                        <td><a href="#">click!</a></td>
-                        <td>Teacher</td>
-                        <td><span class="mdi-image-edit"></span></td>
-                        <td><span class="mdi-action-delete"></span></td>
+                        <td><span class="mdi-action-delete" ng-click="delAddUser(adduser)"></span></td>
+
                     </tr>
                 </tbody>
             </table>

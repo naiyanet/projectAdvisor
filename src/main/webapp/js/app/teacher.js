@@ -20,6 +20,14 @@ angular.module('teacher').controller('teacherController',function($scope,$http){
     };
     
     
+    $scope.delTeacher = function (rowteacher) {
+        $http.post('/deleteteacher', rowteacher).success(function (data) {
+            getTeacher();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
+    
     
     getTeacher();
     

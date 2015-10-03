@@ -3,44 +3,32 @@ angular.module('admin_add_information').controller('admin_add_informationControl
 
     $scope.information = {};
 
-
-
-    $scope.saveInformation = function () {
-        $http.post('/saveinformation', $scope.information).success(getSuccess()).error(getError());
+    $scope.saveInfor = function (){
+        $http.post('/saveinformation',$scope.information).success(function (data){
+            getSuccess();
+            getInformation();
+        });
     };
-
-
-
 
     $scope.delInformation = {};
-    $scope.deleteInformation = function () {
-        $http.post('/deleteformation', $scope.information).success(getSuccess()).error(getError());
+    $scope.deleteInformation = function (del_information) {
+        $http.post('/deleteformation', del_information).success(function (data) {
+            getInformation();
+        });
     };
 
-
-
     getInformation();
-
-
 
     $scope.informationshow = {};
     function getInformation() {
         $http.get('/getinformation').success(function (data) {
             $scope.informationshow = data;
-        }).error(function (data) {
-
         });
-    }
-    ;
-
-
-
+    };
 
     $scope.clickUpdate = function (updateInformation) {
         $scope.information = updateInformation;
     };
-
-
 
     function getSuccess() {
         alert('Save Success');

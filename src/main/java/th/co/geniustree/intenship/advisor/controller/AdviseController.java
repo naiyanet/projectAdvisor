@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,12 +31,12 @@ public class AdviseController {
     }
     
     @RequestMapping(value = "/saveadvise" , method = RequestMethod.POST)
-    public void saveAdvise(@Validated Advise advise){
+    public void saveAdvise(@Validated @RequestBody Advise advise){
         adviseRepo.save(advise);
     }
     
     @RequestMapping(value = "/deleteadvise",method = RequestMethod.POST)
-    public void deleteAdvise(Advise advise){
+    public void deleteAdvise(@RequestBody Advise advise){
         adviseRepo.delete(advise);
     }
 }

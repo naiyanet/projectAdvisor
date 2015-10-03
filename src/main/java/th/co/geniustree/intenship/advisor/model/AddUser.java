@@ -5,37 +5,30 @@
  */
 package th.co.geniustree.intenship.advisor.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
  * @author User
  */
 @Entity
-@Table(name = "CATEGORYADVISE")
-public class CategoryAdvise implements Serializable {
-
+@Table(name = "ADDUSER")
+public class AddUser implements Serializable{
     @Id
-    @SequenceGenerator(name = "CATEGORYADVISE", sequenceName = "CATEGORYADVISE_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "CATEGORYADVISE", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "ADDUSER", sequenceName = "ADDUSER_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "ADDUSER",strategy = GenerationType.SEQUENCE)
     private Integer id;
-
-    private String categoryName;
-
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "categoryAdvise")
-    private CategoryAdvise categoryAdvise;
+    private String email;
+    private String password;
+    
+    private Authority authority;
 
     public Integer getId() {
         return id;
@@ -45,26 +38,34 @@ public class CategoryAdvise implements Serializable {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public CategoryAdvise getCategoryAdvise() {
-        return categoryAdvise;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCategoryAdvise(CategoryAdvise categoryAdvise) {
-        this.categoryAdvise = categoryAdvise;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Authority getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Authority authority) {
+        this.authority = authority;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -76,11 +77,11 @@ public class CategoryAdvise implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CategoryAdvise other = (CategoryAdvise) obj;
+        final AddUser other = (AddUser) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
-
+    
 }

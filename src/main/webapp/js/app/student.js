@@ -13,6 +13,16 @@ angular.module('student').controller('studentController', function ($scope, $htt
         $http.post('/deletestudent', $scope.delStudent).success(getSuccess()).error(getError());
     };
     
+    $scope.delStudent = function (rowstudent) {
+        $http.post('/deletestudent', rowstudent).success(function (data) {
+            getStudent();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
+    
+    
+    
     getStudent();
     
     $scope.students = {};

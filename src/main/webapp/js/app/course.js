@@ -19,7 +19,13 @@ angular.module('course').controller('courseController',function($scope,$http){
         $http.post('/deletecourse',$scope.course).success(getSuccess()).error(getError());
     };
     
-    
+    $scope.delCourse = function (rowcourse) {
+        $http.post('/deletecourse', rowcourse).success(function (data) {
+            getCourse();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
     
     getCourse();
     

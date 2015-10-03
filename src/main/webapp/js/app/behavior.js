@@ -1,46 +1,36 @@
 angular.module('behavior',[]);
 angular.module('behavior').controller('behaviorController',function($scope,$http){
-    
-    
-    
+        
     $scope.behavior = {};
     
     
-    
-    $scope.save = function(){
-        $http.post('/savebehavior',$scope.behavior).success(getSuccess()).error(getError());
+    $scope.saveBehavior = function (){
+        $http.post('/savebehavior',$scope.behavior).success(function (data){
+            getSuccess();
+            getBehavior();
+        });
     };
-    
-    
     
     
     $scope.delBehavior= {};
-    $scope.deleteBehavior = function (){
-        $http.post('/deletebehavior',$scope.behavior).success(getSuccess()).error(getError());
+    $scope.deleteBehavior = function (delBehavior){
+        $http.post('/deletebehavior',delBehavior).success(function (data){
+            getBehavior();
+        });
     };
     
-    
-    
     getBehavior();
-    
-    
     
     $scope.behaviorshow = {};
         function getBehavior(){
             $http.get('/getbehavior').success(function(data){
                 $scope.behaviorshow = data;
-            }).error(function(data){
-                
             });
         };
-    
-    
-    
     
     $scope.clickUpdate = function(updateBehavior){
         $scope.behavior = updateBehavior;
     };
-    
     
     
     function getSuccess(){

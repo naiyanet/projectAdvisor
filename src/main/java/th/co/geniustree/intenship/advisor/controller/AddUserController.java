@@ -13,30 +13,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import th.co.geniustree.intenship.advisor.model.CourseClass;
-import th.co.geniustree.intenship.advisor.repo.CourseClassRepo;
+import th.co.geniustree.intenship.advisor.model.AddUser;
+import th.co.geniustree.intenship.advisor.repo.AddUserRepo;
 
 /**
  *
  * @author User
  */
 @RestController
-public class CourseClassController {
+public class AddUserController {
     @Autowired
-    private CourseClassRepo courseClassRepo;
+    private AddUserRepo addUserRepo;
     
-    @RequestMapping(value = "/getcourseclass",method = RequestMethod.GET)
-    public Page<CourseClass> getCourseClass (Pageable pageable){
-        return courseClassRepo.findAll(pageable);
+    @RequestMapping(value = "/getadduser",method = RequestMethod.GET)
+    public Page<AddUser> getAddUser(Pageable pageable){
+        return addUserRepo.findAll(pageable);
     }
     
-    @RequestMapping(value = "/savecourseclass",method = RequestMethod.POST)
-    public void saveCourseClass(@Validated @RequestBody CourseClass courseClass){
-        courseClassRepo.save(courseClass);
+    @RequestMapping(value = "/saveadduser",method = RequestMethod.POST)
+    public void saveAddUser(@Validated @RequestBody AddUser addUser){
+        addUserRepo.save(addUser);
     }
     
-    @RequestMapping(value = "/deletecourseclass",method = RequestMethod.POST)
-    public void deleteCourseClass(@RequestBody CourseClass courseClass){
-        courseClassRepo.delete(courseClass);
+    @RequestMapping(value = "/deleteadduser",method = RequestMethod.POST)
+    public void deleteAddUser(@RequestBody AddUser addUser){
+        addUserRepo.delete(addUser);
     }
 }

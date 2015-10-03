@@ -1,5 +1,5 @@
 
-<div class="col-md-10">
+<div class="col-md-10" ng-app="course_subject_1" ng-controller="course_subject_1Controller">
     <h4>คณะครุศาสตร์อุตสาหกรรม สาขาวิชาเทคโนโลยีคอมพิวเตอร์</h4>
     <h4>โครงสร้างหลักสูตรวิชา	ระดับการศึกษา ปริญญาตรี 4 ปี วิชาที่ทำการเปิดสอน</h4>
     <ul class="nav nav-pills">
@@ -21,11 +21,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr ng-repeat="course in courseSubjectClassOneshow.content">
                 <td>1</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Delete</td>
+                <td>{{course.subjectCode}}</td>
+                <td>{{course.subjectName}}</td>
+                <td>{{course.credit}}</td>
             </tr>
         </tbody>
     </table>
@@ -35,28 +35,26 @@
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">รหัสวิชา</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" ng-model="CourseSubjectClassOne.subjectCode">
             </div>
         </div>
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">รายวิชา</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" ng-model="CourseSubjectClassOne.subjectName">
             </div>
         </div>
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">หน่วยกิต</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" >
+                <input type="text" class="form-control" ng-model="CourseSubjectClassOne.credit">
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-               
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary" ng-click="saveCourseSubjectClassOne()">Save</button>
                  <a href="#/course_subject"><button class="btn btn-danger">Cancel</button></a>
-                 
             </div>
         </div>
     </div>

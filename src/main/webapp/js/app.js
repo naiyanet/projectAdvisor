@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ngRoute','student','home','admin_add_User','admin_add_groupemail'
                         ,'admin_add_information','advise','appointment','behavior','course','course_subject'
                         ,'course_subject_1','course_subject_2','course_subject_3','course_subject_4'
-                        ,'course_subject_5','parent','profile','teacher','timetable']);
+                        ,'course_subject_5','parent','teacher','timetable']);
 var app = angular.module('app');
 app.controller('appController',function ($scope , $http){
     
@@ -130,10 +130,7 @@ app.config(function ($routeProvider) {
                 controller: 'timetableController',
                 templateUrl: 'timetableAdd.html'
             })
-            .when('/profile', {
-                controller: 'profileController',
-                templateUrl: 'profile.html'
-            }).otherwise({
+            .otherwise({
                 redirectTo:'/'
             });
 });

@@ -1,8 +1,11 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,21 +19,18 @@ import javax.persistence.Table;
  * @author User
  */
 @Entity
-@Table(name = "COURSE")
-public class Course implements Serializable{
+@Table(name = "COURSE_SUBJECT_CLASS_FIVE")
+public class CourseSubjectClassFive implements Serializable{
     @Id
-    @SequenceGenerator(name = "COURSE",sequenceName = "COURSE_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "COURSE",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "COURSESUBJECTCLASSFIVE",sequenceName = "COURSESUBJECTCLASSFIVE_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "COURSESUBJECTCLASSFIVE",strategy = GenerationType.SEQUENCE)
     private Integer id;
-    
-    
-    private CategoryCourse categoryCourse;
-    
-    private CategoryGroupCourse categoryGroupCourse;
     
     private String subjectCode;
     private String subjectName;
     private String credit;
+    
+    private StudentClassYear studentClassYear;
 
     public Integer getId() {
         return id;
@@ -38,22 +38,6 @@ public class Course implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public CategoryCourse getCategoryCourse() {
-        return categoryCourse;
-    }
-
-    public void setCategoryCourse(CategoryCourse categoryCourse) {
-        this.categoryCourse = categoryCourse;
-    }
-
-    public CategoryGroupCourse getCategoryGroupCourse() {
-        return categoryGroupCourse;
-    }
-
-    public void setCategoryGroupCourse(CategoryGroupCourse categoryGroupCourse) {
-        this.categoryGroupCourse = categoryGroupCourse;
     }
 
     public String getSubjectCode() {
@@ -80,10 +64,18 @@ public class Course implements Serializable{
         this.credit = credit;
     }
 
+    public StudentClassYear getStudentClassYear() {
+        return studentClassYear;
+    }
+
+    public void setStudentClassYear(StudentClassYear studentClassYear) {
+        this.studentClassYear = studentClassYear;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.id);
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -95,7 +87,7 @@ public class Course implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Course other = (Course) obj;
+        final CourseSubjectClassFive other = (CourseSubjectClassFive) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

@@ -19,11 +19,11 @@ import javax.persistence.Table;
  * @author User
  */
 @Entity
-@Table(name = "COURSE_CLASS")
-public class CourseClass implements Serializable{
+@Table(name = "COURSE_SUBJECT_CLASS_ONE")
+public class CourseSubjectClassOne implements Serializable{
     @Id
-    @SequenceGenerator(name = "COURSECLASS",sequenceName = "COURSECLASS_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "COURSECLASS",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "COURSESUBJECTCLASSONE",sequenceName = "COURSESUBJECTCLASSONE_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "COURSESUBJECTCLASSONE",strategy = GenerationType.SEQUENCE)
     private Integer id;
     
     private String subjectCode;
@@ -87,7 +87,7 @@ public class CourseClass implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CourseClass other = (CourseClass) obj;
+        final CourseSubjectClassOne other = (CourseSubjectClassOne) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

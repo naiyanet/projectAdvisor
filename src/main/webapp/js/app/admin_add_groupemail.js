@@ -19,6 +19,13 @@ angular.module('admin_add_groupemail').controller('admin_add_groupemailControlle
     };
 
 
+    $scope.delGroupemail = function (rowaddgroupemail) {
+        $http.post('/deletegroupemail', rowaddgroupemail).success(function (data) {
+            getGroupemail();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
 
     getGroupemail();
 

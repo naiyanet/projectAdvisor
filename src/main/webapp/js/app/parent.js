@@ -19,7 +19,13 @@ angular.module('parent').controller('parentController',function($scope,$http){
         $http.post('/deleteparent',$scope.parent).success(getSuccess()).error(getError());
     };
     
-    
+    $scope.delParent = function (rowparent) {
+        $http.post('/deleteparent', rowparent).success(function (data) {
+            getParent();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
     
     getParent();
     

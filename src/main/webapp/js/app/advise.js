@@ -1,29 +1,23 @@
 angular.module('advise',[]);
 angular.module('advise').controller('adviseController',function($scope,$http){
     
-    
-    
     $scope.advise = {};
-    
-    
-    
-    $scope.save = function(){
-        $http.post('/saveadvise',$scope.advise).success(getSuccess()).error(getError());
+
+    $scope.saveAd = function (){
+        $http.post('/saveadvise',$scope.advise).success(function (data){
+            getSuccess();
+            getAdvise();
+        });     
     };
-    
-    
-    
     
     $scope.delAdvise= {};
-    $scope.deleteAdvise = function (){
-        $http.post('/deleteadvise',$scope.advise).success(getSuccess()).error(getError());
+    $scope.deleteAdvise = function (delAd){
+        $http.post('/deleteadvise',delAd).success(function (data){
+            getAdvise();
+        });
     };
     
-    
-    
     getAdvise();
-    
-    
     
     $scope.adviseshow = {};
         function getAdvise(){
@@ -35,13 +29,9 @@ angular.module('advise').controller('adviseController',function($scope,$http){
         };
     
     
-    
-    
     $scope.clickUpdate = function(updateAdvise){
         $scope.advise = updateAdvise;
     };
-    
-    
     
     function getSuccess(){
         alert('Save Success');

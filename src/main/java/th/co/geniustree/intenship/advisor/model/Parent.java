@@ -42,10 +42,7 @@ public class Parent implements Serializable{
     @ManyToMany
     private List<Authority> authorities;
     
-    @ManyToOne
-    @JoinColumn(name = "FACULTY_ID")
-    private Faculty faculty;
-    
+      
     public Integer getId() {
         return id;
     }

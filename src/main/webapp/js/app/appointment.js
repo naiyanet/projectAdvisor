@@ -19,7 +19,13 @@ angular.module('appointment').controller('appointmentController',function($scope
         $http.post('/deleteappointment',$scope.appointment).success(getSuccess()).error(getError());
     };
     
-    
+    $scope.delAppointment = function (rowappointment) {
+        $http.post('/deleteappointment', rowappointment).success(function (data) {
+            getAppointment();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
     
     getAppointment();
     

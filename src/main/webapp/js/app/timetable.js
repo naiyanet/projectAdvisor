@@ -20,6 +20,14 @@ angular.module('timetable').controller('timetableController',function($scope,$ht
     };
     
     
+    $scope.delTimetable = function (rowtimetable) {
+        $http.post('/deletetimetable', rowtimetable).success(function (data) {
+            getTimetable();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
+    
     
     getTimetable();
     
