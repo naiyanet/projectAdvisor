@@ -19,13 +19,12 @@ angular.module('course').controller('courseController', function ($scope, $http)
     ;
 
     $scope.selectCategoryGroup = function () {
-       // console.log($scope.select.selectCategory.categoryGroupCourse);
         $scope.categoryGroup = $scope.select.categoryCourse.categoryGroupCourse;
-        console.log($scope.categoryGroup);
-         console.log($scope.select.categoryCourse+'hhhihuh');
-    };
+      };
 
     $scope.saveCourse= function (){
+        $scope.select.categoryCourse = $scope.select.categoryCourse.categoryCourseName;
+        $scope.select.categoryGroupCourse = $scope.select.categoryGroupCourse.name;
         $http.post('/saveselectcategory',$scope.select).success(function (data){
             
         }).error(function (data){

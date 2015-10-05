@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import th.co.geniustree.intenship.advisor.model.CategoryCourse;
+import th.co.geniustree.intenship.advisor.model.CategoryGroupCourse;
 import th.co.geniustree.intenship.advisor.model.SelectCategory;
 import th.co.geniustree.intenship.advisor.repo.SelectCategoryRepo;
 
@@ -25,14 +27,7 @@ public class SelectCategoryController {
     
     @RequestMapping(value = "/saveselectcategory",method = RequestMethod.POST)
     public void saveSelectCategory(@RequestBody SelectCategory selectCategory){
-        System.out.println("--------------------------------------------------------->"+selectCategory.getCategoryCourse());
-        System.out.println("--------------------------------------------------------->"+selectCategory.getCategoryGroupCourse());
-        System.out.println("--------------------------------------------------------->"+selectCategory);
-        SelectCategory sel = new SelectCategory();
-        sel = selectCategory;
-        sel.setCategoryCourse(selectCategory.getCategoryCourse());
-        sel.setCategoryGroupCourse(selectCategory.getCategoryGroupCourse());
-        selectCategoryRepo.save(sel);
+      selectCategoryRepo.save(selectCategory);
     }
   
 }

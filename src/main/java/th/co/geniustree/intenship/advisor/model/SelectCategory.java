@@ -34,13 +34,8 @@ public class SelectCategory implements Serializable {
     private String subjectCode;
     private String subjectName;
     private String credit;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    private CategoryCourse categoryCourse;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    private CategoryGroupCourse  categoryGroupCourse;
-
+    private String categoryCourse;
+    private String categoryGroupCourse;
 
     public Integer getId() {
         return id;
@@ -49,15 +44,6 @@ public class SelectCategory implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public CategoryCourse getCategoryCourse() {
-        return categoryCourse;
-    }
-
-    public void setCategoryCourse(CategoryCourse categoryCourse) {
-        this.categoryCourse = categoryCourse;
-    }
-    
 
     public String getSubjectCode() {
         return subjectCode;
@@ -83,15 +69,22 @@ public class SelectCategory implements Serializable {
         this.credit = credit;
     }
 
-    public CategoryGroupCourse getCategoryGroupCourse() {
+    public String getCategoryCourse() {
+        return categoryCourse;
+    }
+
+    public void setCategoryCourse(String categoryCourse) {
+        this.categoryCourse = categoryCourse;
+    }
+
+    public String getCategoryGroupCourse() {
         return categoryGroupCourse;
     }
 
-    public void setCategoryGroupCourse(CategoryGroupCourse categoryGroupCourse) {
+    public void setCategoryGroupCourse(String categoryGroupCourse) {
         this.categoryGroupCourse = categoryGroupCourse;
     }
 
-    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -119,6 +112,4 @@ public class SelectCategory implements Serializable {
         return "SelectCategory{" + "id=" + id + ", subjectCode=" + subjectCode + ", subjectName=" + subjectName + ", credit=" + credit + ", categoryCourse=" + categoryCourse + ", categoryGroupCourse=" + categoryGroupCourse + '}';
     }
 
-    
-    
 }

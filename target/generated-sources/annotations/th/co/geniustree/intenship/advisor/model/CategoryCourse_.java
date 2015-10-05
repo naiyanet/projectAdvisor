@@ -11,7 +11,6 @@ public abstract class CategoryCourse_ {
 
 	public static volatile SingularAttribute<CategoryCourse, String> categoryCourseName;
 	public static volatile ListAttribute<CategoryCourse, CategoryGroupCourse> categoryGroupCourse;
-	public static volatile SingularAttribute<CategoryCourse, Course> course;
 	public static volatile SingularAttribute<CategoryCourse, Integer> id;
 
 }
