@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ngRoute','student','home','admin_add_User','admin_add_groupemail'
                         ,'admin_add_information','advise','appointment','behavior','course','course_subject'
                         ,'course_subject_1','course_subject_2','course_subject_3','course_subject_4'
-                        ,'course_subject_5','parent','teacher','timetable']);
+                        ,'course_subject_5','parent','teacher','timetable','checklist-model']);
 var app = angular.module('app');
 app.controller('appController',function ($scope , $http){
     
@@ -10,10 +10,6 @@ app.controller('appController',function ($scope , $http){
 
 app.config(function ($routeProvider) {
     $routeProvider
-//            .when('/',{
-//                controller:'appController',
-//                templateUrl:'index-template.html'
-//            })
             .when('/home', {
                 controller: 'homeController',
                 templateUrl: 'home.html'
@@ -94,9 +90,9 @@ app.config(function ($routeProvider) {
                 controller: 'parentController',
                 templateUrl: 'parentAdd.html'
             })
-            .when('/parentEdit', {
+            .when('/parentContactTeacher', {
                 controller: 'parentController',
-                templateUrl: 'parentEdit.html'
+                templateUrl: 'parentContactTeacher.html'
             })
             .when('/student', {
                 controller: 'studentController',
@@ -106,9 +102,9 @@ app.config(function ($routeProvider) {
                 controller: 'studentController',
                 templateUrl: 'studentAdd.html'
             })
-            .when('/studentEdit', {
+            .when('/studentChangeTeacher', {
                 controller: 'studentController',
-                templateUrl: 'studentEdit.html'
+                templateUrl: 'studentChangeTeacher.html'
             })
             .when('/teacher', {
                 controller: 'teacherController',

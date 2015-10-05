@@ -30,13 +30,13 @@ public class CategoryGroupCourseController {
         return categoryGroupCourseRepo.findAll(pageable);
     }
     
-    @RequestMapping(value = "/savecategorygroupcourse",method = RequestMethod.POST)
-    public void saveCategoryGroupCourse(@Validated @RequestBody CategoryGroupCourse categoryGroupCourse){
-        categoryGroupCourseRepo.save(categoryGroupCourse);
-    }
-    
-    @RequestMapping(value = "/deletecategorygroupcourse",method = RequestMethod.POST)
-    public void deleteCategoryGroupCourse(@RequestBody CategoryGroupCourse categoryGroupCourse){
-        categoryGroupCourseRepo.delete(categoryGroupCourse);
-    }
+//    @RequestMapping(value = "/savecategorygroupcourse",method = RequestMethod.POST)
+//    public void saveCategoryGroupCourse(@Validated @RequestBody CategoryGroupCourse categoryGroupCourse){
+//        categoryGroupCourseRepo.save(categoryGroupCourse);
+//    }
+//    
+//    @RequestMapping(value = "/deletecategorygroupcourse",method = RequestMethod.POST)
+//    public void deleteCategoryGroupCourse(@RequestBody CategoryGroupCourse categoryGroupCourse){
+//        categoryGroupCourseRepo.delete(categoryGroupCourse);
+//    }
 }

@@ -6,11 +6,14 @@
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,7 +30,14 @@ public class CategoryCourse implements Serializable{
     private Integer id;
     
     private String categoryCourseName;
-
+    
+    
+//    @ManyToOne
+//    private Course course;
+    
+    @OneToMany(mappedBy = "categoryCourse")
+    private List<CategoryGroupCourse> categoryGroupCourse;
+    
     public Integer getId() {
         return id;
     }
@@ -44,6 +54,23 @@ public class CategoryCourse implements Serializable{
         this.categoryCourseName = categoryCourseName;
     }
 
+//    public Course getCourse() {
+//        return course;
+//    }
+//
+//    public void setCourse(Course course) {
+//        this.course = course;
+//    }
+
+    public List<CategoryGroupCourse> getCategoryGroupCourse() {
+        return categoryGroupCourse;
+    }
+
+    public void setCategoryGroupCourse(List<CategoryGroupCourse> categoryGroupCourse) {
+        this.categoryGroupCourse = categoryGroupCourse;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -64,6 +91,11 @@ public class CategoryCourse implements Serializable{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "CategoryCourse{" + "id=" + id + ", categoryCourseName=" + categoryCourseName + ", categoryGroupCourse=" + categoryGroupCourse + '}';
     }
     
     

@@ -6,10 +6,9 @@
 package th.co.geniustree.intenship.advisor.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,16 +26,17 @@ public class CategoryCourseController {
     
     @RequestMapping(value = "/getcategorycourse",method = RequestMethod.GET)
     public Page<CategoryCourse> getCategoryCourse(Pageable pageable){
+        System.out.println("------------------------------------------------>get course");
         return categoryCourseRepo.findAll(pageable);
     }
     
-    @RequestMapping(value = "savecategorycourse",method = RequestMethod.POST)
-    public void saveCategoryCourse(@Validated @RequestBody CategoryCourse categoryCourse){
-        categoryCourseRepo.save(categoryCourse);
-    }
-    
-    @RequestMapping(value = "deletecategorycourse",method = RequestMethod.POST)
-    public void deleteCategoryCourse(@RequestBody CategoryCourse categoryCourse){
-        categoryCourseRepo.delete(categoryCourse);
-    }
+//    @RequestMapping(value = "savecategorycourse",method = RequestMethod.POST)
+//    public void saveCategoryCourse(@Validated @RequestBody CategoryCourse categoryCourse){
+//        categoryCourseRepo.save(categoryCourse);
+//    }
+//    
+//    @RequestMapping(value = "deletecategorycourse",method = RequestMethod.POST)
+//    public void deleteCategoryCourse(@RequestBody CategoryCourse categoryCourse){
+//        categoryCourseRepo.delete(categoryCourse);
+//    }
 }

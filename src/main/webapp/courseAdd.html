@@ -10,40 +10,43 @@
                 <div class="form-group">
                     <label for="text" class="col-lg-2 control-label">หมวดวิชา</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control">
+                        <select class="form-control" ng-model="select.categoryCourse" ng-options="co.categoryCourseName for co in coursecategoryshow.content" ng-change="selectCategoryGroup()"></select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="text" class="col-lg-2 control-label">กลุ่มวิชา</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control">
+                        <select class="form-control" ng-model="select.categoryGroupCourse" ng-options="groupCourse.name for groupCourse in categoryGroup"></select>
+                    </div>
+                    <div>
+
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="text" class="col-lg-2 control-label">รหัสวิชา</label>
+                    <label for="text" class="col-lg-2 control-label" >รหัสวิชา</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model="select.subjectCode">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="text" class="col-lg-2 control-label">รายวิชา</label>
+                    <label for="text" class="col-lg-2 control-label" >รายวิชา</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model="select.subjectName">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="text" class="col-lg-2 control-label">หน่วยกิต</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model="select.credit">
                     </div>
                 </div>
                 <div class="form-group">
                     <center>
-                        <button class="btn btn-success">Save</button>
+                        <button class="btn btn-success" ng-click="saveCourse()">Save</button>
                         <a href="#/course"><button class="btn btn-danger">Cancle</button></a>
                     </center>
                 </div>
         </div>
-    </div>
+    </div>{{select}}
 </div>
 </div>

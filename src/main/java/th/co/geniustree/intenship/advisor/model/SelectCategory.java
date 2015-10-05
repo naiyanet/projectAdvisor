@@ -1,16 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package th.co.geniustree.intenship.advisor.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -19,22 +23,25 @@ import javax.persistence.Table;
  * @author User
  */
 @Entity
-@Table(name = "COURSE")
-public class Course implements Serializable {
+@Table(name = "SELECTCATEGORY")
+public class SelectCategory implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "COURSE", sequenceName = "COURSE_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "COURSE", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "SELECTCATEGORY", sequenceName = "SELECTCATEGORY_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "SELECTCATEGORY", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
     private String subjectCode;
     private String subjectName;
     private String credit;
     
-//    @OneToMany(mappedBy = "course" , cascade = CascadeType.ALL)
-//    @JsonIgnore
-//    private List<SelectCategory> selectCategorys;
+    @OneToOne(cascade = CascadeType.ALL)
+    private CategoryCourse categoryCourse;
     
+    @OneToOne(cascade = CascadeType.ALL)
+    private CategoryGroupCourse  categoryGroupCourse;
+
+
     public Integer getId() {
         return id;
     }
@@ -42,6 +49,15 @@ public class Course implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public CategoryCourse getCategoryCourse() {
+        return categoryCourse;
+    }
+
+    public void setCategoryCourse(CategoryCourse categoryCourse) {
+        this.categoryCourse = categoryCourse;
+    }
+    
 
     public String getSubjectCode() {
         return subjectCode;
@@ -67,19 +83,19 @@ public class Course implements Serializable {
         this.credit = credit;
     }
 
-//    public List<SelectCategory> getSelectCategorys() {
-//        return selectCategorys;
-//    }
-//
-//    public void setSelectCategorys(List<SelectCategory> selectCategorys) {
-//        this.selectCategorys = selectCategorys;
-//    }
-    
+    public CategoryGroupCourse getCategoryGroupCourse() {
+        return categoryGroupCourse;
+    }
+
+    public void setCategoryGroupCourse(CategoryGroupCourse categoryGroupCourse) {
+        this.categoryGroupCourse = categoryGroupCourse;
+    }
+
     
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -91,11 +107,18 @@ public class Course implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Course other = (Course) obj;
+        final SelectCategory other = (SelectCategory) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "SelectCategory{" + "id=" + id + ", subjectCode=" + subjectCode + ", subjectName=" + subjectName + ", credit=" + credit + ", categoryCourse=" + categoryCourse + ", categoryGroupCourse=" + categoryGroupCourse + '}';
+    }
+
+    
+    
 }

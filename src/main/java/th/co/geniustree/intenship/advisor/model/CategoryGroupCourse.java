@@ -5,12 +5,15 @@
  */
 package th.co.geniustree.intenship.advisor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -26,8 +29,12 @@ public class CategoryGroupCourse implements Serializable{
     @GeneratedValue(generator = "CATEGORYGROUPCOURSE", strategy = GenerationType.SEQUENCE)
     private Integer id;
     
-    private String categotyGroupCourse;
-
+    private String name;
+    
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "categoryGroupCourse")
+    private CategoryCourse categoryCourse;
     public Integer getId() {
         return id;
     }
@@ -36,13 +43,23 @@ public class CategoryGroupCourse implements Serializable{
         this.id = id;
     }
 
-    public String getCategotyGroupCourse() {
-        return categotyGroupCourse;
+    public String getName() {
+        return name;
     }
 
-    public void setCategotyGroupCourse(String categotyGroupCourse) {
-        this.categotyGroupCourse = categotyGroupCourse;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public CategoryCourse getCategoryCourse() {
+        return categoryCourse;
+    }
+
+    public void setCategoryCourse(CategoryCourse categoryCourse) {
+        this.categoryCourse = categoryCourse;
+    }
+
+    
 
     @Override
     public int hashCode() {
@@ -64,6 +81,11 @@ public class CategoryGroupCourse implements Serializable{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "CategoryGroupCourse{" + "id=" + id + ", name=" + name + ", categoryCourse=" + categoryCourse + '}';
     }
     
     
