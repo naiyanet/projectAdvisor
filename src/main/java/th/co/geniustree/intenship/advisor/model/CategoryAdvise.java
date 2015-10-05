@@ -32,10 +32,9 @@ public class CategoryAdvise implements Serializable {
     private Integer id;
 
     private String categoryName;
-
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "categoryAdvise")
-    private CategoryAdvise categoryAdvise;
+    
+    @OneToMany(mappedBy = "categoryAdvise")
+    private Advise advise;
 
     public Integer getId() {
         return id;
@@ -53,14 +52,15 @@ public class CategoryAdvise implements Serializable {
         this.categoryName = categoryName;
     }
 
-    public CategoryAdvise getCategoryAdvise() {
-        return categoryAdvise;
+    public Advise getAdvise() {
+        return advise;
     }
 
-    public void setCategoryAdvise(CategoryAdvise categoryAdvise) {
-        this.categoryAdvise = categoryAdvise;
+    public void setAdvise(Advise advise) {
+        this.advise = advise;
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 7;

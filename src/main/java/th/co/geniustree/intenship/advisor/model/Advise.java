@@ -1,6 +1,7 @@
 
 package th.co.geniustree.intenship.advisor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -36,8 +37,9 @@ public class Advise implements Serializable{
     private String description;
     private String file;
     
-//    @ManyToOne
-//    @JoinColumn(name = "CATEGORYADVISE_ID")
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "categoryAdviseid")
     private CategoryAdvise  categoryAdvise;
     
     public Integer getId() {
