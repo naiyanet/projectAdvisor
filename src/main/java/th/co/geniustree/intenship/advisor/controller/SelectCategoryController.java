@@ -6,6 +6,8 @@
 package th.co.geniustree.intenship.advisor.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,9 +27,17 @@ public class SelectCategoryController {
     @Autowired
     private SelectCategoryRepo selectCategoryRepo;
     
+    @RequestMapping(value = "/getselectcategory",method = RequestMethod.GET)
+    public Page<SelectCategory> getSelectCategory(Pageable pageable){
+        return selectCategoryRepo.findAll(pageable);
+    }
     @RequestMapping(value = "/saveselectcategory",method = RequestMethod.POST)
     public void saveSelectCategory(@RequestBody SelectCategory selectCategory){
       selectCategoryRepo.save(selectCategory);
     }
-  
+    
+    @RequestMapping(value = "/deleteselectcategory",method = RequestMethod.POST)
+    public void deleteSelectCategory(@RequestBody SelectCategory selectCategory){
+        selectCategoryRepo.delete(selectCategory);
+    }
 }

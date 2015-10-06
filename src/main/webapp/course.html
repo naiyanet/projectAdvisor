@@ -1,16 +1,15 @@
-
+_______________________________________________________________________________________________________________________________________________________________________________________________________
 <div class="col-md-10">  
-    <a href="#/course_subject"><button class="btn btn-success">วิชาที่ทำการเปิดสอนในแต่ละชั้นปี</button></a>
-    <a href="#/courseAdd"><button class="btn btn-success">เพิ่มรายวิชาในหลักสูตรการศึกษา</button></a>
+<a href="#/course_subject"><button class="btn btn-success">วิชาที่ทำการเปิดสอนในแต่ละชั้นปี</button></a>
+<a href="#/courseAdd"><button class="btn btn-danger">เพิ่มวิชาในหลักสูตร</button></a>
     <div>
-        
+
         <br>
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">หมวดศึกษาทั่วไป</h3>
             </div>
             <div class="panel-body">
-                ------------------------------------------------------
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาสังคมศาสตร์และมนุษย์ศาสตร์</h3>
@@ -23,16 +22,16 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr ng-repeat="course in courseSocial">
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.crecit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+              
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาภาษา</h3>
@@ -45,16 +44,16 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr ng-repeat="course in courseLanguage">
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.crecit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+               
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาวิทยาศาสตร์และคณิตศาสตร์</h3>
@@ -67,16 +66,17 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr ng-repeat="course in courseMath">
+                                    {{}}
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+               
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาพลศึกษาหรือนันทนาการหรือกิจกรรม</h3>
@@ -89,28 +89,29 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                 <tr ng-repeat="course in courseActivity">
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.crecit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+               
             </div>
         </div>
-        -------
-        -------
-        -------
-        -------
+
+        
+        
+        
+        
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">หมวดวิชาเฉพาะ</h3>
             </div>
             <div class="panel-body">
-                ------------------------------------------------------
+               
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาชีพพื้นฐาน</h3>
@@ -123,16 +124,16 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr ng-repeat="course in courseBasic">
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.crecit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+               
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาชีพบังคับ</h3>
@@ -145,16 +146,16 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                               <tr ng-repeat="course in courseForce">
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.crecit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+               
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">กลุ่มวิชาชีพเลือก</h3>
@@ -167,22 +168,24 @@
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr ng-repeat="course in courseFreedome">
+                                    <td>{{course.subjectCode}}</td>
+                                    <td>{{course.subjectName}}</td>
+                                    <td>{{course.crecit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                ------------------------------------------------------
+              
             </div>
         </div>
-        -------
-        -------
-        -------
-        -------
+
+        
+        
+        
+        
+        
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">หมวดวิชาเลือกเสรี</h3>

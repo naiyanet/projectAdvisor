@@ -1,5 +1,5 @@
 var app = angular.module('app', ['ngRoute','student','home','admin_add_User','admin_add_groupemail'
-                        ,'admin_add_information','advise','appointment','behavior','course','course_subject'
+                        ,'admin_add_information','advise','appointment','behavior','course','course_add','course_subject'
                         ,'course_subject_1','course_subject_2','course_subject_3','course_subject_4'
                         ,'course_subject_5','parent','teacher','timetable','checklist-model']);
 var app = angular.module('app');
@@ -51,7 +51,7 @@ app.config(function ($routeProvider) {
                 templateUrl: 'behaviorAdd.html'
             })
             .when('/course', {
-                controller: 'courseController',
+                controller: 'course_addController',
                 templateUrl: 'course.html'
             })
             .when('/courseAdd', {

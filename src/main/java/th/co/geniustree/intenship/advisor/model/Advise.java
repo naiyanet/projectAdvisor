@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -37,9 +38,7 @@ public class Advise implements Serializable{
     private String description;
     private String file;
     
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "categoryAdviseid")
+    
     private CategoryAdvise  categoryAdvise;
     
     public Integer getId() {

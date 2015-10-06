@@ -8,7 +8,6 @@ package th.co.geniustree.intenship.advisor.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,8 +35,8 @@ public class SelectCategory implements Serializable {
     private String credit;
     private String categoryCourse;
     private String categoryGroupCourse;
-
-    public Integer getId() {
+    
+        public Integer getId() {
         return id;
     }
 

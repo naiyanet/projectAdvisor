@@ -15,9 +15,8 @@ angular.module('course').controller('courseController', function ($scope, $http)
         }).error(function (data) {
 
         });
-    }
-    ;
-
+    };
+    
     $scope.selectCategoryGroup = function () {
         $scope.categoryGroup = $scope.select.categoryCourse.categoryGroupCourse;
     };
@@ -25,7 +24,9 @@ angular.module('course').controller('courseController', function ($scope, $http)
     $scope.saveCourse = function () {
         $scope.select.categoryCourse = $scope.select.categoryCourse.categoryCourseName;
         $scope.select.categoryGroupCourse = $scope.select.categoryGroupCourse.name;
-        $http.post('/saveselectcategory', $scope.select).success(getSuccess()).error(getError()); 
+        $http.post('/saveselectcategory', $scope.select).success(function (data){
+            
+        });
     };
 
     function getSuccess() {
@@ -34,4 +35,6 @@ angular.module('course').controller('courseController', function ($scope, $http)
     function getError() {
         alert('Error');
     }
+    
+    
 });

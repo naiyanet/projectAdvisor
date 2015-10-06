@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -33,7 +35,7 @@ public class CategoryAdvise implements Serializable {
 
     private String categoryName;
     
-    @OneToMany(mappedBy = "categoryAdvise")
+    
     private Advise advise;
 
     public Integer getId() {
