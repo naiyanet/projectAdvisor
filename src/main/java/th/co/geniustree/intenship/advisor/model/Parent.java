@@ -14,9 +14,6 @@ import javax.persistence.Table;
 @Entity
 public class Parent extends Account implements Serializable{
     private String relations;
-    
-    @ManyToMany
-    private List<Authority> authorities;
 
     public String getRelations() {
         return relations;
