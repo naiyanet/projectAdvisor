@@ -7,6 +7,7 @@ $scope.CourseSubjectClassOne = {};
     
     $scope.saveCourseSubjectClassOne = function(){
         $http.post('/savecoursesubjectclassone',$scope.CourseSubjectClassOne).success(getSuccess()).error(getError());
+        
     };
     
     
@@ -28,8 +29,7 @@ $scope.CourseSubjectClassOne = {};
     getCourseSubjectClassOne();
     
     
-    
-    $scope.courseSubjectClassOneshow = {};
+        $scope.courseSubjectClassOneshow = {};
         function getCourseSubjectClassOne(){
             $http.get('/getcoursesubjectclassone').success(function(data){
                 $scope.courseSubjectClassOneshow = data;
@@ -38,9 +38,7 @@ $scope.CourseSubjectClassOne = {};
             });
         };
     
-    
-    
-    
+
     $scope.clickUpdate = function(updateCourseSubjectClassOne){
         $scope.CourseSubjectClassOne = updateCourseSubjectClassOne;
     };

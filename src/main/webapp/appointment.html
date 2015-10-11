@@ -1,5 +1,30 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>    
+<script type="text/javascript" src="fullcalendar/js/fullcalendar-2.1.1/lib/moment.min.js"></script>
+<script type="text/javascript" src="fullcalendar/js/fullcalendar-2.1.1/fullcalendar.min.js"></script>
+<script type="text/javascript" src="fullcalendar/js/fullcalendar-2.1.1/lang/th.js"></script>
+<script type="text/javascript" src="fullcalendar/script.js"></script>
+<link rel="stylesheet" href="fullcalendar/js/fullcalendar-2.1.1/fullcalendar.min.css">
+
+<style type="text/css">
+    html,body{
+        maring:0;padding:0;
+        font-family:tahoma, "Microsoft Sans Serif", sans-serif, Verdana;   
+        font-size:12px;
+    }
+    #calendar{
+        max-width: 700px;
+        margin: 0 auto;
+        font-size:13px;
+    }        
+</style>
+
 <div class="col-md-10">
     <a href="#/appointmentAdd"><button class="btn btn-success">เพิ่มการนัดหมาย</button></a>
+    <br><br> 
+    <div style="margin:auto;width:800px;">
+        <div id='calendar'></div>
+    </div>
+    <br><br> 
     <div class="panel panel-primary">
         <div class="panel-heading">ข้อมูลนัดหมาย</div>
         <div class="panel-body">

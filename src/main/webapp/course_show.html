@@ -1,18 +1,22 @@
-_______________________________________________________________________________________________________________________________________________________________________________________________________
+<div class="col-md-8">
+    <h4>
+        แสดงข้อมูลโครงสร้างหลักสูตรวิชา	<br>
+        ระดับการศึกษา	: ปริญญาตรี 4 ปี ปกติ <br>
+        คณะ	 : ครุศาสตร์อุตสาหกรรม <br>
+        สาขาวิชา : เทคโนโลยีคอมพิวเตอร์ <br>
+    </h4>
+</div>
 <div class="col-md-10">  
-<a href="#/course_subject"><button class="btn btn-success">วิชาที่ทำการเปิดสอนในแต่ละชั้นปี</button></a>
-<a href="#/courseAdd"><button class="btn btn-danger">เพิ่มวิชาในหลักสูตร</button></a>
-    <div>
 
-        <br>
+    <div>
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">หมวดศึกษาทั่วไป</h3>
+                <h3 class="panel-title">หมวดศึกษาทั่วไป หน่วยกิตต่ำสุด : 32</h3>
             </div>
             <div class="panel-body">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาสังคมศาสตร์และมนุษย์ศาสตร์</h3>
+                        <h3 class="panel-title">กลุ่มวิชาสังคมศาสตร์และมนุษย์ศาสตร์ หน่วยกิตต่ำสุด : 6</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -25,16 +29,16 @@ ________________________________________________________________________________
                                 <tr ng-repeat="course in courseSocial">
                                     <td>{{course.subjectCode}}</td>
                                     <td>{{course.subjectName}}</td>
-                                    <td>{{course.crecit}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-              
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาภาษา</h3>
+                        <h3 class="panel-title">กลุ่มวิชาภาษา หน่วยกิตต่ำสุด : 12</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -47,16 +51,16 @@ ________________________________________________________________________________
                                 <tr ng-repeat="course in courseLanguage">
                                     <td>{{course.subjectCode}}</td>
                                     <td>{{course.subjectName}}</td>
-                                    <td>{{course.crecit}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-               
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาวิทยาศาสตร์และคณิตศาสตร์</h3>
+                        <h3 class="panel-title">กลุ่มวิชาวิทยาศาสตร์และคณิตศาสตร์ หน่วยกิตต่ำสุด : 12</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -76,10 +80,10 @@ ________________________________________________________________________________
                         </table>
                     </div>
                 </div>
-               
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาพลศึกษาหรือนันทนาการหรือกิจกรรม</h3>
+                        <h3 class="panel-title">กลุ่มวิชาพลศึกษาหรือนันทนาการหรือกิจกรรม หน่วยกิตต่ำสุด : 2</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -89,32 +93,32 @@ ________________________________________________________________________________
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                                 <tr ng-repeat="course in courseActivity">
+                                <tr ng-repeat="course in courseActivity">
                                     <td>{{course.subjectCode}}</td>
                                     <td>{{course.subjectName}}</td>
-                                    <td>{{course.crecit}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-               
+
             </div>
         </div>
 
-        
-        
-        
-        
+
+
+
+
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">หมวดวิชาเฉพาะ</h3>
+                <h3 class="panel-title">หมวดวิชาเฉพาะ หน่วยกิตต่ำสุด : 103</h3>
             </div>
             <div class="panel-body">
-               
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาชีพพื้นฐาน</h3>
+                        <h3 class="panel-title">กลุ่มวิชาชีพพื้นฐาน หน่วยกิตต่ำสุด : 37</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -127,16 +131,16 @@ ________________________________________________________________________________
                                 <tr ng-repeat="course in courseBasic">
                                     <td>{{course.subjectCode}}</td>
                                     <td>{{course.subjectName}}</td>
-                                    <td>{{course.crecit}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-               
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาชีพบังคับ</h3>
+                        <h3 class="panel-title">กลุ่มวิชาชีพบังคับ หน่วยกิตต่ำสุด : 49</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -146,19 +150,19 @@ ________________________________________________________________________________
                                     <td>รายวิชา</td>
                                     <td>หน่วยกิต</td>
                                 </tr>
-                               <tr ng-repeat="course in courseForce">
+                                <tr ng-repeat="course in courseForce">
                                     <td>{{course.subjectCode}}</td>
                                     <td>{{course.subjectName}}</td>
-                                    <td>{{course.crecit}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-               
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">กลุ่มวิชาชีพเลือก</h3>
+                        <h3 class="panel-title">กลุ่มวิชาชีพเลือก หน่วยกิตต่ำสุด : 17</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered">
@@ -171,42 +175,26 @@ ________________________________________________________________________________
                                 <tr ng-repeat="course in courseFreedome">
                                     <td>{{course.subjectCode}}</td>
                                     <td>{{course.subjectName}}</td>
-                                    <td>{{course.crecit}}</td>
+                                    <td>{{course.credit}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-              
+
             </div>
         </div>
 
-        
-        
-        
-        
-        
+
+
+
+
+
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">หมวดวิชาเลือกเสรี</h3>
+                <h3 class="panel-title">หมวดวิชาเลือกเสรี หน่วยกิตต่ำสุด : 6</h3>
             </div>
-            <div class="panel-body">
-
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>รหัสวิชา</td>
-                            <td>รายวิชา</td>
-                            <td>หน่วยกิต</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            
         </div>
 
     </div>

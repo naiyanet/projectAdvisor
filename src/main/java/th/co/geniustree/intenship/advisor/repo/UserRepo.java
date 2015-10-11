@@ -6,12 +6,12 @@
 package th.co.geniustree.intenship.advisor.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import th.co.geniustree.intenship.advisor.model.AddUser;
+import th.co.geniustree.intenship.advisor.model.User;
 
 /**
  *
  * @author User
  */
-public interface AddUserRepo extends JpaRepository<AddUser, Integer>{
+public interface UserRepo extends JpaRepository<User, Integer>{
     
 }

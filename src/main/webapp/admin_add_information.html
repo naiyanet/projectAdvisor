@@ -4,9 +4,30 @@
 <script src="calendar/jquery-ui.min.js"></script>
 <script src="calendar/jquery-ui-timepicker-addon.js"></script>
 <script src="calendar/jquery-ui-sliderAccess.js"></script>
+<br>
+<div class="col-md-10">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#/admin_add_information">เพิ่มข่าวประชาสัมพันธ์</a></li>   
+        <li><a href="#/courseAdd">เพิ่มวิชาในหลักสูตร</a></li>
+        <li><a href="#/course_subject_1">เพิ่มแผนการเรียน</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                User <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#/admin_add_user">เพิ่มผู้ใช้งานระบบ</a></li>
+                <li><a href="#/user_show">ข้อมูลผู้ใช้งานระบบ</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<br>
+<br>
 
-<div class="col-md-10" ng-app="admin_add_information" ng-click="admin_add_informationController">
-    <div class="panel panel-primary">
+<div class="col-md-10" ng-app="admin_add_information" ng-controller="admin_add_informationController">
+    <br>
+    <br>
+    <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title">เพิ่มข่าวประชาสัมพันธ์</h3>
         </div>
@@ -78,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-primary">
+    <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title">ข่าวประชาสัมพันธ์</h3>
         </div>

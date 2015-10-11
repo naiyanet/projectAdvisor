@@ -13,30 +13,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import th.co.geniustree.intenship.advisor.model.AddUser;
-import th.co.geniustree.intenship.advisor.repo.AddUserRepo;
+import th.co.geniustree.intenship.advisor.model.User;
+import th.co.geniustree.intenship.advisor.repo.UserRepo;
 
 /**
  *
  * @author User
  */
 @RestController
-public class AddUserController {
+public class UserController {
     @Autowired
-    private AddUserRepo addUserRepo;
+    private UserRepo userRepo;
     
-    @RequestMapping(value = "/getadduser",method = RequestMethod.GET)
-    public Page<AddUser> getAddUser(Pageable pageable){
-        return addUserRepo.findAll(pageable);
+    @RequestMapping(value = "/getuser",method = RequestMethod.GET)
+    public Page<User> getUser(Pageable pageable){
+        return userRepo.findAll(pageable);
     }
     
-    @RequestMapping(value = "/saveadduser",method = RequestMethod.POST)
-    public void saveAddUser(@Validated @RequestBody AddUser addUser){
-        addUserRepo.save(addUser);
+    @RequestMapping(value = "/saveuser",method = RequestMethod.POST)
+    public void saveUser(@Validated @RequestBody User user){
+        userRepo.save(user);
     }
     
-    @RequestMapping(value = "/deleteadduser",method = RequestMethod.POST)
-    public void deleteAddUser(@RequestBody AddUser addUser){
-        addUserRepo.delete(addUser);
+    @RequestMapping(value = "/deleteuser",method = RequestMethod.POST)
+    public void deleteUser(@RequestBody User user){
+        userRepo.delete(user);
     }
 }

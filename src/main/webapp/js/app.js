@@ -1,11 +1,12 @@
-var app = angular.module('app', ['ngRoute','student','home','admin_add_User','admin_add_groupemail'
-                        ,'admin_add_information','advise','appointment','behavior','course','course_add','course_subject'
-                        ,'course_subject_1','course_subject_2','course_subject_3','course_subject_4'
-                        ,'course_subject_5','parent','teacher','timetable','checklist-model']);
+var app = angular.module('app', ['ngRoute', 'student','home', 'add_User', 'admin_add_groupemail'
+            , 'admin_add_information', 'advise', 'appointment', 'behavior', 'course', 'course_add'
+            , 'course_subject_1', 'course_subject_2', 'course_subject_3', 'course_subject_4'
+            , 'parent', 'teacher', 'timetable', 'checklist-model']);
+        
 var app = angular.module('app');
-app.controller('appController',function ($scope , $http){
-    
-    
+
+app.controller('appController', function ($scope, $http) {
+
 });
 
 app.config(function ($routeProvider) {
@@ -14,13 +15,13 @@ app.config(function ($routeProvider) {
                 controller: 'homeController',
                 templateUrl: 'home.html'
             })
-            .when('/admin_add_User', {
-                controller: 'admin_add_UserController',
-                templateUrl: 'admin_add_User.html'
+            .when('/admin_add_user', {
+                controller: 'add_UserController',
+                templateUrl: 'admin_add_user.html'
             })
-            .when('/admin_add_groupemail', {
-                controller: 'admin_add_groupemailController',
-                templateUrl: 'admin_add_groupemail.html'
+            .when('/user_show', {
+                controller: 'add_UserController',
+                templateUrl: 'admin_user_show.html'
             })
             .when('/admin_add_information', {
                 controller: 'admin_add_informationController',
@@ -28,11 +29,11 @@ app.config(function ($routeProvider) {
             })
             .when('/advise', {
                 controller: 'adviseController',
-                templateUrl: 'advise.html'
+                templateUrl: 'advise_show.html'
             })
             .when('/adviseAdd', {
                 controller: 'adviseController',
-                templateUrl: 'adviseAdd.html'
+                templateUrl: 'advise_add.html'
             })
             .when('/appointment', {
                 controller: 'appointmentController',
@@ -44,23 +45,23 @@ app.config(function ($routeProvider) {
             })
             .when('/behavior', {
                 controller: 'behaviorController',
-                templateUrl: 'behavior.html'
+                templateUrl: 'behavior_show.html'
             })
             .when('/behaviorAdd', {
                 controller: 'behaviorController',
-                templateUrl: 'behaviorAdd.html'
+                templateUrl: 'behavior_add.html'
             })
             .when('/course', {
                 controller: 'course_addController',
-                templateUrl: 'course.html'
+                templateUrl: 'course_show.html'
+            })
+            .when('/course_subject_show', {
+                controller: 'course_addController',
+                templateUrl: 'course_show_subject.html'
             })
             .when('/courseAdd', {
                 controller: 'courseController',
-                templateUrl: 'courseAdd.html'
-            })
-            .when('/course_subject', {
-                controller: 'course_subjectController',
-                templateUrl: 'course_subject.html'
+                templateUrl: 'course_add.html'
             })
             .when('/course_subject_1', {
                 controller: 'course_subject_1Controller',
@@ -78,55 +79,27 @@ app.config(function ($routeProvider) {
                 controller: 'course_subject_4Controller',
                 templateUrl: 'course_subject_4.html'
             })
-            .when('/course_subject_5', {
-                controller: 'course_subject_5Controller',
-                templateUrl: 'course_subject_5.html'
-            })
             .when('/parent', {
                 controller: 'parentController',
-                templateUrl: 'parent1.html'
-            })
-            .when('/parentAdd', {
-                controller: 'parentController',
-                templateUrl: 'parentAdd.html'
-            })
-            .when('/parentContactTeacher', {
-                controller: 'parentController',
-                templateUrl: 'parentContactTeacher.html'
+                templateUrl: 'parent_show.html'
             })
             .when('/student', {
                 controller: 'studentController',
-                templateUrl: 'student.html'
-            })
-            .when('/studentAdd', {
-                controller: 'studentController',
-                templateUrl: 'studentAdd.html'
-            })
-            .when('/studentChangeTeacher', {
-                controller: 'studentController',
-                templateUrl: 'studentChangeTeacher.html'
+                templateUrl: 'student_show.html'
             })
             .when('/teacher', {
                 controller: 'teacherController',
-                templateUrl: 'teacher1.html'
-            })
-            .when('/teacherAdd', {
-                controller: 'teacherController',
-                templateUrl: 'teacherAdd.html'
-            })
-            .when('/teacherEdit', {
-                controller: 'teacherController',
-                templateUrl: 'teacherEdit.html'
+                templateUrl: 'teacher_show.html'
             })
             .when('/timetable', {
                 controller: 'timetableController',
-                templateUrl: 'timetable1.html'
+                templateUrl: 'timetable_show.html'
             })
             .when('/timetableAdd', {
                 controller: 'timetableController',
-                templateUrl: 'timetableAdd.html'
+                templateUrl: 'timetable_add.html'
             })
             .otherwise({
-                redirectTo:'/'
+                redirectTo: '/'
             });
 });

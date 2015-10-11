@@ -1,0 +1,96 @@
+<div class="col-md-10">
+    <br>
+    <div id="myTabContent" class="tab-content">
+        <div class="list-group">
+            <div class="list-group-item">
+                <div class="row-content">
+                    <form class="form-horizontal">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="mdi-action-perm-contact-cal"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-lg-10">
+                                        <div class="row-picture">
+                                            <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                                    <div class="col-lg-10">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="student.email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                                    <div class="col-lg-10">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="student.password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFile" class="col-lg-2 control-label">File</label>
+                                    <div class="col-lg-10">
+                                        <input type="file" id="input-picture">
+                                        <img src="image/very-basic-picture-icon.png" width="70" height="70" id="picture" ng-model="filePic">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-lg-2 control-label">รหัสนักศึกษา</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" placeholder="ID Student" ng-model="idStudent">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-lg-2 control-label">รหัสบัตรประชาชน</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" placeholder="ID Card" ng-model="idCard">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-lg-2 control-label">ชื่อ-นามสกุล</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" placeholder="Input Name" ng-model="name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-lg-2 control-label">วันเดือนปีเกิด</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" placeholder="Birthday" ng-model="bDate">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-lg-2 control-label">เบอร์โทรศัพท์</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" placeholder="Input Telephone Number" ng-model="mobile">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="textArea" class="col-lg-2 control-label">ที่อยู่</label>
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" rows="3" id="textArea" ng-model="address"></textarea>
+                                        <span class="help-block">โปรดใส่ที่อยู่ตามความจริง</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-lg-2 control-label">เปลี่ยนอาจารย์ที่ปรึกษา</label>
+                                    <div class="col-lg-10">
+                                        <button class="btn btn-danger">ส่งคำร้อง</button></a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <button type="submit" class="btn btn-primary" ng-click="save()">Update</button>
+                                        <a href="#/student"><button class="btn btn-danger">Cancel</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{student}}
+    </div>
+</div>

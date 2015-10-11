@@ -1,33 +1,107 @@
-angular.module('course', []);
-angular.module('course').controller('courseController', function ($scope, $http) {
+angular.module('course_add', []);
+angular.module('course_add').controller('course_addController', function ($scope, $http) {
 
-    getCourseCategory();
-    $scope.coursecategoryshow = {};
-    $scope.categoryGroup = {};
-    $scope.groupShow;
 
-    $scope.select = {};
+    $scope.courseSocial = [];
+    $scope.courseLanguage = [];
+    $scope.courseMath = [];
+    $scope.courseActivity = [];
 
-    function getCourseCategory() {
-        $http.get('/getcategorycourse').success(function (data) {
-            $scope.coursecategoryshow = data;
-            console.log(data);
+    $scope.courseBasic = [];
+    $scope.courseForce = [];
+    $scope.courseChoice = [];
+
+    $scope.courseFreedome = [];
+
+
+
+    $scope.save = function () {
+        $http.post('/saveselectcategory', $scope.courseAdd).success(getSuccess()).error(getError());
+    };
+
+
+
+
+    $scope.delCourseAdd = {};
+    $scope.deleteCourseAdd = function () {
+        $http.post('/deleteselectcategory', $scope.courseAdd).success(getSuccess()).error(getError());
+    };
+
+    $scope.delCourseAdd = function (rowcourseAdd) {
+        $http.post('/deleteselectcategory', rowcourseAdd).success(function (data) {
+            getCourseAdd();
+        }).error(function (data) {
+            alert('ลบไม่สำเร็จ');
+        });
+    };
+
+    getCourseAdd();
+
+
+
+    $scope.courseAddshow = {};
+    function getCourseAdd() {
+        $http.get('/getselectcategory').success(function (data) {
+            var dataLength = $(data.content).length;
+            var courseSocialArray = 0 ;
+            var courseLanguageArray = 0;
+            var courseMathArray = 0;
+            var courseActivityArray = 0;
+            var courseBasicArray = 0;
+            var courseForceArray = 0;
+            var courseChoiceArray = 0;
+            var courseFreedomeArray = 0;
+            
+            console.log(data.content[0]);
+            console.log(dataLength);
+            for (i = 0; i < dataLength; i++) {
+                if (data.content[i].categoryGroupCourse == 'กลุ่มวิชาสังคมศาสตร์และมนุษย์ศาสตร์') {
+                    $scope.courseSocial[courseSocialArray++] = data.content[i];
+                    console.log(i);
+                }
+                if(data.content[i].categoryGroupCourse == 'กลุ่มวิชาภาษา'){
+                    $scope.courseLanguage[courseLanguageArray++] = data.content[i];
+                     console.log(i);
+                }
+                if (data.content[i].categoryGroupCourse == 'กลุ่มวิชาวิทยาศาสตร์และคณิตศาสตร์') {
+                    $scope.courseMath[courseMathArray++] = data.content[i];
+                     console.log(i);
+                }
+                if (data.content[i].categoryGroupCourse == 'กลุ่มวิชาพลศึกษาหรือนันทนาการหรือกิจกรรม') {
+                    $scope.courseActivity[courseActivityArray++] = data.content[i];
+                     console.log(i);
+                }
+                if (data.content[i].categoryGroupCourse == 'กลุ่มวิชาชีพพื้นฐาน') {
+                    $scope.courseBasic[courseBasicArray++] = data.content[i];
+                     console.log(i);
+                }
+                if (data.content[i].categoryGroupCourse == 'กลุ่มวิชาชีพบังคับ') {
+                    $scope.courseForce[courseForceArray++] = data.content[i];
+                     console.log(i);
+                }
+                if (data.content[i].categoryGroupCourse == 'กลุ่มวิชาชีพเลือก') {
+                    $scope.courseChoice[courseChoiceArray++] = data.content[i];
+                     console.log(i);
+                }
+                if (data.content[i].categoryCourse == 'หมวดวิชาเลือกเสรี') {
+                    $scope.courseFreedome[courseFreedomeArray++] = data.content[i];
+                     console.log(i);
+                }
+                
+            }
+           
         }).error(function (data) {
 
+
         });
-    };
-    
-    $scope.selectCategoryGroup = function () {
-        $scope.categoryGroup = $scope.select.categoryCourse.categoryGroupCourse;
+    }
+    ;
+
+    $scope.clickUpdate = function (updateAppointment) {
+        $scope.appointment = updateAppointment;
     };
 
-    $scope.saveCourse = function () {
-        $scope.select.categoryCourse = $scope.select.categoryCourse.categoryCourseName;
-        $scope.select.categoryGroupCourse = $scope.select.categoryGroupCourse.name;
-        $http.post('/saveselectcategory', $scope.select).success(function (data){
-            
-        });
-    };
+
 
     function getSuccess() {
         alert('Save Success');
@@ -35,6 +109,4 @@ angular.module('course').controller('courseController', function ($scope, $http)
     function getError() {
         alert('Error');
     }
-    
-    
 });
