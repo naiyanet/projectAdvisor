@@ -13,30 +13,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import th.co.geniustree.intenship.advisor.model.User;
-import th.co.geniustree.intenship.advisor.repo.UserRepo;
+import th.co.geniustree.intenship.advisor.model.Account;
+import th.co.geniustree.intenship.advisor.repo.AccountRepo;
 
 /**
  *
- * @author User
+ * @author Account
  */
 @RestController
 public class UserController {
     @Autowired
-    private UserRepo userRepo;
+    private AccountRepo userRepo;
     
     @RequestMapping(value = "/getuser",method = RequestMethod.GET)
-    public Page<User> getUser(Pageable pageable){
+    public Page<Account> getUser(Pageable pageable){
         return userRepo.findAll(pageable);
     }
     
     @RequestMapping(value = "/saveuser",method = RequestMethod.POST)
-    public void saveUser(@Validated @RequestBody User user){
+    public void saveUser(@Validated @RequestBody Account user){
         userRepo.save(user);
     }
     
     @RequestMapping(value = "/deleteuser",method = RequestMethod.POST)
-    public void deleteUser(@RequestBody User user){
+    public void deleteUser(@RequestBody Account user){
         userRepo.delete(user);
     }
 }

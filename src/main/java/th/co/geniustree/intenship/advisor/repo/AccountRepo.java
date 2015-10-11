@@ -6,12 +6,14 @@
 package th.co.geniustree.intenship.advisor.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import th.co.geniustree.intenship.advisor.model.User;
+import th.co.geniustree.intenship.advisor.model.Account;
 
 /**
  *
- * @author User
+ * @author Account
  */
-public interface UserRepo extends JpaRepository<User, Integer>{
+public interface AccountRepo extends JpaRepository<Account, Integer>{
+
+    public Account findByEmail(String email);
     
 }

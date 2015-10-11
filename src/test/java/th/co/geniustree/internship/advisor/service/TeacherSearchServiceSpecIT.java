@@ -41,7 +41,6 @@ public class TeacherSearchServiceSpecIT {
         teacher = new Teacher();
         teacher.setEmail("teacher@xxxx.com");
         teacher.setPassword("xxx");
-        teacher.setIdCard(121212);
         teacher.setName("xxxxx");
         teacher.setMobile("xxxxxx");
     }

@@ -13,22 +13,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  *
- * @author User
+ * @author Account
  */
 @Entity
-@Table(name = "USER")
-public class User implements Serializable{
+@Table(name = "ACCOUNT")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+public class Account implements UserDetails , Serializable{
     @Id
-    @SequenceGenerator(name = "USER", sequenceName = "USER_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "USER", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "ACCOUNT", sequenceName = "ACCOUNT_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "ACCOUNT", strategy = GenerationType.SEQUENCE)
     private Integer id;
     @NotBlank(message = "please input email")
     private String email;
@@ -43,9 +47,7 @@ public class User implements Serializable{
     private Integer age;
     private String mobile;
     private String address;
-    
-
-    
+   
     @ManyToMany
     private List<Authority> authorities;
 
@@ -160,10 +162,35 @@ public class User implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final User other = (User) obj;
+        final Account other = (Account) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
+        return true;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
         return true;
     }
     

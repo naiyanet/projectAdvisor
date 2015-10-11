@@ -16,7 +16,7 @@ import th.co.geniustree.intenship.advisor.model.Parent_;
 
 /**
  *
- * @author User
+ * @author Account
  */
 public class ParentSpec {
 
