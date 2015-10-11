@@ -22,11 +22,11 @@ import th.co.geniustree.intenship.advisor.repo.AccountRepo;
 public class MyUserDetailService implements UserDetailsService {
 
     @Autowired
-    private AccountRepo userRepo;
+    private AccountRepo accountRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Account findByEmail = userRepo.findByEmail(username);
+        Account findByEmail = accountRepo.findByEmail(username);
         if(findByEmail==null){
             throw new UsernameNotFoundException("not found user.");
         }

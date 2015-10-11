@@ -29,7 +29,6 @@ angular.module('add_User').controller('add_UserController', function ($scope, $h
     }
     ;
 
-
     $scope.clickUpdate = function (updateUser) {
         $scope.user = updateUser;
     };
