@@ -1,42 +1,62 @@
-angular.module('advise',[]);
-angular.module('advise').controller('adviseController',function($scope,$http){
-    
-    $scope.advise = {};
+angular.module('advise', []);
+angular.module('advise').controller('adviseController', function ($scope, $http) {
 
-    $scope.saveAd = function (){
-        $http.post('/saveadvise',$scope.advise).success(function (data){
+    $scope.advise = {};
+    $scope.mo = {};
+
+
+    $scope.saveAdvise = function () {
+        $http.post('/saveadvise', $scope.advise).success(function (data) {
             getSuccess();
             getAdvise();
-        });     
-    };
-    
-    $scope.delAdvise= {};
-    $scope.deleteAdvise = function (delAd){
-        $http.post('/deleteadvise',delAd).success(function (data){
-            getAdvise();
+            console.log(data);
+            $scope.clear();
         });
     };
     
+    $scope.delAdvise = {};
+    $scope.deleteAdvise = function (delAd) {
+        $http.post('/deleteadvise', delAd).success(function (data) {
+            getAdvise();
+        });
+    };
+
     getAdvise();
-    
+
     $scope.adviseshow = {};
-        function getAdvise(){
-            $http.get('/getadvise').success(function(data){
-                $scope.adviseshow = data;
-            }).error(function(data){
-                
-            });
-        };
+    function getAdvise() {
+        $http.get('/getadvise').success(function (data) {
+            $scope.adviseshow = data;
+        }).error(function (data) {
+
+        });
+    }
+    ;
     
-    
-    $scope.clickUpdate = function(updateAdvise){
+    getAdviseCategory();
+    $scope.advisecateshow = {};
+    function getAdviseCategory() {
+        $http.get('/getcategory').success(function (data) {
+            $scope.advisecateshow = data;
+            console.log(data);
+        }).error(function (data) {
+
+        });
+    };
+
+
+    $scope.clickUpdate = function (updateAdvise) {
         $scope.advise = updateAdvise;
     };
+
+    $scope.clear = function (){
+        $scope.advise = {};
+    };
     
-    function getSuccess(){
+    function getSuccess() {
         alert('Save Success');
     }
-    function getError(){
+    function getError() {
         alert('Error');
     }
 });

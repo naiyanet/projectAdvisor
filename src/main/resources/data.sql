@@ -23,3 +23,8 @@ insert into CATEGORY_GROUP_COURSE (id, name , category_group_course ) values(CAT
 insert into CATEGORY_GROUP_COURSE (id, name , category_group_course ) values(CATEGORYGROUPCOURSE_SEQ.nextVal,'กลุ่มวิชาชีพพื้นฐาน',2);
 insert into CATEGORY_GROUP_COURSE (id, name , category_group_course ) values(CATEGORYGROUPCOURSE_SEQ.nextVal,'กลุ่มวิชาชีพบังคับ',2);
 insert into CATEGORY_GROUP_COURSE (id, name , category_group_course ) values(CATEGORYGROUPCOURSE_SEQ.nextVal,'กลุ่มวิชาชีพเลือก',2);
+
+insert into CATEGORYADVISE(id,name_Category) values(CATEGORYADVISE_SEQ.nextVal,'หมวดวิชาการ');
+insert into CATEGORYADVISE(id,name_Category) values(CATEGORYADVISE_SEQ.nextVal,'หมวดกิจกรรม');
+insert into CATEGORYADVISE(id,name_Category) values(CATEGORYADVISE_SEQ.nextVal,'หมวดทั่วไป');
+insert into CATEGORYADVISE(id,name_Category) values(CATEGORYADVISE_SEQ.nextVal,'อื่น ๆ ');

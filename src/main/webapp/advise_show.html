@@ -35,15 +35,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
+                                <tr ng-repeat="advi in adviseshow">
+                                    <td>{{advi.idSubject}}</td>
+                                    <td>{{advi.date}}</td>
+                                    <td>{{advi.title}}</td>
+                                    <th>{{advi.detail}}</th>
+                                    <th>{{advi.}}</th>
+                                    <th>{{}}</th>
+                                    <th>{{}}</th>
+                                    <th>{{}}</th>
                                 </tr>
                             </tbody>
                         </table>

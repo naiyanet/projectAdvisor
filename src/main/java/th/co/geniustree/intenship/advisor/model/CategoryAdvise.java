@@ -7,6 +7,7 @@ package th.co.geniustree.intenship.advisor.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,8 +33,13 @@ public class CategoryAdvise implements Serializable {
     @SequenceGenerator(name = "CATEGORYADVISE", sequenceName = "CATEGORYADVISE_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "CATEGORYADVISE", strategy = GenerationType.SEQUENCE)
     private Integer id;
-
-    private String categoryName;
+    
+    
+    private String nameCategory;
+    
+    @OneToMany(mappedBy = "categoryAdvise")
+    @JsonIgnore
+    private List<Advise> advises;
     
     
     private Advise advise;
@@ -42,16 +48,25 @@ public class CategoryAdvise implements Serializable {
         return id;
     }
 
+    public String getNameCategory() {
+        return nameCategory;
+    }
+
+    public void setNameCategory(String nameCategory) {
+        this.nameCategory = nameCategory;
+    }
+    
+    
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public List<Advise> getAdvises() {
+        return advises;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setAdvises(List<Advise> advises) {
+        this.advises = advises;
     }
 
     public Advise getAdvise() {
