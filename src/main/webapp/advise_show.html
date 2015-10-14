@@ -20,30 +20,27 @@
                             </select>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <table class="table table-striped table-hover ">
                             <thead>
                                 <tr>                           
-                                    <th>นักศึกษา</th>
-                                    <th>วันที่-เวลา</th>
-                                    <th>ชื่อเรื่อง</th>
-                                    <th>หมวด</th>
-                                    <th>รายละเอียดคำปรึกษา</th>
-                                    <th>คำอธิบาย</th>
-                                    <th>edit</th>
-                                    <th>delete</th>
+                                    <td>นักศึกษา</td>
+                                    <td>วันที่-เวลา</td>
+                                    <td>ชื่อเรื่อง</td>
+                                    <td>หมวด</td>
+                                    <td>รายละเอียดคำปรึกษา</td>
+                                    <td>edit</td>
+                                    <td>delete</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="advi in adviseshow">
+                                <tr ng-repeat="advi in adviseshow.content">
                                     <td>{{advi.idSubject}}</td>
                                     <td>{{advi.date}}</td>
                                     <td>{{advi.title}}</td>
-                                    <th>{{advi.detail}}</th>
-                                    <th>{{advi.}}</th>
-                                    <th>{{}}</th>
-                                    <th>{{}}</th>
-                                    <th>{{}}</th>
+                                    <td>{{advi.categoryAdvise.nameCategory}}</td>
+                                    <td>{{advi.detail}}</td>
                                 </tr>
                             </tbody>
                         </table>

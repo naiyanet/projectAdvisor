@@ -27,6 +27,7 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
     function getAdvise() {
         $http.get('/getadvise').success(function (data) {
             $scope.adviseshow = data;
+            console.log('..........................'+data);
         }).error(function (data) {
 
         });
@@ -34,6 +35,7 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
     ;
     
     getAdviseCategory();
+    
     $scope.advisecateshow = {};
     function getAdviseCategory() {
         $http.get('/getcategory').success(function (data) {

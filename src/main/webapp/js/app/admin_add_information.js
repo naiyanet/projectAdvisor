@@ -4,9 +4,19 @@ angular.module('admin_add_information').controller('admin_add_informationControl
     $scope.information = {};
 
     $scope.saveInfor = function () {
-        $http.post('/saveinformation', $scope.information).success(getSuccess()).error(getError());
-
+        $http.post('/saveinformation', $scope.information).success(function (data) {
+            getSuccess();
+            getInformation();
+            console.log(data);
+            $scope.clear();
+        });
     };
+
+
+    $scope.clear = function () {
+        $scope.information = {};
+    };
+
 
 
     $scope.delInformation = {};
@@ -22,6 +32,8 @@ angular.module('admin_add_information').controller('admin_add_informationControl
     function getInformation() {
         $http.get('/getinformation').success(function (data) {
             $scope.informationshow = data;
+        }).error(function (data){
+            
         });
     }
     ;

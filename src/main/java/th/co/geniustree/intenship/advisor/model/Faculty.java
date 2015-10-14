@@ -70,6 +70,23 @@ public class Faculty implements Serializable {
         this.name = name;
     }
 
+    public List<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
+    }
+
+    public List<Teacher> getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(List<Teacher> teacher) {
+        this.teacher = teacher;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;

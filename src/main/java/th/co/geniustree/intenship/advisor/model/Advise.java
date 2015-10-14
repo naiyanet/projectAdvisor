@@ -100,9 +100,7 @@ public class Advise implements Serializable{
     public void setCategoryAdvise(CategoryAdvise categoryAdvise) {
         this.categoryAdvise = categoryAdvise;
     }
-
-   
-    
+  
     @Override
     public int hashCode() {
         int hash = 7;

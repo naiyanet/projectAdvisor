@@ -55,12 +55,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="text" class="col-lg-2 control-label">คำอธิบาย</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" ng-model="advise.description">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="inputFile" class="col-lg-2 control-label">File</label>
                                 <div class="col-lg-10">
                                     <!--<input type="submit" id="input-picture" readonly="" class="form-control floating-label" placeholder="Browse...">-->
@@ -88,26 +82,28 @@
             <table class="table table-striped table-hover ">
                 <thead>
                     <tr>
-                        <th>ลำดับ</th>
-                        <th>รหัสนักศึกษา</th>
-                        <th>ชื่อนักกศึกษา</th>
-                        <th>วันที่</th>
-                        <th>ชื่อเรื่อง</th>
-                        <th>Delete</th>
+                        <td>รหัสนักศึกษา</td>
+                        <td>ชื่อนักศึกษา</td>
+                        <td>วันที่</td>
+                        <td>หมวด</td>
+                        <td>ชื่อเรื่อง</td>
+                        <td>รายละเอียด</td>
+                        <td>Delete</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="ad in adviseshow.content">
-                        <th>{{ad.id}}</th>
-                        <th> </th>
-                        <th>{{ad.idSubject}}</th>
-                        <th>{{ad.date}}</th>
-                        <th>{{ad.title}}</th>
-                        <th>
+                        <td></td>
+                        <td>{{ad.idSubject}}</td>
+                        <td>{{ad.date}}</td>
+                        <td>{{}}</td>
+                        <td>{{ad.title}}</td>
+                        <td>{{ad.detail}}</td>
+                        <td>
                             <button class="btn" ng-click="deleteAdvise(ad)">
                                 <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete
                             </button>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
