@@ -1,7 +1,9 @@
-var app = angular.module('app', ['ngRoute', 'student','home', 'add_User', 'admin_add_information',
-                        'advise', 'appointment', 'behavior', 'course', 'course_add', 'course_subject_1', 
-                        'course_subject_2', 'course_subject_3', 'course_subject_4', 'parent', 'teacher', 
-                        'timetable', 'checklist-model']);
+var app = angular.module('app', ['ngRoute', 'home', 'add_user','admin_add_information',
+                                 'advise', 'appointment', 'behavior', 'course', 
+                                 'course_add', 'course_subject_1', 'course_subject_2', 'course_subject_3', 
+                                 'course_subject_4', 
+                                 'parent', 'teacher','student',
+                                 'timetable', 'checklist-model']);
         
 var app = angular.module('app');
 
@@ -15,13 +17,21 @@ app.config(function ($routeProvider) {
                 controller: 'homeController',
                 templateUrl: 'home.html'
             })
-            .when('/admin_add_user', {
-                controller: 'add_UserController',
-                templateUrl: 'admin_add_user.html'
-            })
             .when('/user_show', {
-                controller: 'add_UserController',
+                controller: 'add_userController',
                 templateUrl: 'admin_user_show.html'
+            })
+            .when('/parent', {
+                controller: 'parentController',
+                templateUrl: 'admin_add_parent.html'
+            })
+            .when('/student', {
+                controller: 'studentController',
+                templateUrl: 'admin_add_student.html'
+            })
+            .when('/teacher', {
+                controller: 'teacherController',
+                templateUrl: 'admin_add_teacher.html'
             })
             .when('/admin_add_information', {
                 controller: 'admin_add_informationController',
@@ -79,15 +89,15 @@ app.config(function ($routeProvider) {
                 controller: 'course_subject_4Controller',
                 templateUrl: 'course_subject_4.html'
             })
-            .when('/parent', {
+            .when('/parent_show', {
                 controller: 'parentController',
                 templateUrl: 'parent_show.html'
             })
-            .when('/student', {
+            .when('/student_show', {
                 controller: 'studentController',
                 templateUrl: 'student_show.html'
             })
-            .when('/teacher', {
+            .when('/teacher_show', {
                 controller: 'teacherController',
                 templateUrl: 'teacher_show.html'
             })
