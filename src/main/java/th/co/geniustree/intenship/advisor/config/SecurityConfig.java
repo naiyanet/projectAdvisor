@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import th.co.geniustree.intenship.advisor.service.MyUserDetailService;
 
 /**
  *
@@ -24,7 +25,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
-    private UserDetailsService userDetailsService;
+    private MyUserDetailService userDetailsService;
     
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,7 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
+        http.csrf().disable().formLogin().loginPage("/login.html").
+                loginProcessingUrl("/login").usernameParameter("email").passwordParameter("password")
+                .defaultSuccessUrl("/index.html").permitAll().and().logout().logoutUrl("/logout").and()
+                .authorizeRequests().anyRequest().authenticated();
     }
 
     @Override

@@ -29,7 +29,7 @@ public class TeacherController {
     public Page<Teacher> getParent(Pageable pageable){
         return teacherRepo.findAll(pageable);
     } 
-    @RequestMapping(value = "/saveTeacher",method = RequestMethod.POST)
+    @RequestMapping(value = "/saveteacher",method = RequestMethod.POST)
     public void saveTeacher(@Validated @RequestBody Teacher teacher){
         teacherRepo.save(teacher);
     }

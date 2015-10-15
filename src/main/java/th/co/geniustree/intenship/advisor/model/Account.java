@@ -6,6 +6,8 @@
 package th.co.geniustree.intenship.advisor.model;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -20,6 +22,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
@@ -29,7 +32,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name = "ACCOUNT")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-public class Account implements UserDetails , Serializable{
+public class Account implements Serializable , UserDetails{
     @Id
     @SequenceGenerator(name = "ACCOUNT", sequenceName = "ACCOUNT_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "ACCOUNT", strategy = GenerationType.SEQUENCE)
@@ -47,9 +50,10 @@ public class Account implements UserDetails , Serializable{
     private Integer age;
     private String mobile;
     private String address;
+    private boolean enable = true;
    
     @ManyToMany
-    private List<Authority> authorities;
+    private List<Authority> roles;
 
     public Integer getId() {
         return id;
@@ -139,13 +143,23 @@ public class Account implements UserDetails , Serializable{
         this.address = address;
     }
 
-    public List<Authority> getAuthorities() {
-        return authorities;
+    public boolean isEnable() {
+        return enable;
     }
 
-    public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
+
+    public List<Authority> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Authority> roles) {
+        this.roles = roles;
+    }
+ 
+    
 
     @Override
     public int hashCode() {
@@ -176,23 +190,30 @@ public class Account implements UserDetails , Serializable{
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+       return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+       return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+       return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return enable;
     }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+       return Collections.emptySet();
+    }
+
+   
     
     
 }

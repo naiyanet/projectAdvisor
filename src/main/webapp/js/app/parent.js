@@ -7,7 +7,7 @@ angular.module('parent').controller('parentController',function($scope,$http){
     
     
     
-    $scope.save = function(){
+    $scope.saveParent = function(){
         $http.post('/saveparent',$scope.parent).success(getSuccess()).error(getError());
     };
     

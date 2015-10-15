@@ -9,100 +9,22 @@
         <meta name="author" content="">
 
         <title>Project Advisor</title>
-        <link rel="stylesheet" href="../material/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../material/dist/css/material.min.css">
-        <link rel="stylesheet" href="../material/dist/css/material-fullpalette.min.css">
-        <link rel="stylesheet" href="../material/dist/css/ripples.min.css">
-        <link rel="stylesheet" href="../material/dist/css/roboto.min.css">
-        <script src="../material/jquery-2.1.4.min.js"></script>
+      
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
-                <div class="container">
-                    <div class="navbar-header">
-                        <img src="image/logo-w.png" height="100" width="150">
-                        <a class="navbar-brand" href="home.html">
-                            <h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา
-                        </a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <form class="navbar-form navbar-right">
-
-                            <div class="form-group">
-                                <input type="text" placeholder="Email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" placeholder="Password" class="form-control">
-                            </div>
-                            <a href="login.html">
-                                <button type="submit" class="btn btn-success">Sign in</button></a>  
-
-                            <h4 align="right"><a href="http://www.rmutk.ac.th/" class="text-success">Rajamangala University of Technology krungthep</a></h4>
-                        </form>
-
-                    </div>
-                </div>
-            </nav>
-
-        <div class="container">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped" style="width: 100%"></div>
-            </div>
-            
-            <form class="form-horizontal">
-                <h1 class="form-signin-heading"><center>Please sign in</center></h1>
-                <br>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Checkbox
-                    </label>
-                </div>
-                <br>
-                <div class="togglebutton">
-                    <label>
-                        <input type="checkbox" checked=""> Toggle button
-                    </label>
-                </div>
-            </div>
+        <form action="/login" method="post">
+            <div>
+            user:
+            <input type="text" name="email">
         </div>
-                <br>
-                <button class="btn btn-lg btn-success" type="submit">Sign in</button>
-            </form>
-            
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped" style="width: 100%"></div>
-            </div>
-            <div class="container">
-
-                <footer>
-                    <p>&copy; Advisor 2015</p>
-                </footer>
-            </div>
-        </div> 
-        <script src="../material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-        <script src="../material/dist/js/material.min.js"></script>
-        <script src="../material/dist/js/ripples.min.js"></script>
-
+        <div>
+            password:
+            <input type="text" name="password">
+        </div>
+        <div>
+            <input type="submit" value="login">
+        </div>
+        </form>
     </body>
 </html>

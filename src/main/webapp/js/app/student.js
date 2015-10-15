@@ -4,8 +4,10 @@ angular.module('student').controller('studentController', function ($scope, $htt
     
     $scope.student = {};
     
-    $scope.save = function(){
-        $http.post('/savestudent',$scope.student).success(getSuccess()).error(getError());
+    $scope.saveStudent = function(){
+        $http.post('/savestudent',$scope.student).success(function (data){
+            getSuccess();
+        }).error(getError());
     };
     
     $scope.delStudent = {};

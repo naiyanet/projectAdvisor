@@ -1,7 +1,7 @@
 
--- INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS) 
---         values(ACCOUNT_SEQ.nextVal,'somying','somyinggh@login','098888888','chonburi');
--- 
+INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
+        values(ACCOUNT_SEQ.nextVal,'somying','somyinggh@login','098888888','chonburi','1234','Teacher',1);
+
 -- INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS)
 --         values(ACCOUNT_SEQ.nextVal,'somchai','somchaigh@login','0988889999','bangkok');
 -- 
@@ -10,6 +10,8 @@
 
 INSERT INTO FACULTY(ID,NAME) 
         values(FACULTY_SEQ.nextVal,'computer technology');
+
+
 
 insert into category_course (id, category_course_name ) values(CATEGORYCOURSE_SEQ.nextVal,'หมวดศึกษาทั่วไป');
 insert into category_course (id, category_course_name ) values(CATEGORYCOURSE_SEQ.nextVal,'หมวดวิชาเฉพาะ');

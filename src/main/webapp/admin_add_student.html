@@ -37,14 +37,14 @@
                                     <label class="col-md-3 control-label "> ชื่อผู้ใช้งาน :</label>
 
                                     <div class="col-md-2">
-                                        <input type="username" class="form-control" placeholder="Enter Name"ng-model="user.name">
+                                        <input type="username" class="form-control" placeholder="Enter Name"ng-model="student.name">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> รหัสผ่าน :</label>
                                 <div class="col-md-2">
-                                    <input type="password" ng-change="checkPassword()" class="form-control" placeholder="Enter PassWord"ng-model="user.password">
+                                    <input type="password" ng-change="checkPassword()" class="form-control" placeholder="Enter PassWord"ng-model="student.password">
                                 </div>
                             </div>
                             <div class="form-group"> <i id="confirm" class=""></i>
@@ -57,7 +57,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> อีเมล์ :</label>
                                 <div class="col-md-2">
-                                    <input type="email" class="form-control" placeholder="Enter Email"ng-model="user.email">
+                                    <input type="email" class="form-control" placeholder="Enter Email"ng-model="student.email">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -76,7 +76,7 @@
                                 <label class="col-md-2 control-label"></label>
                                 <div class="col-md-3">
 
-                                    <input value="Save" type="submit" class="btn btn-success"   ng-click="saveUser()">
+                                    <input value="Save" type="submit" class="btn btn-success"   ng-click="saveStudent()">
                                     <input value="Clear" type="submit" class="btn btn-info" ng-click="clearUser()">
                                 </div>
                             </div>

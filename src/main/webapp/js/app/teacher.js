@@ -7,7 +7,7 @@ angular.module('teacher').controller('teacherController',function($scope,$http){
     
     
     
-    $scope.save = function(){
+    $scope.saveTeacher = function(){
         $http.post('/saveteacher',$scope.teacher).success(getSuccess()).error(getError());
     };
     
