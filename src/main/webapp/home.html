@@ -8,7 +8,9 @@
 <div class="col-md-10" ng-app="admin_add_information" ng-controller="admin_add_informationController">
     <div class="panel panel-success">
         <div class="panel-heading">
+            <span class="mdi-action-home">
             <h3 class="panel-title">ประชาสัมพันธ์</h3>
+            </span>
         </div>
         <div class="panel-body">
             <ul class="nav nav-pills">
@@ -18,14 +20,16 @@
             </ul>
             <div class="containerbg-">
                 <div class="jumbotron" style="width:100%px;color:#7E7E7E;background-color: #c9e2b3">
-                    <h1>UTK</h1>
+                    
                     <p>RAJAMANGALA UNIVERSITY OF TECHNOLOGY KRUNGTHEP</p> 
 
                     <div class="containerbg- ">
                         <div class="row">
                             <div class="col-sm-4" ng-repeat="news in informationshow.content">
 
-                                <h3 class="jumbotron" style="color:white;background-color: #31A761">{{news.title}}</h3>
+                                <h3 class="jumbotron" style="color:white;background-color: #31A761">
+                                {{news.title}}
+                                </h3>
                                 <p>{{news.startTime}}</p>
                                 <p>{{news.pageBrief}}</p>
                                 <p>{{news.file}}</p>
@@ -42,7 +46,9 @@
 
     <div class="panel panel-success">
         <div class="panel-heading">
+            <span class="mdi-action-today">
             <h3 class="panel-title">Calendar</h3>
+            </span>
         </div>
         <div class="panel-body">
 

@@ -1,80 +1,67 @@
-<link rel="stylesheet" href="calendar/jquery-ui.css" />
-<link rel="stylesheet" href="calendar/jquery-ui-timepicker-addon.css" />
-<script src="calendar/jquery-1.10.2.min.js"></script>
-<script src="calendar/jquery-ui.min.js"></script>
-<script src="calendar/jquery-ui-timepicker-addon.js"></script>
-<script src="calendar/jquery-ui-sliderAccess.js"></script>
 
 <div class="col-md-10">
+   
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="list-group-item-heading">เพิ่มการให้คำปรึกษา</h4>
+        </div>
+        <div class="panel-body">
+            <p class="list-group-item-text">
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="text" class="col-lg-2 control-label">นักศึกษา</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" ng-model="advise.idSubject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-lg-2 control-label">วันที่-เวลา</label>
+                        <div class="col-lg-10" >
+                            <input type="text"  class="form-control" name="dateInputAd" id="dateInputAd" value="" ng-model="advise.date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-lg-2 control-label">ชื่อเรื่อง</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" ng-model="advise.title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-lg-2 control-label">รายละเอียดการให้คำปรึกษา</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" ng-model="advise.detail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-lg-2 control-label">หมวด</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" ng-model="advise.categoryAdvise" ng-options="cat.nameCategory for cat in advisecateshow.content">
 
-    <div id="myTabContent" class="tab-content">
-        <div class="list-group">
-            <div class="list-group-item">
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">เพิ่มการให้คำปรึกษา</h4>
-                    <p class="list-group-item-text">
-                    <form class="form-horizontal">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="text" class="col-lg-2 control-label">นักศึกษา</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" ng-model="advise.idSubject">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="text" class="col-lg-2 control-label">วันที่-เวลา</label>
-                                <div class="col-lg-10" style="z-index: 1000">
-<!--                                    <script type="text/javascript">
-                                                $(function () {
-                                                    $("#dateInputAd").datepicker({
-                                                        dateFormat: 'dd-M-yy'
-                                                    });
-                                                });
-                                    </script>-->
-                                    <input type="text" style="z-index: 2000" class="form-control" name="dateInputAd" id="dateInputAd" value="" ng-model="advise.date">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="text" class="col-lg-2 control-label">ชื่อเรื่อง</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" ng-model="advise.title">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="text" class="col-lg-2 control-label">รายละเอียดการให้คำปรึกษา</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" ng-model="advise.detail">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="text" class="col-lg-2 control-label">หมวด</label>
-                                <div class="col-lg-10">
-                                    <select class="form-control" ng-model="advise.categoryAdvise" ng-options="cat.nameCategory for cat in advisecateshow.content">
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputFile" class="col-lg-2 control-label">File</label>
-                                <div class="col-lg-10">
-                                    <!--<input type="submit" id="input-picture" readonly="" class="form-control floating-label" placeholder="Browse...">-->
-                                    <input type="file" id="input-picture"> 
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <center>
-                                    <button class="btn btn-success" ng-click="saveAdvise()">Save</button>
-                                    <a href="#/advise"><button class="btn btn-danger">Cancle</button></a>
-                                </center>
-                            </div>
-                        </fieldset>
-                    </form>
-                    </p>                                       
-                </div>
-            </div>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFile" class="col-lg-2 control-label">File</label>
+                        <div class="col-lg-10">
+                            <!--<input type="submit" id="input-picture" readonly="" class="form-control floating-label" placeholder="Browse...">-->
+                            <input type="file" id="input-picture"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-success" ng-click="saveAdvise()">Save</button>
+                            <a href="#/advise"><button class="btn btn-danger">Cancle</button></a>
+                        </center>
+                    </div>
+                </fieldset>
+            </form>
+            </p> 
         </div>
     </div>
-    <div class="panel panel-primary">
+
+
+    <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title">คำที่ปรึกษา</h3>
         </div>
@@ -88,6 +75,7 @@
                         <td>หมวด</td>
                         <td>ชื่อเรื่อง</td>
                         <td>รายละเอียด</td>
+                        <td>Edit</td>
                         <td>Delete</td>
                     </tr>
                 </thead>
@@ -96,9 +84,14 @@
                         <td></td>
                         <td>{{ad.idSubject}}</td>
                         <td>{{ad.date}}</td>
-                        <td>{{}}</td>
+                        <td>{{advi.categoryAdvise.nameCategory}}</td>
                         <td>{{ad.title}}</td>
                         <td>{{ad.detail}}</td>
+                        <td>
+                            <button class="btn">
+                                <span class="mdi-editor-mode-edit"></span>&nbsp;&nbsp;Edit
+                            </button>
+                        </td>
                         <td>
                             <button class="btn" ng-click="deleteAdvise(ad)">
                                 <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete

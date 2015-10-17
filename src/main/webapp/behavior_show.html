@@ -1,41 +1,53 @@
 
 <div class="col-md-10">
     <a href="#/behaviorAdd"><button class="btn btn-success">รายงานความประพฤติ</button></a>
-    
-    
-    <div class="input-group">
-        <span class="mdi-action-search">
-        <input type="text" class="form-control" placeholder="Search..." width="0">   
-        </span>                        
+
+    <div class="list-group-item">
+        <div class="row-picture">
+            <span class="mdi-action-search"></span>
+        </div>
+
+        <div class="row-content">
+           <label class="control-label" for="inputSuccess">Search....By name</label>
+            <input type="text" class="form-control" id="inputSuccess" placeholder="input name"></span>
+        </div>
     </div>
-    
-    
     <br>
-    <table class="table table-striped table-hover ">
-        <thead>
-            <tr>
-                <th>ลำดับ</th>
-                <th>นักศึกษา</th>
-                <th>วันที่-เวลา</th>
-                <th>ชื่อเรื่อง</th>
-                <th>รายละเอียดคำปรึกษา</th>
-                <th>คำอธิบาย</th>
-                <th>edit</th>
-                <th>delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Delete</td>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </tbody>
-    </table>
+
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">รายงานความประพฤติ</div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>ชื่อนักศึกษา</th>
+                        <th>วันที่</th>
+                        <th>ชื่อเรื่อง</th>
+                        <th>รายละเอียดความประพฤติ</th>
+                        <th>คำอธิบาย</th>
+                        <th>File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="beha in behaviorshow.content">
+                        <td>{{beha.namestudent}}</td>
+                        <td>{{beha.dates}}</td>
+                        <td>{{beha.title}}</td>
+                        <td>{{beha.detail}}</td>
+                        <td>{{beha.description}}</td>
+                        <td>
+                            <button>
+                                <span class="mdi-file-file-download"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+
 
 </div>
