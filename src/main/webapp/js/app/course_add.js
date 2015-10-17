@@ -41,6 +41,8 @@ angular.module('course').controller('courseController', function ($scope, $http)
         $http.post('/saveselectcategory', $scope.select).success(function (data) {
             getSuccess();
             $scope.clear();
+        }).error(function (){
+            getError();
         });
     };
 

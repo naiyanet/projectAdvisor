@@ -1,8 +1,7 @@
 var app = angular.module('app', ['ngRoute', 'home', 'add_user','admin_add_information',
                                  'advise', 'appointment', 'behavior', 'course', 
                                  'course_add', 'course_subject_1', 'course_subject_2', 'course_subject_3', 
-                                 'course_subject_4', 
-                                 'parent', 'teacher','student',
+                                 'course_subject_4', 'parent', 'teacher','student',
                                  'timetable', 'checklist-model']);
         
 var app = angular.module('app');

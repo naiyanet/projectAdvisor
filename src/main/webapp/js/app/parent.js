@@ -1,58 +1,63 @@
-angular.module('parent',[]);
-angular.module('parent').controller('parentController',function($scope,$http){
-    
-    
-    
+angular.module('parent', []);
+angular.module('parent').controller('parentController', function ($scope, $http) {
+
     $scope.parent = {};
-    
-    
-    
-    $scope.saveParent = function(){
-        $http.post('/saveparent',$scope.parent).success(getSuccess()).error(getError());
-    };
-    
-    
-    
-    
-    $scope.delParent = {};
-    $scope.deleteParent = function (){
-        $http.post('/deleteparent',$scope.parent).success(getSuccess()).error(getError());
-    };
-    
-    $scope.delParent = function (rowparent) {
-        $http.post('/deleteparent', rowparent).success(function (data) {
+
+    $scope.saveParent = function () {
+        $http.post('/saveParent', $scope.parent).success(function (data) {
+            getSuccess();
             getParent();
+            console.log(data);
+            $scope.clear();
         }).error(function (data) {
-            alert('ลบไม่สำเร็จ');
+            getError();
         });
     };
-    
+
+    $scope.clear = function () {
+        $scope.parent = {};
+    };
+
+    $scope.delParent = {};
+    $scope.deleteParent = function (delparent) {
+        $http.post('/deleteparent', delparent).success(function (data) {
+            getParent();
+        }).error(function (data) {
+            getError();
+        });
+    };
+
+
     getParent();
-    
-    
-    
+
+
     $scope.parentshow = {};
-        function getParent(){
-            $http.get('/getparent').success(function(data){
-                $scope.parentshow = data;
-            }).error(function(data){
-                
-            });
-        };
-    
-    
-    
-    
-    $scope.clickUpdate = function(updateParent){
+    function getParent() {
+        $http.get('/parent').success(function (data) {
+            $scope.parentshow = data;
+        }).error(function (data) {
+            getError();
+        });
+    }
+    ;
+
+    $scope.clickUpdate = function (updateParent) {
         $scope.parent = updateParent;
     };
     
     
+    $scope.clearUser = function () {
+        $scope.user = {};
+        $scope.password = "";
+        checkPassword();
+    };
     
-    function getSuccess(){
+    
+
+    function getSuccess() {
         alert('Save Success');
     }
-    function getError(){
+    function getError() {
         alert('Error');
     }
 });

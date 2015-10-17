@@ -37,18 +37,18 @@
                         <thead>
                             <tr>
                                 <th>ชื่อผู้ใช้งาน</th>
+                                <th>อีเมล์</th>
                                 <th>รหัสผ่าน</th>
                                 <th>กำหนดสิทธิ์</th>
-                                <th>รายละเอียด</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="us in usershow.content">
+                                <td>{{us.name}}</td>
                                 <td>{{us.email}}</td>
                                 <td>{{us.password}}</td>
-                                <td></td>
                                 <td></td>
                                 <td><span class="mdi-image-edit"></span></td>
                                 <td><span class="mdi-action-delete" ng-click="deleteUser(us)"></span></td>

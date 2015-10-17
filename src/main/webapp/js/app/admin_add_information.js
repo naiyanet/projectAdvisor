@@ -20,7 +20,6 @@ angular.module('admin_add_information').controller('admin_add_informationControl
     $scope.delInformation = {};
     $scope.deleteInformation = function (del_information) {
         $http.post('/deleteinformation', del_information).success(function (data) {
-            getSuccess();
             getInformation();
         }).error(function (data) {
             getError();

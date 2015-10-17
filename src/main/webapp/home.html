@@ -9,7 +9,7 @@
     <div class="panel panel-success">
         <div class="panel-heading">
             <span class="mdi-action-home">
-            <h3 class="panel-title">ประชาสัมพันธ์</h3>
+                <h3 class="panel-title">ประชาสัมพันธ์</h3>
             </span>
         </div>
         <div class="panel-body">
@@ -20,21 +20,20 @@
             </ul>
             <div class="containerbg-">
                 <div class="jumbotron" style="width:100%px;color:#7E7E7E;background-color: #c9e2b3">
-                    
+                    <center>
                     <p>RAJAMANGALA UNIVERSITY OF TECHNOLOGY KRUNGTHEP</p> 
-
+                    </center>
                     <div class="containerbg- ">
                         <div class="row">
                             <div class="col-sm-4" ng-repeat="news in informationshow.content">
-
-                                <h3 class="jumbotron" style="color:white;background-color: #31A761">
-                                {{news.title}}
-                                </h3>
-                                <p>{{news.startTime}}</p>
-                                <p>{{news.pageBrief}}</p>
-                                <p>{{news.file}}</p>
-                                <p>{{news.description}}</p>
-                                <p><a href="{{news.linkWeb}}">{{news.linkWeb}}</a></p>
+                                <div class="jumbotron" style="color:white;background-color: #31A761;font-size: large" >
+                                    {{news.title}}
+                                </div>
+                                <p style="font-size: medium">{{news.startTime}}</p>
+                                <p style="font-size: medium">{{news.pageBrief}}</p>
+                                <p style="font-size: medium">{{news.file}}</p>
+                                <p style="font-size: medium">{{news.description}}</p>
+                                <p style="font-size: medium"><a href="{{news.linkWeb}}">{{news.linkWeb}}</a></p>
                             </div>
 
                         </div>
@@ -47,7 +46,7 @@
     <div class="panel panel-success">
         <div class="panel-heading">
             <span class="mdi-action-today">
-            <h3 class="panel-title">Calendar</h3>
+                <h3 class="panel-title">Calendar</h3>
             </span>
         </div>
         <div class="panel-body">

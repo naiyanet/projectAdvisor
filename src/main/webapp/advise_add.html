@@ -84,17 +84,17 @@
                         <td></td>
                         <td>{{ad.idSubject}}</td>
                         <td>{{ad.date}}</td>
-                        <td>{{advi.categoryAdvise.nameCategory}}</td>
+                        <td>{{ad.categoryAdvise.nameCategory}}</td>
                         <td>{{ad.title}}</td>
                         <td>{{ad.detail}}</td>
                         <td>
-                            <button class="btn">
-                                <span class="mdi-editor-mode-edit"></span>&nbsp;&nbsp;Edit
+                            <button >
+                                <span class="mdi-editor-mode-edit"></span>
                             </button>
                         </td>
                         <td>
-                            <button class="btn" ng-click="deleteAdvise(ad)">
-                                <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete
+                            <button ng-click="deleteAdvise(ad)">
+                                <span class="mdi-action-delete"></span>
                             </button>
                         </td>
                     </tr>

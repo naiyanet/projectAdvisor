@@ -16,10 +16,7 @@ $scope.CourseSubjectClassOne = {};
         });
         
     };
-    
-    
-
-    
+      
     $scope.clear = function () {
         $scope.CourseSubjectClassOne = {};
     };

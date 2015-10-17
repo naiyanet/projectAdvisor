@@ -1,60 +1,59 @@
-angular.module('teacher',[]);
-angular.module('teacher').controller('teacherController',function($scope,$http){
-    
-    
-    
+angular.module('teacher', []);
+angular.module('teacher').controller('teacherController', function ($scope, $http) {
+
     $scope.teacher = {};
-    
-    
-    
-    $scope.saveTeacher = function(){
-        $http.post('/saveteacher',$scope.teacher).success(getSuccess()).error(getError());
-    };
-    
-    
-    
-    
-    $scope.delTeacher = {};
-    $scope.deleteTeacher = function (){
-        $http.post('/deleteteacher',$scope.teacher).success(getSuccess()).error(getError());
-    };
-    
-    
-    $scope.delTeacher = function (rowteacher) {
-        $http.post('/deleteteacher', rowteacher).success(function (data) {
+
+    $scope.saveTeacher = function () {
+        $http.post('/saveteacher', $scope.teacher).success(function (data) {
+            getSuccess();
             getTeacher();
+            console.log(data);
+            $scope.clear();
         }).error(function (data) {
-            alert('ลบไม่สำเร็จ');
+            getError();
         });
     };
-    
-    
+
+    $scope.clear = function () {
+        $scope.teacher = {};
+    };
+
+    $scope.delTeacher = {};
+    $scope.deleteTeacher = function (delteacher) {
+        $http.post('/deleteteacher', delteacher).success(function (data) {
+            getTeacher();
+        }).error(function (data) {
+            getError();
+        });
+    };
+
     getTeacher();
-    
-    
-    
+
+
     $scope.teachershow = {};
-        function getTeacher(){
-            $http.get('/getteacher').success(function(data){
-                $scope.teachershow = data;
-            }).error(function(data){
-                
-            });
-        };
-    
-    
-    
-    
-    $scope.clickUpdate = function(updateTeacher){
+    function getTeacher() {
+        $http.get('/teacher').success(function (data) {
+            $scope.teachershow = data;
+        }).error(function (data) {
+
+        });
+    }
+    ;
+
+    $scope.clickUpdate = function (updateTeacher) {
         $scope.teacher = updateTeacher;
     };
-    
-    
-    
-    function getSuccess(){
+
+    $scope.clearUser = function () {
+        $scope.user = {};
+        $scope.password = "";
+        checkPassword();
+    };
+
+    function getSuccess() {
         alert('Save Success');
     }
-    function getError(){
+    function getError() {
         alert('Error');
     }
 });
