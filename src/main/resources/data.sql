@@ -2,11 +2,11 @@
 INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
         values(ACCOUNT_SEQ.nextVal,'somying','somyinggh@login','098888888','chonburi','1234','Teacher',1);
 
--- INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS)
---         values(ACCOUNT_SEQ.nextVal,'somchai','somchaigh@login','0988889999','bangkok');
--- 
--- INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS) 
---         values(ACCOUNT_SEQ.nextVal,'somruk','somruk@login','0988880000','bangkok');
+INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE)
+        values(ACCOUNT_SEQ.nextVal,'somchai','somchaigh@login','0988889999','bangkok','1234','Student',1);
+
+INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
+        values(ACCOUNT_SEQ.nextVal,'somruk','somruk@login','0988880000','bangkok','1234','Parent',1);
 
 INSERT INTO FACULTY(ID,NAME) 
         values(FACULTY_SEQ.nextVal,'computer technology');

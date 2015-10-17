@@ -7,22 +7,23 @@ angular.module('admin_add_information').controller('admin_add_informationControl
         $http.post('/saveinformation', $scope.information).success(function (data) {
             getSuccess();
             getInformation();
-            console.log(data);
             $scope.clear();
+        }).error(function (data) {
+            getError();
         });
     };
-
 
     $scope.clear = function () {
         $scope.information = {};
     };
 
-
-
     $scope.delInformation = {};
     $scope.deleteInformation = function (del_information) {
-        $http.post('/deleteformation', del_information).success(function (data) {
+        $http.post('/deleteinformation', del_information).success(function (data) {
+            getSuccess();
             getInformation();
+        }).error(function (data) {
+            getError();
         });
     };
 
@@ -32,8 +33,8 @@ angular.module('admin_add_information').controller('admin_add_informationControl
     function getInformation() {
         $http.get('/getinformation').success(function (data) {
             $scope.informationshow = data;
-        }).error(function (data){
-            
+        }).error(function (data) {
+
         });
     }
     ;

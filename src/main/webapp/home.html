@@ -17,21 +17,25 @@
                 <li><a href="http://mis.rmutk.ac.th/">ระบบประเมินผลการสอน</a></li>
             </ul>
             <div class="containerbg-">
-                <div class="jumbotron" style="width:850px;color:#7E7E7E;background-color: #c9e2b3">
+                <div class="jumbotron" style="width:100%px;color:#7E7E7E;background-color: #c9e2b3">
                     <h1>UTK</h1>
                     <p>RAJAMANGALA UNIVERSITY OF TECHNOLOGY KRUNGTHEP</p> 
-                </div>
-                <div class="containerbg- ">
-                    <div class="row">
-                        <div class="col-sm-4" ng-repeat="news in informationshow.content">
-                            <h3 class="jumbotron" style="color:white;background-color: #31A761">{{news.title}}</h3>
-                            <p>{{news.pageBrief}}</p>
-                            <p>{{news.description}}</p>
-                            <p><a href="{{news.linkWeb}}">{{news.linkWeb}}</a></p>
-                        </div>
 
+                    <div class="containerbg- ">
+                        <div class="row">
+                            <div class="col-sm-4" ng-repeat="news in informationshow.content">
+
+                                <h3 class="jumbotron" style="color:white;background-color: #31A761">{{news.title}}</h3>
+                                <p>{{news.startTime}}</p>
+                                <p>{{news.pageBrief}}</p>
+                                <p>{{news.file}}</p>
+                                <p>{{news.description}}</p>
+                                <p><a href="{{news.linkWeb}}">{{news.linkWeb}}</a></p>
+                            </div>
+
+                        </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>

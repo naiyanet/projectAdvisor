@@ -6,25 +6,32 @@ $scope.CourseSubjectClassOne = {};
     
     
     $scope.saveCourseSubjectClassOne = function(){
-        $http.post('/savecoursesubjectclassone',$scope.CourseSubjectClassOne).success(getSuccess()).error(getError());
+        $http.post('/savecoursesubjectclassone',$scope.CourseSubjectClassOne).success(function (data) {
+            getSuccess();
+            getCourseSubjectClassOne();
+            console.log(data);
+            $scope.clear();
+        }).error(function (data){
+            getError();
+        });
         
     };
     
     
+
     
-    
-    $scope.delCourseSubjectClassOne= {};
-    $scope.deleteCourseSubjectClassOne = function (){
-        $http.post('/deletecoursesubjectclassone',$scope.CourseSubjectClassOne).success(getSuccess()).error(getError());
+    $scope.clear = function () {
+        $scope.CourseSubjectClassOne = {};
     };
     
-    $scope.delCourseSubjectClassOne = function (rowcourseCourseSubjectClassOne) {
-        $http.post('/deletecoursesubjectclassone', rowcourseCourseSubjectClassOne).success(function (data) {
+    $scope.deleteClassOne = function (delSubjectone){
+        $http.post('/deletecoursesubjectclassone',delSubjectone).success(function(){
             getCourseSubjectClassOne();
-        }).error(function (data) {
+        }).error(function (data){
             alert('ลบไม่สำเร็จ');
         });
     };
+    
     
     getCourseSubjectClassOne();
     

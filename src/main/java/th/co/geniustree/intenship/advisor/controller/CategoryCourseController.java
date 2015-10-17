@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.intenship.advisor.model.CategoryCourse;
+import th.co.geniustree.intenship.advisor.model.Course;
 import th.co.geniustree.intenship.advisor.repo.CategoryCourseRepo;
 
 /**
@@ -30,13 +32,8 @@ public class CategoryCourseController {
         return categoryCourseRepo.findAll(pageable);
     }
     
-//    @RequestMapping(value = "savecategorycourse",method = RequestMethod.POST)
-//    public void saveCategoryCourse(@Validated @RequestBody CategoryCourse categoryCourse){
-//        categoryCourseRepo.save(categoryCourse);
-//    }
-//    
-//    @RequestMapping(value = "deletecategorycourse",method = RequestMethod.POST)
-//    public void deleteCategoryCourse(@RequestBody CategoryCourse categoryCourse){
-//        categoryCourseRepo.delete(categoryCourse);
-//    }
+     @RequestMapping(value = "/deletecategorycourse",method = RequestMethod.POST)
+    public void deleteCourse(@RequestBody CategoryCourse course){
+        categoryCourseRepo.delete(course.getId());
+    }
 }

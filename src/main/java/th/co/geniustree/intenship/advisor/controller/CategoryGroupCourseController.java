@@ -29,14 +29,4 @@ public class CategoryGroupCourseController {
     public Page<CategoryGroupCourse> getCategoryGroupCourse (Pageable pageable){
         return categoryGroupCourseRepo.findAll(pageable);
     }
-    
-//    @RequestMapping(value = "/savecategorygroupcourse",method = RequestMethod.POST)
-//    public void saveCategoryGroupCourse(@Validated @RequestBody CategoryGroupCourse categoryGroupCourse){
-//        categoryGroupCourseRepo.save(categoryGroupCourse);
-//    }
-//    
-//    @RequestMapping(value = "/deletecategorygroupcourse",method = RequestMethod.POST)
-//    public void deleteCategoryGroupCourse(@RequestBody CategoryGroupCourse categoryGroupCourse){
-//        categoryGroupCourseRepo.delete(categoryGroupCourse);
-//    }
 }

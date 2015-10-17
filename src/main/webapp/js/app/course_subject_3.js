@@ -3,27 +3,34 @@ angular.module('course_subject_3').controller('course_subject_3Controller', func
 
 $scope.CourseSubjectClassThree = {};
     
-    
-    
-    $scope.saveCourseSubjectClassThree = function(){
-        $http.post('/savecoursesubjectclassthree',$scope.CourseSubjectClassThree).success(getSuccess()).error(getError());
-    };
-    
-    
-    
-    
-    $scope.delCourseSubjectClassThree= {};
-    $scope.deleteCourseSubjectClassThree = function (){
-        $http.post('/deletecoursesubjectclassthree',$scope.CourseSubjectClassThree).success(getSuccess()).error(getError());
-    };
-    
-    $scope.delCourseSubjectClassThree = function (rowcourseSubjectClassThree) {
-        $http.post('/deletecoursesubjectclassthree', rowcourseSubjectClassThree).success(function (data) {
+
+     $scope.saveCourseSubjectClassThree = function(){
+        $http.post('/savecoursesubjectclassthree',$scope.CourseSubjectClassThree).success(function (data) {
+            getSuccess();
             getCourseSubjectClassThree();
-        }).error(function (data) {
+            console.log(data);
+            $scope.clear();
+        }).error(function (data){
+            getError();
+        });
+        
+    };
+    
+    
+
+    
+    $scope.clear = function () {
+        $scope.CourseSubjectClassThree = {};
+    };
+    
+    $scope.deleteClassThree = function (delSubjectthree){
+        $http.post('/deletecoursesubjectclassthree',delSubjectthree).success(function(){
+            getCourseSubjectClassThree();
+        }).error(function (data){
             alert('ลบไม่สำเร็จ');
         });
     };
+    
     
     getCourseSubjectClassThree();
     

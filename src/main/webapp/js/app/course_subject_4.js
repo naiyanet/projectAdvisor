@@ -4,23 +4,28 @@ angular.module('course_subject_4').controller('course_subject_4Controller', func
 $scope.CourseSubjectClassFour = {};
     
     
-    
+
     $scope.saveCourseSubjectClassFour = function(){
-        $http.post('/savecoursesubjectclassfour',$scope.CourseSubjectClassFour).success(getSuccess()).error(getError());
-    };
-    
-    
-    
-    
-    $scope.delCourseSubjectClassFour= {};
-    $scope.deleteCourseSubjectClassFour = function (){
-        $http.post('/deletecoursesubjectclassfour',$scope.CourseSubjectClassFour).success(getSuccess()).error(getError());
-    };
-    
-    $scope.delCourseSubjectClassFour = function (rowcourseCourseSubjectClassFour) {
-        $http.post('/deletecoursesubjectclassfour', rowcourseCourseSubjectClassFour).success(function (data) {
+        $http.post('/savecoursesubjectclassfour',$scope.CourseSubjectClassFour).success(function (data) {
+            getSuccess();
             getCourseSubjectClassFour();
-        }).error(function (data) {
+            console.log(data);
+            $scope.clear();
+        }).error(function (data){
+            getError();
+        });
+        
+    };
+    
+   
+    $scope.clear = function () {
+        $scope.CourseSubjectClassFour = {};
+    };
+    
+    $scope.deleteClassFour = function (delSubjectfour){
+        $http.post('/deletecoursesubjectclassfour',delSubjectfour).success(function(){
+            getCourseSubjectClassFour();
+        }).error(function (data){
             alert('ลบไม่สำเร็จ');
         });
     };
