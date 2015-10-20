@@ -29,7 +29,8 @@ public class Advise implements Serializable{
     private String idSubject;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date date;
+    private Date dates;
+    
     private String title;
     private String detail;
     private String description;
@@ -61,12 +62,12 @@ public class Advise implements Serializable{
         this.idSubject = idSubject;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDates() {
+        return dates;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDates(Date dates) {
+        this.dates = dates;
     }
 
     public String getTitle() {

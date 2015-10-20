@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -27,7 +28,9 @@ public class Information implements Serializable{
     @SequenceGenerator(name = "INFORMATION" , sequenceName = "INFORMATION_SEQ",allocationSize=1)
     @GeneratedValue(generator = "INFORMATION",strategy = GenerationType.SEQUENCE)
     private Integer id;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date startTime;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date endTime;
     private String file;
     private String title;

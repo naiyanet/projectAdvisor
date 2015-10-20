@@ -24,7 +24,7 @@
                     <div class="form-group">
                         <label for="text" class="col-lg-2 control-label">วันที่-เวลา</label>
                         <div class="col-lg-10" >
-                            <input type="text"  class="form-control" name="dateInputAd" id="dateInputAd" value="" ng-model="advise.date">
+                             <input class="datepicker-custom form-control" type="text" ng-model="advise.dates">
                         </div>
                     </div>
                     <div class="form-group">
@@ -74,7 +74,6 @@
             <table class="table table-striped table-hover ">
                 <thead>
                     <tr>
-                        <td>รหัสนักศึกษา</td>
                         <td>ชื่อนักศึกษา</td>
                         <td>วันที่</td>
                         <td>หมวด</td>
@@ -86,9 +85,8 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="ad in adviseshow.content">
-                        <td></td>
-                        <td>{{ad.idSubject}}</td>
-                        <td>{{ad.date}}</td>
+                        <td>{{}}</td>
+                        <td>{{ad.dates}}</td>
                         <td>{{ad.categoryAdvise.nameCategory}}</td>
                         <td>{{ad.title}}</td>
                         <td>{{ad.detail}}</td>

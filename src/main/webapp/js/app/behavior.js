@@ -59,4 +59,11 @@ angular.module('behavior').controller('behaviorController', function ($scope, $h
         alert('Error');
     }
     
+    
+     $('.datepicker-custom').datepicker({
+        changeYear:true,
+        yearRange:'-100:+100',
+        dateFormat: 'yy-mm-dd'
+    });
+    
 });

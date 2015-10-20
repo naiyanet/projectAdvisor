@@ -64,4 +64,12 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
     function getError() {
         alert('Error');
     }
+    
+    $('.datepicker-custom').datepicker({
+        changeYear:true,
+        yearRange:'-100:+100',
+        dateFormat: 'yy-mm-dd'
+    });
+    
+    
 });

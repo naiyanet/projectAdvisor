@@ -50,7 +50,9 @@ angular.module('admin_add_information').controller('admin_add_informationControl
         alert('Error');
     }
 
-    $('.datepicker.form-control').datepicker({
+
+
+    $('.datepicker-custom').datepicker({
         changeYear:true,
         yearRange:'-100:+100',
         dateFormat: 'yy-mm-dd'

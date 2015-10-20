@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -22,7 +23,10 @@ public class Behavior implements Serializable {
     @SequenceGenerator(name = "BEHAVIOR", sequenceName = "BEHAVIOR_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "BEHAVIOR", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dates;
+    
     private String title;
     private String detail;
     private String description;
