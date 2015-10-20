@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.intenship.advisor.model.Parent;
+import th.co.geniustree.intenship.advisor.repo.AccountRepo;
 import th.co.geniustree.intenship.advisor.repo.ParentRepo;
+import th.co.geniustree.intenship.advisor.service.ParentSearchService;
 
 /**
  *
@@ -24,6 +26,10 @@ import th.co.geniustree.intenship.advisor.repo.ParentRepo;
 public class ParentController {
     @Autowired
     private ParentRepo parentRepo;
+    @Autowired
+    private ParentSearchService parentSearchService;
+    @Autowired
+    private AccountRepo accountRepo;
     
     @RequestMapping(value = "/parent", method = RequestMethod.GET)
     public Page<Parent> getParent(Pageable pageable){
@@ -39,6 +45,11 @@ public class ParentController {
     }
     @RequestMapping(value = "/parent/search", method = RequestMethod.POST)
     public Page<Parent> searchParent(@RequestBody String keyword, Pageable pageable) {
-        return parentRepo.findByNameOrEmail(keyword, keyword, pageable);
+        return parentSearchService.searchByNameOrEmail(keyword, pageable);
+    }
+    
+    @RequestMapping(value = "/countparent",method = RequestMethod.GET)
+    public Long countParent (Pageable pageable){
+        return accountRepo.findByDtype("Parent", pageable).getTotalElements();
     }
 }

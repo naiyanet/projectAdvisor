@@ -17,6 +17,6 @@ import th.co.geniustree.intenship.advisor.model.Parent;
  */
 public interface ParentRepo extends JpaRepository<Parent, Integer>,JpaSpecificationExecutor<Parent>{
 
-    public Page<Parent> findByNameOrEmail(String keyword, String keyword0, Pageable pageable);
+   // public Page<Parent> findByNameOrEmail(String keyword, String keyword0, Pageable pageable);
     
 }

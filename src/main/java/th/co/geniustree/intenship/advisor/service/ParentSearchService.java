@@ -22,10 +22,12 @@ import th.co.geniustree.intenship.advisor.spec.ParentSpec;
 public class ParentSearchService {
     @Autowired
     private ParentRepo parentRepo;
-    public Page<Parent> search(String keyword, Pageable pageable){
+    
+    public Page<Parent> searchByNameOrEmail(String keyword, Pageable pageable){
 
         Specifications<Parent> specification = Specifications.where(ParentSpec.nameLike("%"+keyword+"%"))
                 .or(ParentSpec.emailLike("%"+keyword+"%"));
         return  parentRepo.findAll(specification,pageable);
     }
+
 }
