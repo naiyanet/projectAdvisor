@@ -13,7 +13,7 @@
                 <li  class="active"><a href="#/student">เพิ่มนักศึกษา</a></li>
                 <li><a href="#/parent">เพิ่มผู้ปกครอง</a></li>
                 <li><a href="#/user_show">ข้อมูลผู้ใช้งานระบบ</a></li>
-                
+
             </ul>
         </li>
     </ul>
@@ -58,6 +58,13 @@
                                 <label class="col-md-3 control-label"> อีเมล์ :</label>
                                 <div class="col-md-2">
                                     <input type="email" class="form-control" placeholder="Enter Email"ng-model="student.email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"> อาจารย์ที่ปรึกษา :</label>
+                                <div class="col-md-2">
+                                    <select class="form-control" ng-model="student.teacher" ng-options="tea.name for tea in teacher.content">
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">

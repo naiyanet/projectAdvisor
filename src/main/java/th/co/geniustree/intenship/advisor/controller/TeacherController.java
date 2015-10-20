@@ -26,7 +26,7 @@ public class TeacherController {
     private TeacherRepo teacherRepo;
     
     @RequestMapping(value = "/teacher",method = RequestMethod.GET)
-    public Page<Teacher> getParent(Pageable pageable){
+    public Page<Teacher> getTeacher(Pageable pageable){
         return teacherRepo.findAll(pageable);
     } 
     @RequestMapping(value = "/saveteacher",method = RequestMethod.POST)

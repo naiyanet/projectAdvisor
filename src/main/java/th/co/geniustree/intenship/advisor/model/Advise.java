@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -36,6 +37,12 @@ public class Advise implements Serializable{
     
     @ManyToOne
     private CategoryAdvise categoryAdvise;
+ 
+    @ManyToMany
+    private List<Student> student;
+    
+    @ManyToOne
+    private Teacher teacher;
     
     public Integer getId() {
         return id;
@@ -100,7 +107,24 @@ public class Advise implements Serializable{
     public void setCategoryAdvise(CategoryAdvise categoryAdvise) {
         this.categoryAdvise = categoryAdvise;
     }
-  
+    public List<Student> getStudent() {
+        return student;
+    }
+
+    public void setStudent(List<Student> student) {
+        this.student = student;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+    
+    
+   
     @Override
     public int hashCode() {
         int hash = 7;

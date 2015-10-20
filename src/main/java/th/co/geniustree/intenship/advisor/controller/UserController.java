@@ -39,4 +39,10 @@ public class UserController {
     public void deleteUser(@RequestBody Account user){
         userRepo.delete(user);
     }
+    
+    @RequestMapping(value = "/getaccout",method = RequestMethod.POST)
+    public Page<Account> getAccount(@RequestBody String account , Pageable pagable){
+        System.out.println("----------------------------------------------->account"+account);
+        return userRepo.findByDtype(account,pagable);
+    }
 }

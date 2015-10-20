@@ -1,9 +1,13 @@
 package th.co.geniustree.intenship.advisor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 /**
  *
  * @author User
@@ -21,9 +25,10 @@ public class Student extends Account implements Serializable {
     @ManyToOne
     @JoinColumn(name = "TEACHER_ID")
     private Teacher teacher;
-
     
-
+    @ManyToMany
+    private List<Advise> advise;
+            
     public Faculty getFaculty() {
         return faculty;
     }
@@ -47,5 +52,15 @@ public class Student extends Account implements Serializable {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+
+    public List<Advise> getAdvise() {
+        return advise;
+    }
+
+    public void setAdvise(List<Advise> advise) {
+        this.advise = advise;
+    }
+    
+    
    
 }

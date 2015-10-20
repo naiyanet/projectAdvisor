@@ -36,8 +36,17 @@ angular.module('student').controller('studentController', function ($scope, $htt
             $scope.students = data;
         }).error(function (data) {
         });
-    }
-    ;
+    };
+    
+    getTeacher();
+    $scope.teacher = {};
+    function  getTeacher(){
+        $http.post('/getaccout','Teacher').success(function (data){
+            $scope.teacher = data;
+        }).error(function (data){
+            
+        });
+    };
 
     $scope.clickUpdate = function (updateStudent) {
         $scope.student = updateStudent;

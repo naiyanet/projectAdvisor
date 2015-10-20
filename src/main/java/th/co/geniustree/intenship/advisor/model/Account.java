@@ -5,12 +5,14 @@
  */
 package th.co.geniustree.intenship.advisor.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +20,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -51,10 +54,14 @@ public class Account implements Serializable , UserDetails{
     private String mobile;
     private String address;
     private boolean enable = true;
+    
+    @Column(name = "DTYPE" , insertable = false, updatable = false)
+    private String dtype;
    
     @ManyToMany
     private List<Authority> roles;
-
+    
+    
     public Integer getId() {
         return id;
     }
@@ -157,6 +164,14 @@ public class Account implements Serializable , UserDetails{
 
     public void setRoles(List<Authority> roles) {
         this.roles = roles;
+    }
+
+    public String getDtype() {
+        return dtype;
+    }
+
+    public void setDtype(String dtype) {
+        this.dtype = dtype;
     }
  
     
