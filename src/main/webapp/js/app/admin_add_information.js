@@ -4,6 +4,7 @@ angular.module('admin_add_information').controller('admin_add_informationControl
     $scope.information = {};
 
     $scope.saveInfor = function () {
+        console.log($scope.information);
         $http.post('/saveinformation', $scope.information).success(function (data) {
             getSuccess();
             getInformation();
@@ -48,5 +49,11 @@ angular.module('admin_add_information').controller('admin_add_informationControl
     function getError() {
         alert('Error');
     }
+
+    $('.datepicker.form-control').datepicker({
+        changeYear:true,
+        yearRange:'-100:+100',
+        dateFormat: 'yy-mm-dd'
+    });
 });
 

@@ -5,9 +5,11 @@
  */
 package th.co.geniustree.intenship.advisor.controller;
 
+import javax.ws.rs.core.SecurityContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,4 +47,18 @@ public class UserController {
         System.out.println("----------------------------------------------->account"+account);
         return userRepo.findByDtype(account,pagable);
     }
+    
+    @RequestMapping(value = "/startpageuser",method = RequestMethod.GET)
+    public Account getCurrentLogin(){
+        Account account =  (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Integer id = userRepo.findByEmail(account.getEmail()).getId();
+        return userRepo.findOne(id);
+    }
+//    @RequestMapping(value = "/startpagestaff", method = RequestMethod.GET)
+//    public Employee getCurrentLogin() {
+//        Employee employee = (Employee) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        Integer id = employeeRepo.findByEmail(employee.getEmail()).getId();
+//       return employeeRepo.findOne(id);
+//    }
+    
 }

@@ -38,11 +38,12 @@ public class Advise implements Serializable{
     @ManyToOne
     private CategoryAdvise categoryAdvise;
  
-    @ManyToMany
-    private List<Student> student;
+    @ManyToOne
+    private Student student;
     
     @ManyToOne
     private Teacher teacher;
+    
     
     public Integer getId() {
         return id;
@@ -107,13 +108,15 @@ public class Advise implements Serializable{
     public void setCategoryAdvise(CategoryAdvise categoryAdvise) {
         this.categoryAdvise = categoryAdvise;
     }
-    public List<Student> getStudent() {
+
+    public Student getStudent() {
         return student;
     }
 
-    public void setStudent(List<Student> student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
+    
 
     public Teacher getTeacher() {
         return teacher;

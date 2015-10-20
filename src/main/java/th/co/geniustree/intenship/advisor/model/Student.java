@@ -26,7 +26,8 @@ public class Student extends Account implements Serializable {
     @JoinColumn(name = "TEACHER_ID")
     private Teacher teacher;
     
-    @ManyToMany
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
     private List<Advise> advise;
             
     public Faculty getFaculty() {

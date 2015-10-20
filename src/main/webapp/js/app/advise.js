@@ -48,10 +48,8 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
         }).error(function (data) {
             getError();
         });
-    }
-    ;
-
-
+    };
+    
     $scope.clickUpdate = function (updateAdvise) {
         $scope.advise = updateAdvise;
     };

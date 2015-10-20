@@ -7,6 +7,14 @@ var app = angular.module('app', ['ngRoute', 'home', 'add_user','admin_add_inform
 var app = angular.module('app');
 
 app.controller('appController', function ($scope, $http) {
+    
+    $scope.account = {};
+    getAccountLogin();
+    function getAccountLogin (){
+        $http.get('/startpageuser').success(function (data){
+            $scope.account = data;
+        });
+    }
 
 });
 
