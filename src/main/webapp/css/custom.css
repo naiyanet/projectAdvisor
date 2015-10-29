@@ -9,3 +9,21 @@ select.ui-datepicker-year{
     cursor: pointer;
     color:salmon;
 }
+
+
+#setting-text{
+    color: #000000;
+    font-size: 13px;
+}
+#setting-text:hover{
+    cursor: pointer;
+    color:tomato;
+}
+
+
+table{
+   table-layout: fixed;
+}
+table th , table td{
+    overflow: hidden;
+}

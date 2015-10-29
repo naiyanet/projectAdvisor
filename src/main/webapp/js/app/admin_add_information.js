@@ -14,6 +14,10 @@ angular.module('admin_add_information').controller('admin_add_informationControl
         });
     };
 
+    $scope.editInformation = function (u) {
+        $scope.information = u;
+     };
+
     $scope.clear = function () {
         $scope.information = {};
     };

@@ -32,15 +32,15 @@
             <div class="form-group">
                 <label for="text" class="col-lg-2 control-label">วันเดือนปี</label>
                 <div class="col-lg-10">
-                    
-                   
+
+
                     <input class="datepicker-custom form-control" type="text" ng-model="information.startTime">
                 </div>
             </div>
             <div class="form-group">
                 <label for="text" class="col-lg-2 control-label">หมดเวลาแสดง</label>
                 <div class="col-lg-10">
-                   
+
                     <input class="datepicker-custom form-control"  type="text" ng-model="information.endTime">
                 </div>
             </div>
@@ -112,12 +112,14 @@
                             <td>{{infor.description}}</td>
                             <td>{{infor.linkWeb}}</td>
                             <td>
-                                <p class="mdi-editor-mode-edit" ng-click="delInformation(infor)">
-                                </p>
+                                <button ng-click="editInformation(infor)">
+                                    <span class="mdi-editor-mode-edit"></span>
+                                </button>
                             </td>
                             <td>
-                                <p class="mdi-action-delete" ng-click="deleteInformation(infor)">
-                                </p>
+                                <button ng-click="deleteInformation(infor)">
+                                    <span class="mdi-action-delete"></span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

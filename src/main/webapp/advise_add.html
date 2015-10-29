@@ -1,6 +1,6 @@
 
 <div class="col-md-10">
-   
+
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="list-group-item-heading">เพิ่มการให้คำปรึกษา</h4>
@@ -24,7 +24,7 @@
                     <div class="form-group">
                         <label for="text" class="col-lg-2 control-label">วันที่-เวลา</label>
                         <div class="col-lg-10" >
-                             <input class="datepicker-custom form-control" type="text" ng-model="advise.dates">
+                            <input class="datepicker-custom form-control" type="text" ng-model="advise.dates">
                         </div>
                     </div>
                     <div class="form-group">
@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <label for="text" class="col-lg-2 control-label">รายละเอียดการให้คำปรึกษา</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" ng-model="advise.detail">
+                            <textarea class="form-control" rows="3" id="textArea" ng-model="advise.detail"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,7 +49,6 @@
                     <div class="form-group">
                         <label for="inputFile" class="col-lg-2 control-label">File</label>
                         <div class="col-lg-10">
-                            <!--<input type="submit" id="input-picture" readonly="" class="form-control floating-label" placeholder="Browse...">-->
                             <input type="file" id="input-picture"> 
                         </div>
                     </div>
@@ -89,7 +88,29 @@
                         <td>{{ad.dates}}</td>
                         <td>{{ad.categoryAdvise.nameCategory}}</td>
                         <td>{{ad.title}}</td>
-                        <td>{{ad.detail}}</td>
+                        <td>
+                            <h5 data-toggle="modal" data-target="#complete-dialog" class="form-group" id="setting-text">ดูรายละเอียด</h5>
+                            <div id="complete-dialog" class="modal fade form-group" tabindex="-1"> 
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header form-group">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">รายละเอียดการให้คำปรึกษา</h4>
+                                            <br>
+                                        </div>
+                                        <div class="modal-body form-group">
+                                            <div class="col-md-10">
+                                                <div style="word-wrap: break-word ; width: 100%">{{ad.detail}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer form-group">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
                         <td>
                             <button ng-click="editAdvise(ad)">
                                 <span class="mdi-editor-mode-edit"></span>
