@@ -30,11 +30,7 @@ public class Course implements Serializable {
     private String subjectCode;
     private String subjectName;
     private String credit;
-    
-//    @OneToMany(mappedBy = "course" , cascade = CascadeType.ALL)
-//    @JsonIgnore
-//    private List<SelectCategory> selectCategorys;
-    
+
     public Integer getId() {
         return id;
     }

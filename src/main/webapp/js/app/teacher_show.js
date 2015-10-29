@@ -1,9 +1,10 @@
-angular.module('teacher', []);
-angular.module('teacher').controller('teacherController', function (UserService ,$scope, $http) {
+angular.module('teachershow', []);
+angular.module('teachershow').controller('teachershowController', function (UserService ,$scope, $http) {
 
-    $scope.teacher = UserService.user;
+    $scope.teacher = {};
 
-    $scope.saveTeacher = function () {
+    $scope.saveTeacherShow = function () {
+        console.log('save');
         $http.post('/saveteacher', $scope.teacher).success(function (data) {
             getSuccess();
             getTeacher();
@@ -13,10 +14,17 @@ angular.module('teacher').controller('teacherController', function (UserService 
             getError();
         });
     };
+    
+     getAccountLogin();
+    function getAccountLogin (){
+        $http.get('/startpageuser').success(function (data){
+            $scope.account = data;
+            $scope.teacher = data;
+        });
+    }
 
     $scope.clear = function () {
         $scope.teacher = {};
-        UserService.user = {};
     };
 
     $scope.delTeacher = {};
@@ -43,12 +51,6 @@ angular.module('teacher').controller('teacherController', function (UserService 
 
     $scope.clickUpdate = function (updateTeacher) {
         $scope.teacher = updateTeacher;
-    };
-
-    $scope.clearUser = function () {
-        $scope.user = {};
-        $scope.password = "";
-        checkPassword();
     };
 
     function getSuccess() {

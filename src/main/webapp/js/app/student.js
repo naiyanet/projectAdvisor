@@ -1,8 +1,9 @@
 angular.module('student', []);
 
-angular.module('student').controller('studentController', function ($scope, $http) {
+angular.module('student').controller('studentController', function (UserService , $scope, $http) {
 
-    $scope.student = {};
+    $scope.student = UserService.user;
+    
     $scope.parentShow = {};
     $scope.keyword = "";
     $scope.currentPage = 0;

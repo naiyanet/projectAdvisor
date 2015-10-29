@@ -1,3 +1,4 @@
+
 <br>
 <div class="col-md-10">
     <ul class="nav nav-pills">
@@ -49,8 +50,8 @@
                                 <td>{{us.name}}</td>
                                 <td>{{us.email}}</td>
                                 <td>{{us.password}}</td>
-                                <td></td>
-                                <td><span class="mdi-image-edit"></span></td>
+                                <td>{{us.dtype}}</td>
+                                <td><span class="mdi-image-edit" ng-click="edit(us)"></span></td>
                                 <td><span class="mdi-action-delete" ng-click="deleteUser(us)"></span></td>
 
                             </tr>

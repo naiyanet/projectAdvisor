@@ -1,3 +1,11 @@
 select.ui-datepicker-year{
     color: black;
 }
+#setting-profile{
+    color: greenyellow;
+    font-size: 13px;
+}
+#setting-profile:hover{
+    cursor: pointer;
+    color:salmon;
+}

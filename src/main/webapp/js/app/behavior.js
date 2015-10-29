@@ -15,6 +15,10 @@ angular.module('behavior').controller('behaviorController', function ($scope, $h
         });
     };
 
+    $scope.editBehavior = function (u) {
+        $scope.behavior = u;
+     };
+
 
     $scope.clear = function () {
         $scope.behavior = {};
@@ -41,15 +45,6 @@ angular.module('behavior').controller('behaviorController', function ($scope, $h
             $scope.behaviorshow = data;
         });
     };
-
-
-
-    $scope.clickUpdate = function (updateBehavior) {
-        $scope.behavior = updateBehavior;
-    };
-
-
-
 
     function getSuccess() {
         alert('Save Success');

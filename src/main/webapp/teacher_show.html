@@ -7,7 +7,7 @@
                     <form class="form-horizontal">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="mdi-image-wb-incandescent"></span></h3>
+                                <h3 class="panel-title">Teacher : </h3>
                             </div>
                             <div class="panel-body">
                                 <div class="form-group">
@@ -21,13 +21,13 @@
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                                     <div class="col-lg-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        <input type="email" class="form-control" ng-model="teacher.email" id="inputEmail" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                                     <div class="col-lg-10">
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        <input type="password" class="form-control" ng-model="teacher.password" id="inputPassword" placeholder="Password">
                                     </div>
                                 </div>
 
@@ -39,47 +39,35 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="text" class="col-lg-2 control-label">รหัสอาจารย์</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" placeholder="ID Teacher">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="text" class="col-lg-2 control-label">รหัสบัตรประชาชน</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" placeholder="ID Card">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label for="text" class="col-lg-2 control-label">ชื่อ-นามสกุล</label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" placeholder="Input Name">
+                                        <input type="text" class="form-control" placeholder="Input Name" ng-model="teacher.name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="text" class="col-lg-2 control-label">วันเดือนปีเกิด</label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" placeholder="Birthday">
+                                        <input type="text" class="form-control" placeholder="Birthday" ng-model="teacher.bDate">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="text" class="col-lg-2 control-label">เบอร์โทรศัพท์</label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" placeholder="Input Telephone Number">
+                                        <input type="text" class="form-control" placeholder="Input Telephone Number" ng-model="teacher.mobile">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="textArea" class="col-lg-2 control-label">ที่อยู่</label>
                                     <div class="col-lg-10">
-                                        <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                        <textarea class="form-control" rows="3" id="textArea" ng-model="teacher.address"></textarea>
                                         <span class="help-block">โปรดใส่ที่อยู่ตามความจริง</span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-lg-10 col-lg-offset-2">
-                                        <button type="submit" class="btn btn-primary">Update</button>
-                                        <a href="#/teacher"><button class="btn btn-danger">Cancel</button></a>
+                                        <button type="submit" class="btn btn-primary" ng-click="saveTeacherShow()">Update</button>
+                                        <a href="#/home"><button class="btn btn-danger">Cancel</button></a>
                                     </div>
                                 </div>
                             </div>

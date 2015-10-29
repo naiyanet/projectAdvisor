@@ -2,11 +2,12 @@ var app = angular.module('app', ['ngRoute', 'home', 'add_user','admin_add_inform
                                  'advise', 'appointment', 'behavior', 'course', 
                                  'course_add', 'course_subject_1', 'course_subject_2', 'course_subject_3', 
                                  'course_subject_4', 'parent', 'teacher','student',
+                                 'studentshow','teachershow','parentshow',
                                  'timetable', 'checklist-model']);
         
 var app = angular.module('app');
 
-app.controller('appController', function ($scope, $http) {
+app.controller('appController', function (UserService , $scope, $http) {
     
     $scope.account = {};
     getAccountLogin();
@@ -15,7 +16,19 @@ app.controller('appController', function ($scope, $http) {
             $scope.account = data;
         });
     }
-
+    
+    $scope.settingProfile = function (){
+        UserService.user = $scope.account;
+        if($scope.account.dtype == 'Teacher'){
+            location.href='#/teacher_show';
+        }
+        if($scope.account.dtype == 'Student'){
+            location.href='#/student_show';
+        }
+        if($scope.account.dtype == 'Parent'){
+            location.href='#/parent_show';
+        }
+    };
 });
 
 app.config(function ($routeProvider) {
@@ -97,15 +110,15 @@ app.config(function ($routeProvider) {
                 templateUrl: 'course_subject_4.html'
             })
             .when('/parent_show', {
-                controller: 'parentController',
+                controller: 'parentshowController',
                 templateUrl: 'parent_show.html'
             })
             .when('/student_show', {
-                controller: 'studentController',
+                controller: 'studentshowController',
                 templateUrl: 'student_show.html'
             })
             .when('/teacher_show', {
-                controller: 'teacherController',
+                controller: 'teachershowController',
                 templateUrl: 'teacher_show.html'
             })
             .when('/timetable', {
@@ -120,3 +133,17 @@ app.config(function ($routeProvider) {
                 redirectTo: '/'
             });
 });
+
+
+app.factory('UserService',function(){
+    return {
+        user:{}
+    };
+});
+
+app.factory('AdviseService',function(){
+    return {
+        adviseservice:{}
+    };
+});
+

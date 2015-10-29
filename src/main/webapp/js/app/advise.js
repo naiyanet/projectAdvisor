@@ -1,5 +1,5 @@
 angular.module('advise', []);
-angular.module('advise').controller('adviseController', function ($scope, $http) {
+angular.module('advise').controller('adviseController', function ( $scope, $http) {
 
     $scope.advise = {};
     $scope.mo = {};
@@ -15,6 +15,12 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
             getError();
         });
     };
+
+    $scope.editAdvise = function (u) {
+        $scope.advise = u;
+     };
+
+
 
     $scope.delAdvise = {};
     $scope.deleteAdvise = function (delAd) {
@@ -48,8 +54,9 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
         }).error(function (data) {
             getError();
         });
-    };
-    
+    }
+    ;
+
     $scope.clickUpdate = function (updateAdvise) {
         $scope.advise = updateAdvise;
     };
@@ -64,12 +71,12 @@ angular.module('advise').controller('adviseController', function ($scope, $http)
     function getError() {
         alert('Error');
     }
-    
+
     $('.datepicker-custom').datepicker({
-        changeYear:true,
-        yearRange:'-100:+100',
+        changeYear: true,
+        yearRange: '-100:+100',
         dateFormat: 'yy-mm-dd'
     });
-    
-    
+
+
 });

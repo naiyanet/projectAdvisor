@@ -30,9 +30,7 @@ public class Appointment implements Serializable {
     private Date date;
     private String place;
     private String description;
-    
-    @ManyToMany
-    private List<Authority> authorities;
+
 
     public Integer getId() {
         return id;

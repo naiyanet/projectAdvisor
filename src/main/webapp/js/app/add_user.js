@@ -1,5 +1,5 @@
 angular.module('add_user', []);
-angular.module('add_user').controller('add_userController', function ($scope, $http) {
+angular.module('add_user').controller('add_userController', function (UserService, $scope, $http) {
 
     $scope.user = {};
 
@@ -8,6 +8,21 @@ angular.module('add_user').controller('add_userController', function ($scope, $h
             getSuccess();
             getUser();
         });
+    };
+
+    $scope.edit = function (u) {
+        if (u.dtype == 'Teacher') {
+            location.href = '#/teacher';
+            UserService.user = u;
+        }
+        if (u.dtype == 'Student'){
+            location.href = '#/student';
+            UserService.user = u;
+        }
+        if (u.dtype == 'Parent'){
+            location.href = '#/parent';
+            UserService.user = u;
+        }
     };
 
     $scope.delUser = {};
@@ -50,7 +65,7 @@ angular.module('add_user').controller('add_userController', function ($scope, $h
     function getSuccess() {
         alert('Save Success');
     }
-    function getError(){
+    function getError() {
         alert('Error');
     }
 });

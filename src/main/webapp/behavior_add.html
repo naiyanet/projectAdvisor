@@ -74,6 +74,7 @@
                         <th>รายละเอียดความประพฤติ</th>
                         <th>คำอธิบาย</th>
                         <th>File</th>
+                        <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -87,6 +88,11 @@
                         <td>
                             <button>
                             <span class="mdi-file-file-download"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button ng-click="editBehavior(beha)">
+                                <span class="mdi-editor-mode-edit"></span>
                             </button>
                         </td>
                         <td>

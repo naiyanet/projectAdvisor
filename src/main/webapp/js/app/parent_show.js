@@ -1,7 +1,7 @@
-angular.module('parent', []);
-angular.module('parent').controller('parentController', function (UserService , $scope, $http) {
+angular.module('parentshow', []);
+angular.module('parentshow').controller('parentshowController', function (UserService , $scope, $http) {
 
-    $scope.parent = UserService.user;
+    $scope.parent = {};
 
     $scope.saveParent = function () {
         $http.post('/saveParent', $scope.parent).success(function (data) {

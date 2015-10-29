@@ -47,7 +47,7 @@ public class ParentSearchServiceSpecIT {
     @Test
     public void findEmailParentShouldReturnOneRow() {
         parentRepo.saveAndFlush(parent);
-        Page<Parent> search = parentSearchService.search("parent", new PageRequest(0, 10));
+        Page<Parent> search = parentSearchService.searchByNameOrEmail("parent", new PageRequest(0, 10));
         Assertions.assertThat(search.getTotalElements()).isEqualTo(1);
     }
 
@@ -72,10 +72,10 @@ public class ParentSearchServiceSpecIT {
     @Test
     public void updateEmailMustBeSuccess() {
         parentRepo.saveAndFlush(parent);
-        Page<Parent> search = parentSearchService.search("parent", new PageRequest(0, 10));
+        Page<Parent> search = parentSearchService.searchByNameOrEmail("parent", new PageRequest(0, 10));
         Assertions.assertThat(search.getTotalElements()).isEqualTo(1);
         parent.setEmail("xxxxxxx@xxxxx.com");
-        Page<Parent> searchAgain = parentSearchService.search("xxxxxxx", new PageRequest(0, 10));
+        Page<Parent> searchAgain = parentSearchService.searchByNameOrEmail("xxxxxxx", new PageRequest(0, 10));
         Assertions.assertThat(searchAgain.getTotalElements()).isEqualTo(1);
     }
 }

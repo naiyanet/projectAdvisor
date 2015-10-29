@@ -37,7 +37,8 @@ public class SelectCategoryController {
     }
     
     @RequestMapping(value = "/deleteselectcategory",method = RequestMethod.POST)
-    public void deleteSelectCategory(@RequestBody SelectCategory selectCategory){
+    public Page<SelectCategory> deleteSelectCategory(@RequestBody SelectCategory selectCategory , Pageable pageable){
         selectCategoryRepo.delete(selectCategory);
+        return selectCategoryRepo.findAll(pageable);
     }
 }
