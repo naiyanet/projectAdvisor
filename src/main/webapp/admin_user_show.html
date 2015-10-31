@@ -14,7 +14,7 @@
                 <li><a href="#/admin_add_user">เพิ่มนักศึกษา</a></li>
                 <li><a href="#/admin_add_user">เพิ่มผู้ปกครอง</a></li>
                 <li  class="active"><a href="#/user_show">ข้อมูลผู้ใช้งานระบบ</a></li>
-                
+
             </ul>
         </li>
     </ul>
@@ -51,9 +51,16 @@
                                 <td>{{us.email}}</td>
                                 <td>{{us.password}}</td>
                                 <td>{{us.dtype}}</td>
-                                <td><span class="mdi-image-edit" ng-click="edit(us)"></span></td>
-                                <td><span class="mdi-action-delete" ng-click="deleteUser(us)"></span></td>
-
+                                <td>
+                                    <button ng-click="edit(us)">
+                                        <span class="mdi-editor-mode-edit"></span>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button ng-click="deleteUser(us)">
+                                        <span class="mdi-action-delete"></span>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

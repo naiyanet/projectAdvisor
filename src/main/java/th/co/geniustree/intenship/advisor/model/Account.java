@@ -5,7 +5,6 @@
  */
 package th.co.geniustree.intenship.advisor.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
@@ -40,14 +39,15 @@ public class Account implements Serializable , UserDetails{
     @SequenceGenerator(name = "ACCOUNT", sequenceName = "ACCOUNT_SEQ", allocationSize = 1)
     @GeneratedValue(generator = "ACCOUNT", strategy = GenerationType.SEQUENCE)
     private Integer id;
+    
     @NotBlank(message = "please input email")
     private String email;
     private String password;
-    
     private String filePic;
     private String idStudent;
     private String idCard;
     private String name;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date bDate;
     private Integer age;
