@@ -51,7 +51,7 @@ public class UserController {
     @RequestMapping(value = "/startpageuser",method = RequestMethod.GET)
     public Account getCurrentLogin(){
         Account account =  (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Integer id = userRepo.findByEmail(account.getEmail()).getId();
+        Integer id = userRepo.findByEmail(account.getEmail()).get().getId();
         return userRepo.findOne(id);
     }
 //    @RequestMapping(value = "/startpagestaff", method = RequestMethod.GET)

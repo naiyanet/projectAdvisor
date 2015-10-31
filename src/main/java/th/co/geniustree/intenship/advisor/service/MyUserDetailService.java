@@ -5,6 +5,7 @@
  */
 package th.co.geniustree.intenship.advisor.service;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,10 +27,7 @@ public class MyUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Account findByEmail = accountRepo.findByEmail(username);
-        if(findByEmail==null){
-            throw new UsernameNotFoundException("not found user.");
-        }
-        return findByEmail;
+        Optional<Account> findByEmail = accountRepo.findByEmail(username);
+        return findByEmail.orElseThrow(()->new UsernameNotFoundException("not found user."));
     }
 }
