@@ -15,77 +15,94 @@
         <link rel="stylesheet" href="material/dist/css/roboto.min.css">
         <script src="material/jquery-2.1.4.min.js"></script>
 
+        <link type="text/css" href="js/style.css" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+
+        <style>
+            body{
+                background: url(image/WhiteBg1.jpg)no-repeat center center fixed;
+                background-size: cover;
+            }
+            img{ 
+                max-width: 90%;
+                height: auto;
+            }
+        </style>
+
     </head>
     <body>
+
         <div id="wrapper">
+            <div>
+                <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
+                    <div class="container-fluid">
+                        <div class="navbar-header col-md-6">
+                           <img src="image/logo-w.png"  height="100" width="150"> 
+                            
+                                <h4>Advisor Information System</h4>ระบบสารสนเทศอาจารย์ที่ปรึกษา
+                            
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <form class="navbar-form navbar-right" action="authentication" method="POST">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Email" name="email" class="form-control">
+                                </div>
+                                <div class="form-group" style="margin-left: 20px;">
+                                    <input type="password" placeholder="Password" name="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <a href="login.html">
+                                        <button class="btn btn-success" >Sign in</button>
+                                    </a>  
+                                </div>
+                                <h4 align="right"><a href="http://www.rmutk.ac.th/" class="text-success">Rajamangala University of Technology krungthep</a></h4>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
 
-            <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #000000;color: white">
                 <div class="container">
-                    <div class="navbar-header">
-                        <img src="image/logo-w.png" height="100" width="150">
-                        <a class="navbar-brand" href="index-template.html">
-                            <h3>Advisor Information System</h3>ระบบสารสนเทศอาจารย์ที่ปรึกษา
-                        </a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <form class="navbar-form navbar-right" action="authentication" method="POST">
+                    <div class="row">
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <marquee direction="lefe" scrollamount="5" width="100%">
+                            โปรด Login เข้าสู่ระบบ หากไม่มี Username กรุณาแจ้งผู้ดูแลระบบ
+                        </marquee>
+                        <br>
+                        <div  id="slide-img">
 
-                            <div class="form-group">
-                                <input type="text" placeholder="Email" name="email" class="form-control">
-                            </div>
-                            <div class="form-group" style="margin-left: 20px;">
-                                <input type="password" placeholder="Password" name="password" class="form-control">
-                            </div>
-                            <a href="login.html">
-                                <button type="submit" class="btn btn-success">Sign in</button></a>  
-
-                            <h4 align="right"><a href="http://www.rmutk.ac.th/" class="text-success">Rajamangala University of Technology krungthep</a></h4>
-                        </form>
-
+                            <img src="image/bg01.gif"  id="size-pic" >
+                            <img src="image/Electronics1.jpg"  id="size-pic" >
+                            <img src="image/Programmers never die HD Wallpaper.png" id="size-pic" >
+                            <img src="image/schemotechnika_java_matrix_cod_by_cumanji.jpg" id="size-pic" >
+                            <img src="image/Java-Programming-Wallpaper-HD.jpg" id="size-pic" >
+                        </div>    
                     </div>
                 </div>
-            </nav>
-
-            <div class="bg">
                 <div class="container">
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                    <br><br>
-                    <img src="image/pic2.gif" height="500" width="1200" ALIGN="center">    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>อาจารย์ : Read me!!</label>
+                            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label>นักศึกษา : Read me!!</label>
+                            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label>ผู้ปกครอง : Read me!!</label>
+
+                            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
+                    </div>
+                    <footer>
+                        <p>&copy; Advisor 2015</p>
+                    </footer>
                 </div>
             </div>
-            <div class="progress">
-                <div class="progress-bar" style="width: 100%;"></div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2>อาจารย์</h2>
-                        <p>Read me!! </p>
-                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>นักศึกษา</h2>
-                        <p>Read me!! </p>
-                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>ผู้ปกครอง</h2>
-                        <p>Read me!!</p>
-                        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                </div>
-
-                <hr>
-                <footer>
-                    <p>&copy; Advisor 2015</p>
-                </footer>
-            </div>
-
         </div>
-     
-        
 
         <style>
             #growl-custom{
@@ -95,14 +112,34 @@
                 padding: 15px 20px;
                 border-radius: 10px;
             }
-
         </style>
+        <style>
+            #size-pic{
+                height: 350px;
+                width: 100%;
+                margin-left: 145px;
+            }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#slide-img').after('<div id="nav" class="nav">').cycle({
+                    fx: 'fade',
+                    speed: 500,
+                    timeout: 5000,
+                    pager: '#nav',
+                   
+                });
+
+            });
+        </script>
 
         <script src="material/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
         <script src="material/dist/js/material.min.js"></script>
         <script src="material/dist/js/ripples.min.js"></script>
+
         <script>
             $.material.init();
         </script>
+
     </body>
 </html>
