@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.intenship.advisor.model.Account;
+import th.co.geniustree.intenship.advisor.model.SearchData;
 import th.co.geniustree.intenship.advisor.repo.AccountRepo;
 
 /**
@@ -42,10 +43,22 @@ public class UserController {
         userRepo.delete(user);
     }
     
-    @RequestMapping(value = "/getaccout",method = RequestMethod.POST)
-    public Page<Account> getAccount(@RequestBody String account , Pageable pagable){
+    @RequestMapping(value = "/getteacher",method = RequestMethod.POST)
+    public Page<Account> getAccountTeacher(@RequestBody String account , Pageable pagable){
         System.out.println("----------------------------------------------->account"+account);
         return userRepo.findByDtype(account,pagable);
+    }
+    @RequestMapping(value = "/getparent",method = RequestMethod.POST)
+    public Page<Account> getAccountParent(@RequestBody String account , Pageable pagable){
+        System.out.println("----------------------------------------------->account"+account);
+        return userRepo.findByDtype(account,pagable);
+    }
+    
+     @RequestMapping(value = "/findteacher",method = RequestMethod.POST)
+    public Page<Account> findTeacher (@RequestBody SearchData searchData , Pageable pageable){
+        String SearchBy = searchData.getSearchBy();
+        String keyword = searchData.getKeyWord();
+        return userRepo.findByDtypeAndName(SearchBy, keyword, pageable);
     }
     
     @RequestMapping(value = "/startpageuser",method = RequestMethod.GET)

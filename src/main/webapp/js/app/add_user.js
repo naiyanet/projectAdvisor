@@ -11,6 +11,7 @@ angular.module('add_user').controller('add_userController', function (UserServic
     };
 
     $scope.edit = function (u) {
+        console.log('show...'+u.teacher.name);
         if (u.dtype == 'Teacher') {
             location.href = '#/teacher';
             UserService.user = u;

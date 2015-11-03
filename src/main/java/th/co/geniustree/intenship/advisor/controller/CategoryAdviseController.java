@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.intenship.advisor.model.CategoryAdvise;
 import th.co.geniustree.intenship.advisor.repo.CategoryAdviseRepo;
+import th.co.geniustree.intenship.advisor.service.CategoryAdviseSearchService;
 
 /**
  *
@@ -25,7 +26,10 @@ public class CategoryAdviseController {
 
     @Autowired
     private CategoryAdviseRepo categoryAdviseRepo;
-
+    @Autowired
+    private CategoryAdviseSearchService adviseSearchService;
+    
+    
     @RequestMapping(value = "/getcategory", method = RequestMethod.GET)
     public Page<CategoryAdvise> getCategory(Pageable pageable) {
         return categoryAdviseRepo.findAll(pageable);
@@ -39,5 +43,9 @@ public class CategoryAdviseController {
     @RequestMapping(value = "/deletecategory", method = RequestMethod.POST)
     public void deleteCategory(@RequestBody CategoryAdvise category){
         categoryAdviseRepo.delete(category);
+    }
+    @RequestMapping(value = "/categoryadvise/search", method = RequestMethod.POST)
+    public Page<CategoryAdvise> searchParent(@RequestBody String keyword, Pageable pageable) {
+        return adviseSearchService.searchByNameCategory(keyword, pageable);
     }
 }

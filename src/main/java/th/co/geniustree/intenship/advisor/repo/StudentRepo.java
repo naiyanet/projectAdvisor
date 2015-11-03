@@ -21,7 +21,7 @@ public interface StudentRepo extends JpaRepository<Student, Integer>,JpaSpecific
     public Page<Student> findByNameOrEmail(String name, String email, Pageable pageable);
     public Student findByEmailIgnoreCase(String value);
 
-    public Object findByMobileIgnoreCase(String value);
-
-    public Student findByIdCardIgnoreCase(String value);
+    public Student findByMobileIgnoreCase(String value);
+    
+     public Student findByIdCardIgnoreCase(String value);
 }

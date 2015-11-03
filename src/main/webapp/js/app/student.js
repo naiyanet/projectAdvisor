@@ -1,10 +1,11 @@
 angular.module('student', []);
 
-angular.module('student').controller('studentController', function (UserService , $scope, $http) {
+angular.module('student').controller('studentController', function (UserService, $scope, $http) {
 
     $scope.student = UserService.user;
-    
-    $scope.parentShow = {};
+    $scope.student.teacher = {};
+    $scope.teacherShow = UserService.user.teacher;
+    $scope.parentShow = UserService.user.parent;
     $scope.keyword = "";
     $scope.currentPage = 0;
     var page = 0;
@@ -45,31 +46,33 @@ angular.module('student').controller('studentController', function (UserService 
         });
     }
     ;
-
+    
     getTeacher();
     $scope.teacher = {};
-    function  getTeacher() {
-        $http.post('/getaccout', 'Teacher').success(function (data) {
+    function getTeacher() {
+        $http.post('/getteacher', 'Teacher').success(function (data) {
             $scope.teacher = data;
-        }).error(function (data) {
-
         });
-    }
-    ;
+    };
+    $scope.selectTeacher = function (tea) {
+        $scope.student.teacher = tea;
+        $scope.teacherShow = tea;
+    };
+    
 
     getParent();
     $scope.parent = {};
     function getParent() {
-        $http.post('/getaccout', 'Parent', {params: {page: $scope.currentPage, size: 10}}).success(function (data) {
+        $http.post('/getparent', 'Parent', {params: {page: $scope.currentPage, size: 10}}).success(function (data) {
             console.log(data + '...............');
             $scope.parent = data;
-        }).error(function (data) {
+       }).error(function (data) {
 
         });
     }
     ;
-    
-    $scope.selectParent = function (parent){
+
+    $scope.selectParent = function (parent) {
         $scope.student.parent = parent;
         $scope.parentShow = parent;
     };
@@ -96,14 +99,14 @@ angular.module('student').controller('studentController', function (UserService 
             if ((totalParent % 10) != 0) {
                 totalPage++;
             }
-            if($scope.currentPage == 0){
-            $('#first-page').addClass('disabled');
-            $('#pre-page').addClass('disabled');
-             $('#next-page').addClass('disabled');
+            if ($scope.currentPage == 0) {
+                $('#first-page').addClass('disabled');
+                $('#pre-page').addClass('disabled');
+                $('#next-page').addClass('disabled');
                 $('#final-page').addClass('disabled');
             }
-            if(totalPage > 1){
-                 $('#next-page').removeClass('disabled');
+            if (totalPage > 1) {
+                $('#next-page').removeClass('disabled');
                 $('#final-page').removeClass('disabled');
             }
         }
@@ -176,5 +179,37 @@ angular.module('student').controller('studentController', function (UserService 
         alert('Error');
     }
 
+
+  $scope.clickParent = function (){
+      $('#complete-dialog').openModal();
+  };
 });
 
+
+
+
+    
+//    $scope.teacher = {};
+//    function  getTeacher(id) {
+////        console.log($scope.student.teacher+'plljlihiuggyuiu');
+////        if (!$scope.student.teacher.id) {
+////            var searchdata = {};
+////            searchdata.searchBy = 'Teacher';
+////            searchdata.keyword = $scope.student.teacher.name;
+////            $http.post('/findteacher', searchdata).success(function (data) {
+////                $scope.teacher = data;
+////                console.log('has teacher');
+////                $scope.student.teacher = data.content[0];
+////            });
+////
+////        } else {
+//            $http.post('/getaccout', 'Teacher').success(function (data) {
+//                $scope.teacher = data;
+//                $scope.student.teacher = data.content[id - 1];
+//            });
+////        }
+//        
+//
+//
+//    }
+//    ;

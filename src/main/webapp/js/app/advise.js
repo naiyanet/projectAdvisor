@@ -79,4 +79,12 @@ angular.module('advise').controller('adviseController', function ( $scope, $http
     });
 
 
+
+    $scope.adviseSearch = function (){
+        $http.post('/categoryadvise/search', $scope.keyword).success(function (data){
+            $scope.advise = data;
+            
+        });
+    };
+
 });

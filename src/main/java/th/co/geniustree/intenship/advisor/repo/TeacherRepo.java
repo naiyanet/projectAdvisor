@@ -18,5 +18,6 @@ import th.co.geniustree.intenship.advisor.model.Teacher;
 public interface TeacherRepo extends JpaRepository<Teacher, Integer>,JpaSpecificationExecutor<Teacher>{
 
     public Page<Teacher> findByNameOrEmail(String keyword, String keyword0, Pageable pageable);
+    public Teacher findByName(String keyword);
     
 }

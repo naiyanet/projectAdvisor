@@ -21,4 +21,6 @@ public interface AccountRepo extends JpaRepository<Account, Integer>{
     
     public Page<Account> findByDtype(String dtype , Pageable pageable);
     
+    public Page<Account> findByDtypeAndName(String dtype , String name , Pageable pageable);
+    
 }
