@@ -3,7 +3,7 @@ angular.module('student', []);
 angular.module('student').controller('studentController', function (UserService, $scope, $http) {
 
     $scope.student = UserService.user;
-    $scope.student.teacher = {};
+//    $scope.student.teacher = {};
     $scope.teacherShow = UserService.user.teacher;
     $scope.parentShow = UserService.user.parent;
     $scope.keyword = "";
@@ -54,9 +54,9 @@ angular.module('student').controller('studentController', function (UserService,
             $scope.teacher = data;
         });
     };
-    $scope.selectTeacher = function (tea) {
-        $scope.student.teacher = tea;
-        $scope.teacherShow = tea;
+    $scope.selectTeacher = function (teacher) {
+        $scope.student.teacher = teacher;
+        $scope.teacherShow = teacher;
     };
     
 
