@@ -3,10 +3,12 @@ package th.co.geniustree.intenship.advisor.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -30,8 +32,11 @@ public class Behavior implements Serializable {
     private String title;
     private String detail;
     private String description;
-    private String file;
-
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    private FileUpload fileUpload;
+    
+    
     public Integer getId() {
         return id;
     }
@@ -72,14 +77,15 @@ public class Behavior implements Serializable {
         this.description = description;
     }
 
-    public String getFile() {
-        return file;
+    public FileUpload getFileUpload() {
+        return fileUpload;
     }
 
-    public void setFile(String file) {
-        this.file = file;
+    public void setFileUpload(FileUpload fileUpload) {
+        this.fileUpload = fileUpload;
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 7;

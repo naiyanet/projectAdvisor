@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label for="inputFile" class="col-lg-2 control-label">File</label>
                             <div class="col-lg-10">
-                                <input type="file" id="input-picture"> 
+                                <input type="file" class="form-control" file-model="file" custom-on-change ="saveFileBehavior">
                             </div>
                         </div>
                         <div class="form-group">
@@ -98,11 +98,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td>
-                            <button>
-                                <span class="mdi-file-file-download"></span>
-                            </button>
-                        </td>
+                        <td>{{beha.fileUpload.name}}</td>
                         <td>
                             <button ng-click="editBehavior(beha)">
                                 <span class="mdi-editor-mode-edit"></span>

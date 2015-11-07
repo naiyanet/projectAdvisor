@@ -87,4 +87,55 @@ angular.module('advise').controller('adviseController', function ( $scope, $http
         });
     };
 
+     $scope.dowloads = function(advises){
+        location.href = '/getfileadvise/' + advises.fileUpload.id;
+        
+    };
+    
+    
+    $scope.file;
+    $scope.saveFileAdvise = function () {
+        var fd = new FormData();
+        fd.append('files', $scope.file);
+        $http.post('/savefileadvise', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        }).success(function (data) {
+            console.log(data+'fileeeeeeeeeeeeee');
+            $scope.advise.fileUpload = data;
+        });
+    };
+
+
+
+
+});
+
+
+
+
+
+app.directive('fileModel', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            element.bind('change', function () {
+                scope.$apply(function () {
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+});
+
+app.directive('customOnChange', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var onChangeHandler = scope.$eval(attrs.customOnChange);
+            element.bind('change', onChangeHandler);
+        }
+    };
 });

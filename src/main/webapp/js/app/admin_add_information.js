@@ -1,5 +1,5 @@
-angular.module('admin_add_information', []);
-angular.module('admin_add_information').controller('admin_add_informationController', function ($scope, $http) {
+var app = angular.module('admin_add_information', []);
+var app = angular.module('admin_add_information').controller('admin_add_informationController', function ($scope, $http) {
 
     $scope.searchData = {};
 
@@ -83,8 +83,56 @@ angular.module('admin_add_information').controller('admin_add_informationControl
                     }
                 });
     }
-
-
+    
+    $scope.dowloads = function(information){
+        location.href = '/getfileinformation/' + information.fileUpload.id;
+        
+    };
+    
+    $scope.file;
+    $scope.saveFile = function () {
+//        $("#fileupload").val();
+//        console.log($("#fileupload").val());
+        var fd = new FormData();
+        fd.append('files', $scope.file);
+        $http.post('/savefile', fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        }).success(function (data) {
+            console.log(data+'fileeeeeeeeeeeeee');
+            $scope.information.fileUpload = data;
+        });
+    };
+    
+    
+    
 
 });
 
+
+
+
+app.directive('fileModel', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            element.bind('change', function () {
+                scope.$apply(function () {
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+});
+
+app.directive('customOnChange', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var onChangeHandler = scope.$eval(attrs.customOnChange);
+            element.bind('change', onChangeHandler);
+        }
+    };
+});
