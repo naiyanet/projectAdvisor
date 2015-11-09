@@ -1,12 +1,13 @@
 angular.module('studentshow', []);
 
-angular.module('studentshow').controller('studentshowController', function (UserService , $scope, $http) {
+angular.module('studentshow').controller('studentshowController', function ($scope, $http) {
 
-    $scope.student = {};
+    $scope.account = {};
     $scope.parentShow = {};
+    
 
     $scope.saveStudent = function () {
-        $http.post('/savestudent', $scope.student).success(function (data) {
+        $http.post('/savestudent', $scope.account).success(function (data) {
             getSuccess();
             getStudent();
             console.log(data);
@@ -17,7 +18,7 @@ angular.module('studentshow').controller('studentshowController', function (User
     };
 
     $scope.clear = function () {
-        $scope.student = {};
+        $scope.account = {};
     };
 
     $scope.delStudent = {};
@@ -35,13 +36,22 @@ angular.module('studentshow').controller('studentshowController', function (User
     function getStudent() {
         $http.get('/getstudent').success(function (data) {
             $scope.students = data;
+            // console.log(data.content[0]+'-----------gddrgdgdggdg--------');
         }).error(function (data) {
         });
     }
     ;
 
+    getAccountLogin();
+    function getAccountLogin() {
+        $http.get('/startpageuser').success(function (data) {
+            $scope.account = data;
+            console.log(data);
+        });
+    }
+
     $scope.clickUpdate = function (updateStudent) {
-        $scope.student = updateStudent;
+        $scope.account = updateStudent;
     };
 
 

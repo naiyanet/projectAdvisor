@@ -42,6 +42,7 @@ angular.module('student').controller('studentController', function (UserService,
     function getStudent() {
         $http.get('/getstudent').success(function (data) {
             $scope.students = data;
+            console.log(data+'---------------------------');
         }).error(function (data) {
         });
     }

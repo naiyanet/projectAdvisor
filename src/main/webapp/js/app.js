@@ -89,6 +89,22 @@ app.config(function ($routeProvider) {
                 controller: 'course_addController',
                 templateUrl: 'course_show_subject.html'
             })
+            .when('/course_subject_show_1', {
+                controller: 'course_addController',
+                templateUrl: 'course_show_subject_1.html'
+            })
+            .when('/course_subject_show_2', {
+                controller: 'course_addController',
+                templateUrl: 'course_show_subject_2.html'
+            })
+            .when('/course_subject_show_3', {
+                controller: 'course_addController',
+                templateUrl: 'course_show_subject_3.html'
+            })
+            .when('/course_subject_show_4', {
+                controller: 'course_addController',
+                templateUrl: 'course_show_subject_4.html'
+            })
             .when('/courseAdd', {
                 controller: 'courseController',
                 templateUrl: 'course_add.html'

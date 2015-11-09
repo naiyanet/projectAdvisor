@@ -1,6 +1,6 @@
 
 INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
-        values(ACCOUNT_SEQ.nextVal,'somying','somyinggh@login','098888888','chonburi','1234','Teacher',1);
+        values(ACCOUNT_SEQ.nextVal,'somying','somyinggh@login','098888888','chonburi','1234','Student',1);
 
 INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE)
         values(ACCOUNT_SEQ.nextVal,'somchai','somchaigh@login','0988889999','bangkok','1234','Student',1);
@@ -8,9 +8,16 @@ INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE)
 INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
         values(ACCOUNT_SEQ.nextVal,'somruk','somruk@login','0988880000','bangkok','1234','Parent',1);
 
+INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
+        values(ACCOUNT_SEQ.nextVal,'นายพูนศักดิ์ วงศ์สวัสดิ์','pskw@rmutk.ac.th','022879639','bangkok','1234','Teacher',1);
+
+INSERT INTO ACCOUNT(ID,NAME,EMAIL,MOBILE,ADDRESS,PASSWORD,DTYPE,ENABLE) 
+        values(ACCOUNT_SEQ.nextVal,'นางสาวปรียาภรณ์ มัชฌิกะ','preeyaporn.m@rmutk.ac.th','022879639','bangkok','1234','Teacher',1);
+
+
+
 INSERT INTO FACULTY(ID,NAME) 
         values(FACULTY_SEQ.nextVal,'computer technology');
-
 
 
 insert into category_course (id, category_course_name ) values(CATEGORYCOURSE_SEQ.nextVal,'หมวดศึกษาทั่วไป');
