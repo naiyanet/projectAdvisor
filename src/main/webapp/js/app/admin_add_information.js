@@ -27,7 +27,7 @@ var app = angular.module('admin_add_information').controller('admin_add_informat
 
     $scope.delInformation = {};
     $scope.deleteInformation = function (del_information) {
-        $http.post('/deleteinformation', del_information).success(function (data) {
+        $http.post('/deleteinformation', del_information.id).success(function (data) {
             getInformation();
         }).error(function (data) {
             getError();
@@ -41,19 +41,12 @@ var app = angular.module('admin_add_information').controller('admin_add_informat
         $http.get('/getinformation').success(function (data) {
             $scope.informationshow = data;
             console.log(data);
-            for(var i = 0 ; i < data.totalElements ; i++){
-                console.log('jkj');
-                if(!!data.content[i].startTime){
-                    var d = new Date(data.content[i].startTime).setYear(new Date(data.content[i].startTime).getFullYear()+543);
-                $scope.informationshow.content[i].startTime = moment(d).format('D MMMM YYYY');
-console.log(d+'mjjjj');
+            for (var i = 0; i < data.totalElements; i++) {
+                if (!!data.content[i].startTime) {
+                    var d = new Date(data.content[i].startTime).setYear(new Date(data.content[i].startTime).getFullYear() + 543);
+                    $scope.informationshow.content[i].startTime = moment(d).format('D MMMM YYYY');
                 }
             }
-//            var y = new Date().setYear('2558');
-//            
-//            
-//            console.log(data.content[0].startTime);
-//            console.log(moment(y).format('D-MMMM-YYYY'));
         }).error(function (data) {
 
         });
@@ -78,8 +71,8 @@ console.log(d+'mjjjj');
         yearRange: '-100:+100',
         dateFormat: 'yy-mm-dd'
     });
-    
-    
+
+
 
 
     $scope.page = {};
@@ -99,12 +92,12 @@ console.log(d+'mjjjj');
                     }
                 });
     }
-    
-    $scope.dowloads = function(information){
+
+    $scope.dowloads = function (information) {
         location.href = '/getfileinformation/' + information.fileUpload.id;
-        
+
     };
-    
+
     $scope.file;
     $scope.saveFile = function () {
 //        $("#fileupload").val();
@@ -115,13 +108,13 @@ console.log(d+'mjjjj');
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
         }).success(function (data) {
-            console.log(data+'fileeeeeeeeeeeeee');
+            console.log(data + 'fileeeeeeeeeeeeee');
             $scope.information.fileUpload = data;
         });
     };
-    
-    
-    
+
+
+
 
 });
 

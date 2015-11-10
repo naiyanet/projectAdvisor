@@ -55,7 +55,7 @@ public class InformationController {
     }
 
     @RequestMapping(value = "/deleteinformation", method = RequestMethod.POST)
-    public void deleteInformation(@RequestBody Information information) {
+    public void deleteInformation(@RequestBody Integer information) {
         informationRepo.delete(information);
     }
 
