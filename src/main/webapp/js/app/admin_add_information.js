@@ -40,6 +40,20 @@ var app = angular.module('admin_add_information').controller('admin_add_informat
     function getInformation() {
         $http.get('/getinformation').success(function (data) {
             $scope.informationshow = data;
+            console.log(data);
+            for(var i = 0 ; i < data.totalElements ; i++){
+                console.log('jkj');
+                if(!!data.content[i].startTime){
+                    var d = new Date(data.content[i].startTime).setYear(new Date(data.content[i].startTime).getFullYear()+543);
+                $scope.informationshow.content[i].startTime = moment(d).format('D MMMM YYYY');
+console.log(d+'mjjjj');
+                }
+            }
+//            var y = new Date().setYear('2558');
+//            
+//            
+//            console.log(data.content[0].startTime);
+//            console.log(moment(y).format('D-MMMM-YYYY'));
         }).error(function (data) {
 
         });
@@ -64,6 +78,8 @@ var app = angular.module('admin_add_information').controller('admin_add_informat
         yearRange: '-100:+100',
         dateFormat: 'yy-mm-dd'
     });
+    
+    
 
 
     $scope.page = {};
