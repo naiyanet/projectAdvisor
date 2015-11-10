@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-md-11">
     <div><a href="#/adviseAdd"><button class="btn btn-success" style="width: 200px">เพิ่มคำปรึกษา</button></a></div>
 
     <div class="panel panel-default">
@@ -30,21 +30,21 @@
                     <table class="table table-striped table-hover ">
                         <thead>
                             <tr>                           
-                                <td>นักศึกษา</td>
-                                <td>วันที่-เวลา</td>
-                                <td>หมวด</td>
-                                <td>ชื่อเรื่อง</td>
-                                <td>รายละเอียดคำปรึกษา</td>
-                                <td>download</td>
+                                <td >นักศึกษา</td>
+                                <td >วันที่-เวลา</td>
+                                <td >หมวด</td>
+                                <td >ชื่อเรื่อง</td>
+                                <td >รายละเอียดคำปรึกษา</td>
+                                <td >download</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="advi in adviseshow.content">
-                                <td>{{advi.idSubject}}</td>
-                                <td>{{advi.dates}}</td>
-                                <td>{{advi.categoryAdvise.nameCategory}}</td>
-                                <td>{{advi.title}}</td>
-                                <td>
+                                <td >{{advi.student.name}}</td>
+                                <td >{{advi.dates}}</td>
+                                <td >{{advi.categoryAdvise.nameCategory}}</td>
+                                <td >{{advi.title}}</td>
+                                <td >
                                     <h5 data-toggle="modal" data-target="#complete-dialog" class="form-group" id="setting-text">ดูรายละเอียด</h5>
                                     <div id="complete-dialog" class="modal fade form-group" tabindex="-1"> 
                                         <div class="modal-dialog">
@@ -76,8 +76,6 @@
                     </table>
                 </div>
             </form>
-
-            <br>
         </div>
     </div>
 </div>

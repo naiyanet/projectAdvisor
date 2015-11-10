@@ -1,5 +1,5 @@
 
-<div class="col-md-10">
+<div class="col-md-11">
     <a href="#/behaviorAdd"><button class="btn btn-success" style="width: 200px">รายงานความประพฤติ</button></a>
 
     <div class="panel panel-default">
@@ -34,7 +34,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="beha in behaviorshow.content">
-                        <td>{{beha.namestudent}}</td>
+                        <td>{{beha.student.name}}</td>
                         <td>{{beha.dates}}</td>
                         <td>{{beha.title}}</td>
                         <td>

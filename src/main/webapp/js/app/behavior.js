@@ -1,10 +1,17 @@
 angular.module('behavior', []);
-angular.module('behavior').controller('behaviorController', function ($scope, $http) {
+angular.module('behavior').controller('behaviorController', function (UserService,$scope, $http) {
 
     $scope.behavior = {};
-
+     $scope.account = {};
+    $scope.studentShow = UserService.user.student;
+    $scope.keyword = "";
+    $scope.currentPage = 0;
+    var page = 0;
+    var totalParent = 0;
+    var totalPage = 0;
 
     $scope.saveBehavior = function () {
+        $scope.behavior.teacher = $scope.account; 
         $http.post('/savebehavior', $scope.behavior).success(function (data) {
             getSuccess();
             getBehavior();
@@ -14,6 +21,14 @@ angular.module('behavior').controller('behaviorController', function ($scope, $h
             getError();
         });
     };
+    
+      getAccountLogin();
+    function getAccountLogin() {
+        $http.get('/startpageuser').success(function (data) {
+            $scope.account = data;
+            console.log(data + '----------------------->');
+        });
+    }
 
     $scope.editBehavior = function (u) {
         $scope.behavior = u;
@@ -62,6 +77,115 @@ angular.module('behavior').controller('behaviorController', function ($scope, $h
     });
     
     
+    getStudent();
+    $scope.student = {};
+    function getStudent() {
+        $http.post('/getstudent', 'Student').success(function (data) {
+            console.log(data + '...............'+data.totalElements);
+            $scope.student = data;
+       }).error(function (data) {
+
+        });
+    }
+    ;
+
+    $scope.selectStudent = function (student) {
+        $scope.behavior.student = student;
+        $scope.studentShow = student;
+    };
+
+    $scope.studentSearch = function () {
+        console.log($scope.keyword);
+        $http.post('/student/search', $scope.keyword).success(function (data) {
+            $scope.student = data;
+            console.log(data);
+        });
+    };
+
+    countStudent();
+    function countStudent() {
+        $http.get('/countstudent').success(function (data) {
+            totalStudent = data;
+            console.log(data);
+            totalPageStudent();
+            console.log(totalPage);
+        });
+
+        function totalPageStudent() {
+            totalPage = parseInt(totalStudent / 10);
+            if ((totalStudent % 10) != 0) {
+                totalPage++;
+            }
+            if ($scope.currentPage == 0) {
+                $('#first-page').addClass('disabled');
+                $('#pre-page').addClass('disabled');
+                $('#next-page').addClass('disabled');
+                $('#final-page').addClass('disabled');
+            }
+            if (totalPage > 1) {
+                $('#next-page').removeClass('disabled');
+                $('#final-page').removeClass('disabled');
+            }
+        }
+    }
+
+    $scope.firstPage = function () {
+        if (!$('#first-page').hasClass('disabled')) {
+            $scope.currentPage = 0;
+            getParent();
+            $('#first-page').addClass('disabled');
+            $('#pre-page').addClass('disabled');
+            $('#next-page').removeClass('disabled');
+            $('#final-page').removeClass('disabled');
+        }
+    };
+
+    $scope.prePage = function () {
+        if (!$('#pre-page').hasClass('disabled')) {
+            $scope.currentPage--;
+            getParent();
+            if ($scope.currentPage == 0) {
+                $('#first-page').addClass('disabled');
+                $('#pre-page').addClass('disabled');
+            }
+            $('#next-page').removeClass('disabled');
+            $('#final-page').removeClass('disabled');
+        }
+    };
+
+    $scope.nextPage = function () {
+        if (!$('#next-page').hasClass('disabled')) {
+            $scope.currentPage++;
+            getParent();
+            if ($scope.currentPage == totalPage - 1) {
+                $('#next-page').addClass('disabled');
+                $('#final-page').addClass('disabled');
+            }
+            $('#first-page').removeClass('disabled');
+            $('#pre-page').removeClass('disabled');
+        }
+    };
+
+    $scope.finalPage = function () {
+        if (!$('#final-page').hasClass('disabled')) {
+            $scope.currentPage = totalPage - 1;
+            getParent();
+            $('#next-page').addClass('disabled');
+            $('#final-page').addClass('disabled');
+            $('#first-page').removeClass('disabled');
+            $('#pre-page').removeClass('disabled');
+        }
+    };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
      $scope.dowloads = function(be){
         location.href = '/getfilebehavior/' + be.fileUpload.id;
         
@@ -81,7 +205,16 @@ angular.module('behavior').controller('behaviorController', function ($scope, $h
     };
     
     
+    
+    
+    
+    
 });
+
+
+
+
+
 
 
 

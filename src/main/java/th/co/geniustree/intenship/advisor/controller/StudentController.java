@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import th.co.geniustree.intenship.advisor.model.Parent;
 import th.co.geniustree.intenship.advisor.model.Student;
+import th.co.geniustree.intenship.advisor.repo.AccountRepo;
 import th.co.geniustree.intenship.advisor.repo.StudentRepo;
+import th.co.geniustree.intenship.advisor.service.StudentSearchService;
 
 /**
  *
@@ -24,6 +27,10 @@ import th.co.geniustree.intenship.advisor.repo.StudentRepo;
 public class StudentController {
     @Autowired
     private StudentRepo studentRepo;
+    @Autowired
+    private StudentSearchService searchService;
+    @Autowired
+    private AccountRepo  accountRepo;
     
     @RequestMapping (value = "/getstudent",method = RequestMethod.GET)
     public Page<Student> getStudent(Pageable pageable){
@@ -40,8 +47,13 @@ public class StudentController {
         studentRepo.delete(student);
     }
     
-//    @RequestMapping(value = "/student/search", method = RequestMethod.POST)
-//    public Page<Student> searchStudent(@RequestBody String keyword, Pageable pageable) {
-//        return studentRepo.findByNameOrEmail(keyword, keyword, pageable);
-//    }
+    @RequestMapping(value = "/student/search", method = RequestMethod.POST)
+    public Page<Student> searchParent(@RequestBody String keyword, Pageable pageable) {
+        return searchService.search(keyword, pageable);
+    }
+    
+    @RequestMapping(value = "/countstudent",method = RequestMethod.GET)
+    public Long countParent (Pageable pageable){
+        return accountRepo.findByDtype("Student", pageable).getTotalElements();
+    }
 }

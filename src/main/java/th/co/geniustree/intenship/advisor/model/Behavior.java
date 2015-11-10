@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -32,6 +33,11 @@ public class Behavior implements Serializable {
     private String title;
     private String detail;
     private String description;
+    
+    @ManyToOne
+    private Student student;
+    @ManyToOne
+    private Teacher teacher;
     
     @OneToOne(cascade = CascadeType.ALL)
     private FileUpload fileUpload;
@@ -83,6 +89,22 @@ public class Behavior implements Serializable {
 
     public void setFileUpload(FileUpload fileUpload) {
         this.fileUpload = fileUpload;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     

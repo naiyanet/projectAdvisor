@@ -29,7 +29,12 @@ public class Student extends Account implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "student")
     private List<Advise> advise;
-            
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private List<Behavior> behaviors;
+    
+    
     public Faculty getFaculty() {
         return faculty;
     }
@@ -60,6 +65,14 @@ public class Student extends Account implements Serializable {
 
     public void setAdvise(List<Advise> advise) {
         this.advise = advise;
+    }
+
+    public List<Behavior> getBehaviors() {
+        return behaviors;
+    }
+
+    public void setBehaviors(List<Behavior> behaviors) {
+        this.behaviors = behaviors;
     }
     
     

@@ -1,11 +1,20 @@
 angular.module('advise', []);
-angular.module('advise').controller('adviseController', function ( $scope, $http) {
+angular.module('advise').controller('adviseController', function (UserService, $scope, $http) {
 
     $scope.advise = {};
+    $scope.account = {};
     $scope.mo = {};
-
+    $scope.studentShow = UserService.user.student;
+    $scope.keyword = "";
+    $scope.currentPage = 0;
+    var page = 0;
+    var totalParent = 0;
+    var totalPage = 0;
 
     $scope.saveAdvise = function () {
+        console.log('----------------------->'+UserService.user.student);
+        $scope.advise.teacher = $scope.account.teacher;
+        $scope.advise.student = $scope.account;
         $http.post('/saveadvise', $scope.advise).success(function (data) {
             getSuccess();
             getAdvise();
@@ -18,9 +27,24 @@ angular.module('advise').controller('adviseController', function ( $scope, $http
 
     $scope.editAdvise = function (u) {
         $scope.advise = u;
-     };
+    };
 
-
+    getAccountLogin();
+    function getAccountLogin() {
+        $http.get('/startpageuser').success(function (data) {
+            $scope.account = data;
+            console.log(data + '----------------------->');
+        });
+    }
+    
+    $scope.checkTeacherLogin = function (){
+        if($scope.account.dtype === 'Teacher'){
+            return true;
+        }
+        else{
+            return false;
+        }
+    };
 
     $scope.delAdvise = {};
     $scope.deleteAdvise = function (delAd) {
@@ -80,19 +104,124 @@ angular.module('advise').controller('adviseController', function ( $scope, $http
 
 
 
-    $scope.adviseSearch = function (){
-        $http.post('/categoryadvise/search', $scope.keyword).success(function (data){
+    $scope.adviseSearch = function () {
+        $http.post('/categoryadvise/search', $scope.keyword).success(function (data) {
             $scope.advise = data;
-            
+
         });
     };
 
-     $scope.dowloads = function(advises){
-        location.href = '/getfileadvise/' + advises.fileUpload.id;
-        
+    getStudent();
+    $scope.student = {};
+    function getStudent() {
+        $http.post('/getstudent', 'Student').success(function (data) {
+            console.log(data + '...............' + data.totalElements);
+            $scope.student = data;
+        }).error(function (data) {
+
+        });
+    }
+    ;
+
+    $scope.selectStudent = function (student) {
+        $scope.advise.student = student;
+        $scope.studentShow = student;
     };
-    
-    
+
+    $scope.studentSearch = function () {
+        console.log($scope.keyword);
+        $http.post('/student/search', $scope.keyword).success(function (data) {
+            $scope.student = data;
+            console.log(data);
+        });
+    };
+
+    countStudent();
+    function countStudent() {
+        $http.get('/countstudent').success(function (data) {
+            totalStudent = data;
+            console.log(data);
+            totalPageStudent();
+            console.log(totalPage);
+        });
+
+        function totalPageStudent() {
+            totalPage = parseInt(totalStudent / 10);
+            if ((totalStudent % 10) != 0) {
+                totalPage++;
+            }
+            if ($scope.currentPage == 0) {
+                $('#first-page').addClass('disabled');
+                $('#pre-page').addClass('disabled');
+                $('#next-page').addClass('disabled');
+                $('#final-page').addClass('disabled');
+            }
+            if (totalPage > 1) {
+                $('#next-page').removeClass('disabled');
+                $('#final-page').removeClass('disabled');
+            }
+        }
+    }
+
+    $scope.firstPage = function () {
+        if (!$('#first-page').hasClass('disabled')) {
+            $scope.currentPage = 0;
+            getParent();
+            $('#first-page').addClass('disabled');
+            $('#pre-page').addClass('disabled');
+            $('#next-page').removeClass('disabled');
+            $('#final-page').removeClass('disabled');
+        }
+    };
+
+    $scope.prePage = function () {
+        if (!$('#pre-page').hasClass('disabled')) {
+            $scope.currentPage--;
+            getParent();
+            if ($scope.currentPage == 0) {
+                $('#first-page').addClass('disabled');
+                $('#pre-page').addClass('disabled');
+            }
+            $('#next-page').removeClass('disabled');
+            $('#final-page').removeClass('disabled');
+        }
+    };
+
+    $scope.nextPage = function () {
+        if (!$('#next-page').hasClass('disabled')) {
+            $scope.currentPage++;
+            getParent();
+            if ($scope.currentPage == totalPage - 1) {
+                $('#next-page').addClass('disabled');
+                $('#final-page').addClass('disabled');
+            }
+            $('#first-page').removeClass('disabled');
+            $('#pre-page').removeClass('disabled');
+        }
+    };
+
+    $scope.finalPage = function () {
+        if (!$('#final-page').hasClass('disabled')) {
+            $scope.currentPage = totalPage - 1;
+            getParent();
+            $('#next-page').addClass('disabled');
+            $('#final-page').addClass('disabled');
+            $('#first-page').removeClass('disabled');
+            $('#pre-page').removeClass('disabled');
+        }
+    };
+
+    $scope.clickParent = function () {
+        $('#complete-student-advise').openModal();
+    };
+
+
+    $scope.dowloads = function (advises) {
+        location.href = '/getfileadvise/' + advises.fileUpload.id;
+
+    };
+
+
     $scope.file;
     $scope.saveFileAdvise = function () {
         var fd = new FormData();
@@ -101,13 +230,10 @@ angular.module('advise').controller('adviseController', function ( $scope, $http
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
         }).success(function (data) {
-            console.log(data+'fileeeeeeeeeeeeee');
+            console.log(data + 'fileeeeeeeeeeeeee');
             $scope.advise.fileUpload = data;
         });
     };
-
-
-
 
 });
 

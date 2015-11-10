@@ -53,7 +53,11 @@ public class UserController {
         System.out.println("----------------------------------------------->account"+account);
         return userRepo.findByDtype(account,pagable);
     }
-    
+    @RequestMapping(value = "/getstudent",method = RequestMethod.POST)
+    public Page<Account> getAccountStudent(@RequestBody String account , Pageable pagable){
+        System.out.println("----------------------------------------------->account"+account);
+        return userRepo.findByDtype(account,pagable);
+    }
      @RequestMapping(value = "/findteacher",method = RequestMethod.POST)
     public Page<Account> findTeacher (@RequestBody SearchData searchData , Pageable pageable){
         String SearchBy = searchData.getSearchBy();
