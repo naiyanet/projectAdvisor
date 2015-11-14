@@ -71,11 +71,5 @@ public class UserController {
         Integer id = userRepo.findByEmail(account.getEmail()).get().getId();
         return userRepo.findOne(id);
     }
-//    @RequestMapping(value = "/startpagestaff", method = RequestMethod.GET)
-//    public Employee getCurrentLogin() {
-//        Employee employee = (Employee) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        Integer id = employeeRepo.findByEmail(employee.getEmail()).getId();
-//       return employeeRepo.findOne(id);
-//    }
-    
+   
 }

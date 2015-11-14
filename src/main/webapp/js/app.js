@@ -32,7 +32,8 @@ app.controller('appController', function (UserService , $scope, $http) {
 });
 
 app.config(function ($routeProvider) {
-    $routeProvider
+    
+    $routeProvider 
             .when('/home', {
                 controller: 'homeController',
                 templateUrl: 'home.html'

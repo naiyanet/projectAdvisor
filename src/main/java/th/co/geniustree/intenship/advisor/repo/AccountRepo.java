@@ -9,13 +9,14 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import th.co.geniustree.intenship.advisor.model.Account;
 
 /**
  *
  * @author Account
  */
-public interface AccountRepo extends JpaRepository<Account, Integer>{
+public interface AccountRepo extends JpaRepository<Account, Integer>,JpaSpecificationExecutor<Account>{
 
     public Optional<Account> findByEmail(String email);
     

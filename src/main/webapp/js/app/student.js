@@ -190,27 +190,3 @@ angular.module('student').controller('studentController', function (UserService,
 
 
     
-//    $scope.teacher = {};
-//    function  getTeacher(id) {
-////        console.log($scope.student.teacher+'plljlihiuggyuiu');
-////        if (!$scope.student.teacher.id) {
-////            var searchdata = {};
-////            searchdata.searchBy = 'Teacher';
-////            searchdata.keyword = $scope.student.teacher.name;
-////            $http.post('/findteacher', searchdata).success(function (data) {
-////                $scope.teacher = data;
-////                console.log('has teacher');
-////                $scope.student.teacher = data.content[0];
-////            });
-////
-////        } else {
-//            $http.post('/getaccout', 'Teacher').success(function (data) {
-//                $scope.teacher = data;
-//                $scope.student.teacher = data.content[id - 1];
-//            });
-////        }
-//        
-//
-//
-//    }
-//    ;
