@@ -12,14 +12,12 @@ angular.module('advise').controller('adviseController', function (UserService, $
     var totalPage = 0;
 
     $scope.saveAdvise = function () {
-        console.log('----------------------->'+UserService.user.student);
         $scope.advise.teacher = $scope.account.teacher;
         $scope.advise.student = $scope.account;
         $http.post('/saveadvise', $scope.advise).success(function (data) {
             getSuccess();
-            getAdvise();
-            console.log(data);
             $scope.clear();
+            getAdvise();
         }).error(function (data) {
             getError();
         });
@@ -36,12 +34,12 @@ angular.module('advise').controller('adviseController', function (UserService, $
             console.log(data + '----------------------->');
         });
     }
-    
-    $scope.checkTeacherLogin = function (){
-        if($scope.account.dtype === 'Teacher'){
+
+    $scope.checkTeacherLogin = function () {
+        if ($scope.account.dtype === 'Teacher') {
             return true;
         }
-        else{
+        else {
             return false;
         }
     };
@@ -59,7 +57,7 @@ angular.module('advise').controller('adviseController', function (UserService, $
 
     $scope.adviseshow = {};
     function getAdvise() {
-        $http.get('/getadvise').success(function (data) {
+        $http.get('/getadvisee').success(function (data) {
             $scope.adviseshow = data;
             console.log('..........................' + data);
         }).error(function (data) {

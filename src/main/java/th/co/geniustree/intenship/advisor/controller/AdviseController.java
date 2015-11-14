@@ -33,7 +33,7 @@ public class AdviseController {
     @Autowired
     private AdviseRepo adviseRepo;
     
-    @RequestMapping(value = "/getadvise",method = RequestMethod.GET)
+    @RequestMapping(value = "/getadvisee",method = RequestMethod.GET)
     public Page<Advise> getAdvise(Pageable pageable){
         return adviseRepo.findAll(pageable);
     }

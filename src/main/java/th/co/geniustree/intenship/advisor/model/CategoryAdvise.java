@@ -41,9 +41,6 @@ public class CategoryAdvise implements Serializable {
     @JsonIgnore
     private List<Advise> advises;
     
-    
-    private Advise advise;
-
     public Integer getId() {
         return id;
     }
@@ -69,15 +66,7 @@ public class CategoryAdvise implements Serializable {
         this.advises = advises;
     }
 
-    public Advise getAdvise() {
-        return advise;
-    }
-
-    public void setAdvise(Advise advise) {
-        this.advise = advise;
-    }
-
-    
+   
     @Override
     public int hashCode() {
         int hash = 7;
