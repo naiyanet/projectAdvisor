@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.intenship.advisor.model.Account;
 import th.co.geniustree.intenship.advisor.model.SearchData;
 import th.co.geniustree.intenship.advisor.repo.AccountRepo;
+import th.co.geniustree.intenship.advisor.service.AccountSearchService;
 
 /**
  *
@@ -27,6 +28,9 @@ import th.co.geniustree.intenship.advisor.repo.AccountRepo;
 public class UserController {
     @Autowired
     private AccountRepo userRepo;
+    
+    @Autowired
+    private AccountSearchService accountSearchService;
     
     @RequestMapping(value = "/getuser",method = RequestMethod.GET)
     public Page<Account> getUser(Pageable pageable){
@@ -70,6 +74,11 @@ public class UserController {
         Account account =  (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Integer id = userRepo.findByEmail(account.getEmail()).get().getId();
         return userRepo.findOne(id);
+    }
+    
+    @RequestMapping(value = "/getuser/searchuser",method = RequestMethod.POST)
+    public Page<Account> searchUser (@RequestBody String keyword,Pageable pageable){
+        return accountSearchService.searchAccount(keyword, pageable);
     }
    
 }

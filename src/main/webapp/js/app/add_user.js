@@ -1,6 +1,8 @@
 angular.module('add_user', []);
 angular.module('add_user').controller('add_userController', function (UserService, $scope, $http) {
 
+
+    $scope.keyword = null;
     $scope.user = {};
 
     $scope.saveUser = function () {
@@ -15,11 +17,11 @@ angular.module('add_user').controller('add_userController', function (UserServic
             location.href = '#/teacher';
             UserService.user = u;
         }
-        if (u.dtype == 'Student'){
+        if (u.dtype == 'Student') {
             location.href = '#/student';
             UserService.user = u;
         }
-        if (u.dtype == 'Parent'){
+        if (u.dtype == 'Parent') {
             location.href = '#/parent';
             UserService.user = u;
         }
@@ -68,4 +70,17 @@ angular.module('add_user').controller('add_userController', function (UserServic
     function getError() {
         alert('Error');
     }
+
+
+    $scope.searchUser = function (keyword) {
+        console.log(keyword);
+        if (!keyword) {
+            getUser();
+        } else {
+            $http.post('/getuser/searchuser', keyword).success(function (data) {
+                $scope.usershow = data;
+            });
+        }
+    };
+
 });

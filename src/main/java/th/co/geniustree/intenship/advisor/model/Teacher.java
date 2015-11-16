@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class Teacher extends Account implements Serializable{
+    private String status;
     @ManyToOne
     @JoinColumn(name = "FACULTY_ID")
     private Faculty faculty;
@@ -30,7 +31,15 @@ public class Teacher extends Account implements Serializable{
     @JsonIgnore
     @OneToMany(mappedBy = "teacher")
     private List<Behavior> behaviors;
-    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+      
     public Faculty getFaculty() {
         return faculty;
     }
